@@ -39,7 +39,7 @@ def run_test(input_file):
         log2 = analyzer.stage2_analyze(text,log1,stage2_res)
         log3 = analyzer.stage3_analyze(text, log1)
         log4 = analyzer.stage4_analyze(text, mod_res,log1)
-        log5 = analyzer.stage5_analyze(text, mod_res,log1)
+        log5 = analyzer.stage5_analyze(text, sem_res, log1)
 
         log_entry = {
             "timestamp": datetime.now().isoformat(),

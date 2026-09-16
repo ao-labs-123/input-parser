@@ -1,5 +1,8 @@
-[
-  "Succeeded because you helped.",
-  "Failed despite the effort.",
-  "Required further investigation."
-]
+{
+  "stage2":
+  [
+    "Succeeded because you helped.",
+    "Failed despite the effort.",
+    "Required further investigation."
+  ]
+}

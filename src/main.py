@@ -1,18 +1,21 @@
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 
 from rules.stage1_rule import determine_explicit_subject
 from rules.stage1_rule import determine_subject
 from rules.stage2_rule import analyze_causality_and_ambiguity
-from rules.stage3_rule import analyze_causality
 from rules.stage4_rule import analyze_modification_structure
 from rules.stage5_rule import analyze_semantic_structure
 from analyzer import LogicAnalyzer
 
 def run_test(input_file):
     with open(input_file, 'r', encoding='utf-8') as f:
-        examples = json.load(f)
+        input_data = json.load(f)
+
+    stage_name, examples = next(iter(input_data.items()))
+    target_stage = int(re.search(r"\d+", stage_name).group())
     
     from rules.stage1_rule import get_lexicon
     from rules.stage3_rule import get_lexicon
@@ -20,26 +23,27 @@ def run_test(input_file):
     analyzer = LogicAnalyzer(lexicon_data)
 
     for text in examples:
-        explicit_status = determine_explicit_subject(text)
-        
-        if explicit_status:
-            subject_status = explicit_status
-        else:
-            subject_status = determine_subject(text)
-            
-        # 因果関係の判定は主語の有無に関わらず共通で実行
-        causality_status = analyze_causality(text)
+        log1 = log2 = log3 = log4 = log5 = None
 
-        mod_res = analyze_modification_structure(text)
-        sem_res = analyze_semantic_structure(text)
+        if target_stage >= 1:
+            explicit_status = determine_explicit_subject(text)
+            subject_status = explicit_status or determine_subject(text)
+            log1 = analyzer.stage1_analyze(text, subject_status)
 
-        stage2_res = analyze_causality_and_ambiguity(text,subject_status)
+        if target_stage >= 2:
+            stage2_res = analyze_causality_and_ambiguity(text, subject_status)
+            log2 = analyzer.stage2_analyze(text, log1, stage2_res)
 
-        log1 = analyzer.stage1_analyze(text, subject_status)
-        log2 = analyzer.stage2_analyze(text,log1,stage2_res)
-        log3 = analyzer.stage3_analyze(text, log1)
-        log4 = analyzer.stage4_analyze(text, mod_res,log1)
-        log5 = analyzer.stage5_analyze(text, sem_res, log1)
+        if target_stage >= 3:
+            log3 = analyzer.stage3_analyze(text, log1)
+
+        if target_stage >= 4:
+            mod_res = analyze_modification_structure(text)
+            log4 = analyzer.stage4_analyze(text, mod_res, log1)
+
+        if target_stage >= 5:
+            sem_res = analyze_semantic_structure(text)
+            log5 = analyzer.stage5_analyze(text, sem_res, log1)
 
         log_entry = {
             "timestamp": datetime.now().isoformat(),

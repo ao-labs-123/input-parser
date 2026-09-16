@@ -1,4 +1,7 @@
-[
-  "The report, which was long, is done.",
-  "The report that I wrote is done."
-]
+{
+  "stage4":
+  [
+    "The report, which was long, is done.",
+    "The report that I wrote is done."
+  ]
+}

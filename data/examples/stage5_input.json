@@ -1,5 +1,8 @@
-[
-  "I have a car.",
-  "I am having a party.",
-  "I was told by him."	
-]
+{
+  "stage5": 
+  [
+    "I have a car.",
+    "I am having a party.",
+    "I was told by him."	
+  ]
+}

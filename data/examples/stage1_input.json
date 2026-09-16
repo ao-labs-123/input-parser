@@ -1,6 +1,9 @@
-[
-  "He succeeded because I helped.",
-  "Thought was strange.",
-  "Thought it was strange apparently.",
-  "It is required that you submit the form."
-]
+{
+  "stage1": 
+  [
+    "He succeeded because I helped.",
+    "Thought was strange.",
+    "Thought it was strange apparently.",
+    "It is required that you submit the form."
+  ]
+}

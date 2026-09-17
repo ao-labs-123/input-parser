@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-09-16T16:05:30.515101",
+        "timestamp": "2026-09-17T11:39:47.127119",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -13,7 +13,7 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.515877",
+        "timestamp": "2026-09-17T11:39:47.129178",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -26,7 +26,7 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.516692",
+        "timestamp": "2026-09-17T11:39:47.130063",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Psychological Verb + Null Subject + Evidential Marker",
@@ -39,7 +39,7 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.517235",
+        "timestamp": "2026-09-17T11:39:47.130733",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -53,7 +53,33 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.518129",
+        "timestamp": "2026-09-17T11:39:47.131488",
+        "input": "I submitted the form yesterday.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": null,
+        "stage3": null,
+        "stage4": null,
+        "stage5": null
+    },
+    {
+        "timestamp": "2026-09-17T11:39:47.132216",
+        "input": "I wrote the report at the office.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": null,
+        "stage3": null,
+        "stage4": null,
+        "stage5": null
+    },
+    {
+        "timestamp": "2026-09-17T11:39:47.133318",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Standard",
@@ -70,7 +96,7 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.518855",
+        "timestamp": "2026-09-17T11:39:47.134246",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Standard",
@@ -87,7 +113,7 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.519646",
+        "timestamp": "2026-09-17T11:39:47.135210",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Standard",
@@ -104,7 +130,41 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.520388",
+        "timestamp": "2026-09-17T11:39:47.136194",
+        "input": "Submitted the form yesterday.",
+        "stage1": {
+            "process": "Standard",
+            "decision": "None",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "Unknown"
+        },
+        "stage3": null,
+        "stage4": null,
+        "stage5": null
+    },
+    {
+        "timestamp": "2026-09-17T11:39:47.137187",
+        "input": "Succeeded in the meeting.",
+        "stage1": {
+            "process": "Standard",
+            "decision": "None",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "Unknown"
+        },
+        "stage3": null,
+        "stage4": null,
+        "stage5": null
+    },
+    {
+        "timestamp": "2026-09-17T11:39:47.138205",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -128,7 +188,7 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.521057",
+        "timestamp": "2026-09-17T11:39:47.139049",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -152,7 +212,41 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.522060",
+        "timestamp": "2026-09-17T11:39:47.139940",
+        "input": "He succeeded by working hard.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "He"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "He"
+        },
+        "stage3": null,
+        "stage4": null,
+        "stage5": null
+    },
+    {
+        "timestamp": "2026-09-17T11:39:47.140843",
+        "input": "I was stressed after the long meeting.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": null,
+        "stage4": null,
+        "stage5": null
+    },
+    {
+        "timestamp": "2026-09-17T11:39:47.141963",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -173,7 +267,7 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.522953",
+        "timestamp": "2026-09-17T11:39:47.142957",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -194,7 +288,49 @@
         "stage5": null
     },
     {
-        "timestamp": "2026-09-16T16:05:30.524532",
+        "timestamp": "2026-09-17T11:39:47.144002",
+        "input": "The office where I wrote the report was quiet.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "The office"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "The office"
+        },
+        "stage3": null,
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": null
+    },
+    {
+        "timestamp": "2026-09-17T11:39:47.145007",
+        "input": "The day where he succeeded was bright.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "The day"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "The day"
+        },
+        "stage3": null,
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": null
+    },
+    {
+        "timestamp": "2026-09-17T11:39:47.146541",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -218,7 +354,7 @@
         }
     },
     {
-        "timestamp": "2026-09-16T16:05:30.525561",
+        "timestamp": "2026-09-17T11:39:47.147635",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -242,7 +378,7 @@
         }
     },
     {
-        "timestamp": "2026-09-16T16:05:30.526481",
+        "timestamp": "2026-09-17T11:39:47.148731",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -263,6 +399,30 @@
         "stage5": {
             "process": "[Passive: be + V-en + by]",
             "result": "Actor: him / Receiver: I."
+        }
+    },
+    {
+        "timestamp": "2026-09-17T11:39:47.149898",
+        "input": "The report was completed quickly.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "The report"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "The report"
+        },
+        "stage3": null,
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "process": "[Morphology: Base] → [Category: Action]",
+            "result": "General action statement."
         }
     }
 ]

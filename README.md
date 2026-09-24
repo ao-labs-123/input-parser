@@ -35,7 +35,7 @@ Our engine avoids errors by using structural overrides instead of statistical we
 In the second case, the "Evidential Marker" (⁠apparently⁠) acts as a logical trigger to override the default speaker-centric perspective. This deterministic logic ensures precision that probabilistic models often miss.
 
 ## Core Philosophy
-Traditional AI relies on massive statistical models (LLMs) to predict the next word, often leading to "black box" decisions, high computational costs, and conversational misinterpretations. This project takes a different path: **Deterministic Logical Abstraction.**
+This project takes a different path: **Deterministic Logical Abstraction.**
 
 By codifying the structural and cognitive rules of language into a lightweight engine, we achieve human-level contextual reasoning with a fraction of the memory and processing power.
 

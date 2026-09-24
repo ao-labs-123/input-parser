@@ -1,4 +1,4 @@
-# Stage1 — Agent and Subject Estimation in Dialogue AI
+# Stage1 — Agent and Subject Estimation
 
 ## Overview:
 This step focuses on optimizing the model's ability to interpret sentences with implicit subjects. By codifying linguistic patterns—such as the way psychological verbs (e.g., 'think', 'feel', 'notice') consistently map to the speaker as the primary agent—the model eliminates ambiguity in subject identification and significantly increases conversational accuracy, regardless of the underlying language.

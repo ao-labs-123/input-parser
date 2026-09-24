@@ -1,6 +1,6 @@
 # Current Phase: Input Parsing
 **At this stage, incoming text is captured and parsed into a lightweight, deterministic rule-based structure—bypassing heavy statistical prediction.**
-![alt text](image-1.jpeg)
+![alt text](image.jpeg)
 
 ## "ACT-R at a Micro-Scale"
 ### What makes this different from standard ACT-R?

@@ -39,12 +39,8 @@ By codifying the structural and cognitive rules of language into a lightweight e
 1. **Explainability (Transparent Reasoning)**:
 
    Every inference step is driven by clear, rule-based logic. You can trace exactly why the AI interpreted a sentence a certain way.
-   
-2. **Extreme Efficiency**:
 
-   Our engine performs inference via logic, not massive matrix multiplication. It is designed to run on low-cost hardware, from home appliances to embedded systems.
-
-3. **Language Agnostic Structure**:
+2. **Language Agnostic Structure**:
 
    The logical core (Subject Inference, Semantic Categorization) is designed to be applicable across multiple languages, including Japanese and English.
 

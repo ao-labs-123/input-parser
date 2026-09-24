@@ -1,3 +1,4 @@
+# Micro—ACT-R (tentative)
 # Current Phase: Input Parsing
 **At this stage, incoming text is captured and parsed into a lightweight, deterministic rule-based structure—bypassing heavy statistical prediction.**
 ![alt text](image.jpeg)
@@ -10,7 +11,7 @@
 
 
 
-# The 5-Stage Logical Pipeline
+## The 5-Stage Logical Pipeline
 **Our engine processes language through a bottom-up logical hierarchy:**
 
 - [stage1:Subject Inference](docs/en/stage1_design.md)

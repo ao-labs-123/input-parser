@@ -50,7 +50,6 @@ By codifying the structural and cognitive rules of language into a lightweight e
 ```repository
 
 ├── docs  
-│    ├── ROADMAP.md
 │    ├── stage1_design.md
 │    ├── stage2_design.md
 │    ├── stage3_design.md

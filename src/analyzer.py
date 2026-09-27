@@ -117,8 +117,8 @@ class LogicAnalyzer:
                     "mapping": f"{cause} -> Causes -> {effect}",
                     "structure": {"cause": cause, "effect": effect}
                 }
-                
-                return {"process": "No causality found", "mapping": "None"}
+
+        return {"process": "No causality found", "mapping": "None"}
 
     def stage4_analyze(self, text, modification_result, log1):
         # 1. 完全に None だった場合、または辞書が空だった場合はここで安全に弾く

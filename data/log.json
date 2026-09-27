@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-09-27T07:38:56.849153",
+        "timestamp": "2026-09-27T09:56:13.344633",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -31,7 +31,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.849985",
+        "timestamp": "2026-09-27T09:56:13.345462",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -44,7 +44,7 @@
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -58,7 +58,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.850775",
+        "timestamp": "2026-09-27T09:56:13.346227",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Psychological Verb + Null Subject + Evidential Marker",
@@ -71,7 +71,7 @@
             "resolved_agent": "He/She/They"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -85,7 +85,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.851267",
+        "timestamp": "2026-09-27T09:56:13.348791",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -99,7 +99,7 @@
             "resolved_agent": "you"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -113,7 +113,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.851799",
+        "timestamp": "2026-09-27T09:56:13.349491",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -126,7 +126,7 @@
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -140,7 +140,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.852351",
+        "timestamp": "2026-09-27T09:56:13.350623",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -153,7 +153,7 @@
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -167,7 +167,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.853290",
+        "timestamp": "2026-09-27T09:56:13.352004",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Standard",
@@ -198,7 +198,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.854099",
+        "timestamp": "2026-09-27T09:56:13.353082",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Standard",
@@ -211,7 +211,7 @@
             "resolved_agent": "Unknown"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -225,7 +225,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.854928",
+        "timestamp": "2026-09-27T09:56:13.354203",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Standard",
@@ -238,7 +238,7 @@
             "resolved_agent": "Unknown"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -252,7 +252,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.855963",
+        "timestamp": "2026-09-27T09:56:13.355376",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Standard",
@@ -265,7 +265,7 @@
             "resolved_agent": "Unknown"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -279,7 +279,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.856864",
+        "timestamp": "2026-09-27T09:56:13.356664",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Standard",
@@ -292,7 +292,7 @@
             "resolved_agent": "Unknown"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -306,7 +306,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.857845",
+        "timestamp": "2026-09-27T09:56:13.358600",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -337,7 +337,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.858645",
+        "timestamp": "2026-09-27T09:56:13.360105",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -368,7 +368,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.859797",
+        "timestamp": "2026-09-27T09:56:13.361599",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -381,8 +381,14 @@
             "resolved_agent": "He"
         },
         "stage3": {
-            "process": "No causality found",
-            "mapping": "None"
+            "process": "Agent: He + Manner Marker: by",
+            "mapping": "working hard -> Means -> He succeeded",
+            "structure": {
+                "relation": "Manner",
+                "marker": "by",
+                "context": "working hard",
+                "event": "He succeeded"
+            }
         },
         "stage4": {
             "process": "Standard",
@@ -395,7 +401,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.861076",
+        "timestamp": "2026-09-27T09:56:13.363028",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -408,8 +414,14 @@
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No causality found",
-            "mapping": "None"
+            "process": "Agent: I + Temporal Marker: after",
+            "mapping": "the long meeting -> Occurs After -> I was stressed",
+            "structure": {
+                "relation": "Temporal",
+                "marker": "after",
+                "context": "the long meeting",
+                "event": "I was stressed"
+            }
         },
         "stage4": {
             "process": "Standard",
@@ -422,7 +434,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.863195",
+        "timestamp": "2026-09-27T09:56:13.364849",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -435,7 +447,7 @@
             "resolved_agent": "The report"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -449,7 +461,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.864971",
+        "timestamp": "2026-09-27T09:56:13.366494",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -462,7 +474,7 @@
             "resolved_agent": "The report"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -476,7 +488,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.866588",
+        "timestamp": "2026-09-27T09:56:13.368129",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -489,7 +501,7 @@
             "resolved_agent": "The office"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -503,7 +515,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.868744",
+        "timestamp": "2026-09-27T09:56:13.369847",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -516,7 +528,7 @@
             "resolved_agent": "The day"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -530,7 +542,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.871138",
+        "timestamp": "2026-09-27T09:56:13.371766",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -543,7 +555,7 @@
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -557,7 +569,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.873388",
+        "timestamp": "2026-09-27T09:56:13.373000",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -570,7 +582,7 @@
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -584,7 +596,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.875622",
+        "timestamp": "2026-09-27T09:56:13.374134",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -597,7 +609,7 @@
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {
@@ -611,7 +623,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T07:38:56.877927",
+        "timestamp": "2026-09-27T09:56:13.375268",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -624,7 +636,7 @@
             "resolved_agent": "The report"
         },
         "stage3": {
-            "process": "No causality found",
+            "process": "No context relation found",
             "mapping": "None"
         },
         "stage4": {

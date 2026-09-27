@@ -98,7 +98,7 @@ class LogicAnalyzer:
 
 
 
-    def stage3_analyze(self, text, log1):
+    def stage3_analyze(self, text, log1, context_result=None):
         # log1 から Stage 1 で特定した Agent を受け取る
         agent = log1["agent"]
         
@@ -118,7 +118,18 @@ class LogicAnalyzer:
                     "structure": {"cause": cause, "effect": effect}
                 }
 
-        return {"process": "No causality found", "mapping": "None"}
+        if context_result:
+            context = context_result["context"]
+            event = context_result["event"]
+            relation = context_result["relation"]
+            mapping = "Occurs After" if relation == "Temporal" else "Means"
+            return {
+                "process": f"Agent: {agent} + {relation} Marker: {context_result['marker']}",
+                "mapping": f"{context} -> {mapping} -> {event}",
+                "structure": context_result,
+            }
+
+        return {"process": "No context relation found", "mapping": "None"}
 
     def stage4_analyze(self, text, modification_result, log1):
         # 1. 完全に None だった場合、または辞書が空だった場合はここで安全に弾く

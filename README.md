@@ -7,7 +7,7 @@ Standard ACT-R operates on a macro level with production rules. This project zoo
 <img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/7844b856-c666-433f-9344-dffe1ab9bc0c" />
 
 # Current Phase: Input Parsing
-![alt text](image.jpeg)
+![alt text](image.1jpeg)
 
 ## The 5-Stage Logical Pipeline
 **Our engine processes language through a bottom-up logical hierarchy:**

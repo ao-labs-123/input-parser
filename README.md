@@ -7,8 +7,9 @@ Standard ACT-R operates on a macro level with production rules. This project zoo
 ## Micro-ACT-R Pipeline Architecture
 <img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/7844b856-c666-433f-9344-dffe1ab9bc0c" />
 
-- [particle-encapsulation](https://github.com/ao-labs-123/particle-encapsulation)
-- [topological-mapper](https://github.com/ao-labs-123/topological-mapper)
+1. [input-parser]()※Current Position
+2. [particle-encapsulation](https://github.com/ao-labs-123/particle-encapsulation)
+3. [topological-mapper](https://github.com/ao-labs-123/topological-mapper)
 
 # Current Phase: Input Parsing
 ![alt text](image.jpeg)

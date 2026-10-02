@@ -211,9 +211,9 @@ class LogicAnalyzer:
             }
             
         elif form_type == "Passive":
-            actor = semantic_result.get("actor")
+            actor = semantic_result.get("actor") or "Unknown"
             receiver = semantic_result.get("receiver")
-            
+
             return {
                 "process": "[Passive: be + V-en + by]",
                 "result": f"Actor: {actor} / Receiver: {receiver}."

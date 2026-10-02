@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-09-27T09:56:13.344633",
+        "timestamp": "2026-10-02T08:41:25.985255",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -31,7 +31,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.345462",
+        "timestamp": "2026-10-02T08:41:25.985878",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -58,7 +58,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.346227",
+        "timestamp": "2026-10-02T08:41:25.986538",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Psychological Verb + Null Subject + Evidential Marker",
@@ -85,7 +85,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.348791",
+        "timestamp": "2026-10-02T08:41:25.987016",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -108,12 +108,12 @@
             "result": "AI defines the primary identity of 'It is required'."
         },
         "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
+            "process": "[Passive: be + V-en + by]",
+            "result": "Actor: Unknown / Receiver: It."
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.349491",
+        "timestamp": "2026-10-02T08:41:25.987537",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -140,7 +140,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.350623",
+        "timestamp": "2026-10-02T08:41:25.988078",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -167,7 +167,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.352004",
+        "timestamp": "2026-10-02T08:41:25.988973",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Standard",
@@ -198,7 +198,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.353082",
+        "timestamp": "2026-10-02T08:41:25.989751",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Standard",
@@ -225,7 +225,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.354203",
+        "timestamp": "2026-10-02T08:41:25.990558",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Standard",
@@ -252,7 +252,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.355376",
+        "timestamp": "2026-10-02T08:41:25.991358",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Standard",
@@ -279,7 +279,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.356664",
+        "timestamp": "2026-10-02T08:41:25.992244",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Standard",
@@ -306,7 +306,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.358600",
+        "timestamp": "2026-10-02T08:41:25.993124",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -337,7 +337,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.360105",
+        "timestamp": "2026-10-02T08:41:25.993934",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -368,7 +368,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.361599",
+        "timestamp": "2026-10-02T08:41:25.994776",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -401,7 +401,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.363028",
+        "timestamp": "2026-10-02T08:41:25.995716",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -429,12 +429,12 @@
             "structure": "No relative clause found"
         },
         "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
+            "process": "[Passive: be + V-en + by]",
+            "result": "Actor: Unknown / Receiver: I."
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.364849",
+        "timestamp": "2026-10-02T08:41:25.996853",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -461,7 +461,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.366494",
+        "timestamp": "2026-10-02T08:41:25.997880",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -488,7 +488,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.368129",
+        "timestamp": "2026-10-02T08:41:25.998876",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -510,12 +510,12 @@
             "structure": "No relative clause found"
         },
         "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
+            "process": "[Passive: be + V-en + by]",
+            "result": "Actor: Unknown / Receiver: The office where I wrote the report."
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.369847",
+        "timestamp": "2026-10-02T08:41:25.999930",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -537,12 +537,12 @@
             "structure": "No relative clause found"
         },
         "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
+            "process": "[Passive: be + V-en + by]",
+            "result": "Actor: Unknown / Receiver: The day where he succeeded."
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.371766",
+        "timestamp": "2026-10-02T08:41:26.001258",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -569,7 +569,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.373000",
+        "timestamp": "2026-10-02T08:41:26.002345",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -596,7 +596,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.374134",
+        "timestamp": "2026-10-02T08:41:26.003499",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -623,7 +623,7 @@
         }
     },
     {
-        "timestamp": "2026-09-27T09:56:13.375268",
+        "timestamp": "2026-10-02T08:41:26.004692",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -645,8 +645,8 @@
             "structure": "No relative clause found"
         },
         "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
+            "process": "[Passive: be + V-en + by]",
+            "result": "Actor: Unknown / Receiver: The report."
         }
     }
 ]

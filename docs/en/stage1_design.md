@@ -44,6 +44,8 @@ When a sentence utilizes imperative structures, direct instructions, or second-p
 
 When a sentence utilizes a dummy or formal subject structure (`It is/was [predicate] that...`), the system skips the surface-level `"It"` and extracts the actual logical agent from within the embedded clause.
 
+#### Example (It ... that ...):
+
 * **Input Example**: `"It is required that you submit the form."`
 * **Logic Process**: Bypasses dummy `"It"` $\rightarrow$ Recognizes the structural framework `It is [X] that [Y]` $\rightarrow$ Extracts the first word of the that-clause as the true agent.
 * **Result**:

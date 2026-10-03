@@ -1,10 +1,9 @@
 {
-  "stage2":
+  "stage2": 
   [
-    "Succeeded because you helped.",
-    "Failed despite the effort.",
-    "Required further investigation.",
-    "Submitted the form yesterday.",
-    "Succeeded in the meeting."
+    "I'm stressed due to the project.",
+    "I succeeded because you helped.",
+    "He succeeded by working hard.",
+    "I was stressed after the long meeting."
   ]
 }

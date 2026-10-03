@@ -1,35 +1,35 @@
-# Stage 3 — Causal Direction Analysis
+# Stage 3 — Clarification of Modification Structures
 ## Overview:
-This step builds upon the identified agents from Stage 1 to map the logical flow of the conversation. By analyzing conjunctions, conjunctive adverbs, and causal prepositions (e.g., `because`,`due to`, `therefore`, `however`), the model determines the direction of causality between events, preventing the misinterpretation of premise and conclusion.
+This step refines the contextual precision established in Stages 1 and 3. By isolating prepositional phrases, relative clauses, and adjectives, the model performs structural parsing to distinguish between "defining attributes" (essential identity) and "supplementary attributes" (additional information), ensuring modifiers are correctly tethered to their intended nouns or agents.
 
 ## Key Points:
-**1. Logical Marker Mapping**:
+**1. Modifier Tethering**:
 
-The system identifies specific linguistic "connectors" to categorize the sentence structure into cause-and-effect pairs, logical reversals, or sequential events.
+The system systematically identifies the target (head noun) for every modifier. This prevents "long-distance dependency" errors where an adjective or clause might be incorrectly assigned to the wrong noun in a complex sentence.
 
-**2. Directional Dependency**:
+**2. Defining vs. Supplementary Logic**:
 
-By anchoring the cause and the result to the agents identified in previous stages, the model maps the "who" and "why" behind an action, ensuring that causality remains attached to the correct entity.
+The model categorizes attributes:
+- Defining:Necessary to uniquely identify the subject (e.g., "The project that we started in May").
+- Supplementary:Providing non-essential context (e.g., "The project, which is quite difficult, ...").
 
-**3. Structural disambiguation**:
+**3. Contextual Anchoring**:
 
-This step resolves complex sentences where multiple events are linked, preventing the AI from conflating an outcome with an underlying motivation.
+Modifiers are cross-referenced with the agent profiles established in Stage 1, ensuring that nested descriptions of third parties do not bleed into the speaker's own attributes.
 
-## Logic Comparison: Causal Parsing
+## Logic Comparison: Modifier Parsing
 | Input | Logic Process | Result |
 |--|--|--|
-| **"I'm stressed due to the project."** | [Agent: I] + [Preposition: due to] + [Noun: project] | AI maps: Project → Causes → I (Stress). |
-| **"I succeeded because you helped."** | [Agent: I] + [Conjunction: because] + [Agent: You] | AI maps: You (Help) → Causes → I (Success). |
+| **"The report, which was long, is done."** | [Non-defining clause] → [Supplementary] | AI treats "long" as an attribute, not the primary identifier. |
+| **"The report that I wrote is done."** | [Defining clause] → [Essential] | AI links "I" (Agent) to the specific report as a defining marker. |
 
-## Example of Causal Tracking:
- **Input**: "I couldn't finish the report because the system was down."
+
+## Example of Structural Clarification:
+ **Input**: "I talked to the manager who was frustrated with the deadline."
  
  **Analysis**:
- 
- - Agent: "I" (Speaker).
- 
- - Causal Marker: "Because" (indicates the reason follows).
- 
- - Event Chain: System down (Condition) → Result in failure to finish report (Outcome).
- 
- **AI Understanding**: The system failure is the primary cause; the speaker is the affected agent.
+ - Target: "Manager" (Third Party).
+ - Modifier: "who was frustrated with the deadline" (Relative clause).
+ - Attachment: The frustration is tied exclusively to the "Manager," not the speaker.
+
+ **AI Understanding**: Accurately attributes the emotional state (frustration) to the secondary agent, maintaining the structural boundary between the speaker and the manager.

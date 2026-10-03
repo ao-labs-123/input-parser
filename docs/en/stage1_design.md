@@ -1,54 +1,38 @@
-# Stage1 — Agent and Subject Estimation (with Clarification Fallback)
+# Stage 1 — Agent and Subject Estimation (with Clarification Fallback)
 
 ## Overview:
-This step focuses on optimizing the model's ability to interpret sentences with implicit subjects. By codifying linguistic patterns—such as the way psychological verbs (e.g., `think`, `feel`, `notice`) consistently map to the speaker as the primary agent—the model eliminates ambiguity in subject identification and significantly increases conversational accuracy, regardless of the underlying language.
 
-1. **Explicit Subject Present:** Highest priority; directly assigned as specified.
-2. **Imperative / Direct Address Marker:** Inferred as the listener ("You") when imperative forms, direct requests, or second-person discourse markers are present.
-3. **Null Subject + Psychological Verb:** Inferred as the speaker ("I") based on syntactic structure.
-4. **Null Subject + Evidential Marker:** Overridden and assigned to a third party ("He/She/They").
-5. **Null Subject + Psychological Verb + Evidential Marker:** Overridden and assigned to a third party ("He/She/They").
-6. **Null Subject + No Core Markers:** Falls back to Stage 2 clarification (Undetermined / Unknown agent).
+This step focuses on deterministically interpreting sentences with implicit subjects. By codifying linguistic patterns—such as psychological verbs (e.g., 'think', 'feel', 'want'), imperative markers, and evidential cues—the model maps the primary agent without relying on statistical estimation.
+
+When an input features a null subject and lacks all core identification markers (`Null Subject + No Core Markers`), the system refrains from making speculative assumptions. Instead, it assigns the agent as `Unknown` and seamlessly triggers a targeted clarification request (or defers resolution to context-mapping modules).
 
 ## Key Points:
 
-**1. Explicit Subject Priority**:
+### 1. Explicit Subject Priority:
+When an explicit subject is present in the sentence (e.g., "I", "He", "The company"), the model bypasses inference heuristics and directly assigns the specified agent. This acts as the highest-priority deterministic rule.
 
-   When an explicit subject is present in the sentence (e.g., "I," "He," "The company"), the model bypasses inference heuristics and directly assigns the specified agent. This acts as the highest-priority deterministic rule.
+### 2. Second-Person Directives (Imperatives & Listener Directives):
+When a sentence utilizes imperative structures, direct instructions, or second-person discourse markers without an explicit subject (e.g., "Please submit", "Check this"), the system directly infers the agent as the listener ("You").
 
-**2. Second-Person Inferences (Imperatives & Listener Directives)**:
+### 3. Psychological Verb Default for Omitted Subjects:
+When a psychological verb (e.g., 'think', 'feel', 'want', 'hope', 'stressed') appears without an explicit subject, the model assigns the speaker ("I") as the agent by default.
 
-When a sentence utilizes imperative structures, direct instructions, or second-person discourse markers without an explicit subject (e.g., "Please submit by tomorrow", "Do not enter"), the system directly infers the agent as the listener ("You").
+### 4. Evidentiality & Attribution Override:
+If a sentence contains markers of evidentiality or indirect speech (e.g., 'seemingly', 'allegedly', 'they say', 'I heard', 'it is told'), the system overrides the speaker-default and assigns the agent to a third party ("He/She/They").
 
-#### Example (Imperative/Directive):
-* **Input Example:** "Please check the attached file."
-* **Logic Process:** Imperative Marker Detected → Infers Listener Directive → Assigns "You" as the agent.
+### 5. Fallback to Clarification (`Unknown` Agent):
+When a sentence contains no explicit subject and lacks all core markers (no psychological verbs, no imperative markers, and no evidential cues), the model assigns `Unknown` to prevent hallucination. This state automatically prepares a natural language clarification request or routes the chunk to the topological context mapper.
+
+---
+
+## Structural Parsing Framework Examples
+
+### Example 1: Formal Subject Framework (It ... that ...)
+When a sentence utilizes a dummy or formal subject structure (`It is/was [predicate] that...`), the system skips the surface-level "It" and extracts the actual logical agent from within the embedded clause.
+
+* **Input Example:** "It is required that you submit the form."
+* **Logic Process:** Bypasses dummy "It" → Recognizes structural framework `It is [X] that [Y]` → Extracts the first word of the that-clause as the true agent.
 * **Result:**
-  ```json
-  {
-    "process": "Imperative / Directive Detected",
-    "decision": "Priority: Listener Direct Address",
-    "agent": "you",
-    "structure": "[Imperative Verb] [Object]"
-  }
-
-**3. Psychological Verb Default for Omitted Subjects**:
-
-   When a psychological verb (e.g., `think`, `feel`, `want`, `hope`, `stressed`) appears without an explicit subject, assign the speaker as the agent by default.
-
-**4. Evidentiality & Attribution Override**:
-
-   If a sentence contains markers of evidentialities or indirect speech (e.g., `seemingly`, `allegedly`, `they say`, `I heard`,`it is told`), treat the agent as a second or third party, overriding the speaker-default.
-
-**5. Formal Subject Framework (It ... that ...)**:
-
-When a sentence utilizes a dummy or formal subject structure (`It is/was [predicate] that...`), the system skips the surface-level `"It"` and extracts the actual logical agent from within the embedded clause.
-
-#### Example (It ... that ...):
-
-* **Input Example**: `"It is required that you submit the form."`
-* **Logic Process**: Bypasses dummy `"It"` $\rightarrow$ Recognizes the structural framework `It is [X] that [Y]` $\rightarrow$ Extracts the first word of the that-clause as the true agent.
-* **Result**:
   ```json
   {
     "process": "Formal Subject Detected (It ... that)",
@@ -57,13 +41,18 @@ When a sentence utilizes a dummy or formal subject structure (`It is/was [predic
     "structure": "It is [required] that [you submit the form]"
   }
 
-## Logic Comparison: Implicit Subject vs. Evidential Override
+### Example 2: Fallback Framework (⁠Unknown⁠ / Clarification Request)
+When an input consists of a plain factual statement without syntactic markers, the system assigns an ⁠Unknown⁠ agent.
 
-| Input | Logic Process | Result |
-| --- | --- | --- |
-| **"He succeeded because I helped."** | **Explicit Subject Present** $\rightarrow$ [Priority: Explicit Subject] | AI directly assigns `He` and `I` as the respective agents. |
-| **"Please review the document."** | **Imperative/Direct Directive** → [Priority: Listener Address] | AI assigns `You` as the agent. |
-| **"Thought was strange."** | **Psychological Verb + Null Subject** → [Default: Speaker] | AI assigns `I` as the agent. |
-| **"Thought it was strange apparently."** | **Psychological Verb + Null Subject + Evidential Marker** → [Override: 3rd Party] | AI assigns `He/She/They` as the agent. |
-| **"Went to the cafe yesterday."** | **Null Subject + No Psychological/Evidential Markers** → [Fallback: Undetermined ] | AI assigns `Unknown` and triggers clarification rule. |
-| ⁠**"It is required that you submit the form."⁠** | Formal Subject Frame Detection → Clause Extraction | AI bypasses `It` and assigns `you` as the agent. |
+* **Input Example:** "Went to the cafe yesterday."
+* **Logic Process:** Null Subject + No Core Markers → Refrains from speculative assignment → Flags agent as ⁠Unknown⁠.
+* **result:**
+ ```json
+  {
+   "process": "Null Subject + No Core Markers Detected",
+   "decision": "Fallback: Undetermined Agent",
+   "agent": "Unknown",
+   "action_required": "Trigger Stage 1 Clarification / Context Resolution"
+  }
+
+## Logic Comparison: Deterministic Rules vs. Undetermined Fallback

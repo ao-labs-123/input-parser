@@ -1,43 +1,35 @@
-# Stage 2 — Clarification Requests for Undetermined Agents
-
+# Stage 2 — Causal Direction Analysis
 ## Overview:
-
-This step functions as an intelligent resolution and fallback mechanism. When Stage 1's deterministic mapping encounters structural ambiguity—such as plain factual statements lacking psychological or evidential markers—the model refrains from making speculative assumptions. Instead, it marks the agent as `Unknown`.
-
-If the agent cannot be resolved through short-term contextual analysis (e.g., via the topological mapper), the model triggers a targeted, natural-language clarification request. This mirrors human conversational behavior by intervening only when logical constraints remain unresolved.
+This step builds upon the identified agents from Stage 1 to map the logical flow of the conversation. By analyzing conjunctions, conjunctive adverbs, and causal prepositions (e.g., `because`,`due to`, `therefore`, `however`), the model determines the direction of causality between events, preventing the misinterpretation of premise and conclusion.
 
 ## Key Points:
+**1. Logical Marker Mapping**:
 
-### 1. Rule-Based Ambiguity Trigger:
+The system identifies specific linguistic "connectors" to categorize the sentence structure into cause-and-effect pairs, logical reversals, or sequential events.
 
-The system designates an agent as `Undetermined (Unknown)` and routes it to Stage 2 based on explicit structural conditions:
+**2. Directional Dependency**:
 
-* **Null Subject + No Core Markers (Primary Trigger):** 
-  When an input contains a null subject and lacks all core identification markers (i.e., no psychological verbs for 1st person, no imperative markers for 2nd person, and no evidential markers for 3rd person), the system cannot deterministically infer the agent. 
-  * *Example:* "Went to the cafe yesterday." → Triggers Stage 2 Clarification.
+By anchoring the cause and the result to the agents identified in previous stages, the model maps the "who" and "why" behind an action, ensuring that causality remains attached to the correct entity.
 
-* **Equally Plausible Candidates:** 
-  When multiple potential agents exist with equal structural weight and cannot be disambiguated by syntactic rules alone.
+**3. Structural disambiguation**:
 
-### 2. Minimalist Intervention:
+This step resolves complex sentences where multiple events are linked, preventing the AI from conflating an outcome with an underlying motivation.
 
-To maintain natural conversational flow, inquiries are strictly limited to resolving the specific ambiguity. The model avoids exhaustive questioning, relying on targeted re-confirmation (e.g., "Are you referring to yourself or someone else?").
-
-### 3. Human-Centric Data Integrity:
-
-By acknowledging that certain sentences are genuinely ambiguous even to human listeners, this step prevents the AI from assigning hallucinated or unverified agents, thereby ensuring logical integrity and user trust.
-
-## Note on Context Resolution Order:
-
-When an Agent is marked as `Unknown` at Stage 1:
-1. **Immediate Input Parsing:** The agent status is set to `Unknown`.
-2. **Contextual Resolution:** The subsequent `topological-mapper` module attempts to resolve the `Unknown` agent using active discourse context or match-and-select rules.
-3. **Clarification Trigger:** If contextual resolution fails to yield a unique agent, the system officially executes the Stage 2 Clarification Request to the user.
-
-## Logic Comparison: Undetermined Agents
-
+## Logic Comparison: Causal Parsing
 | Input | Logic Process | Result |
-| :--- | :--- | :--- |
-| **"Succeeded because you helped."** | **Null Subject + No Core Markers** (Action Verb in Main Clause) → Assigned `Unknown` | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
-| **"Failed despite the effort."** | **Null Subject + No Core Markers** (Action Verb) → Assigned `Unknown` | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
-| **"Required further investigation."** | **Null Subject + No Core Markers** (Objective State / Obligation) → Assigned `Unknown` | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
+|--|--|--|
+| **"I'm stressed due to the project."** | [Agent: I] + [Preposition: due to] + [Noun: project] | AI maps: Project → Causes → I (Stress). |
+| **"I succeeded because you helped."** | [Agent: I] + [Conjunction: because] + [Agent: You] | AI maps: You (Help) → Causes → I (Success). |
+
+## Example of Causal Tracking:
+ **Input**: "I couldn't finish the report because the system was down."
+ 
+ **Analysis**:
+ 
+ - Agent: "I" (Speaker).
+ 
+ - Causal Marker: "Because" (indicates the reason follows).
+ 
+ - Event Chain: System down (Condition) → Result in failure to finish report (Outcome).
+ 
+ **AI Understanding**: The system failure is the primary cause; the speaker is the affected agent.

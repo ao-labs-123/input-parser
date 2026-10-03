@@ -1,7 +1,7 @@
 # Stage1 — Agent and Subject Estimation
 
 ## Overview:
-This step focuses on optimizing the model's ability to interpret sentences with implicit subjects. By codifying linguistic patterns—such as the way psychological verbs (e.g., 'think', 'feel', 'notice') consistently map to the speaker as the primary agent—the model eliminates ambiguity in subject identification and significantly increases conversational accuracy, regardless of the underlying language.
+This step focuses on optimizing the model's ability to interpret sentences with implicit subjects. By codifying linguistic patterns—such as the way psychological verbs (e.g., `think`, `feel`, `notice`) consistently map to the speaker as the primary agent—the model eliminates ambiguity in subject identification and significantly increases conversational accuracy, regardless of the underlying language.
 
 1. **Explicit Subject Present:** Highest priority; directly assigned as specified.
 2. **Imperative / Direct Address Marker:** Inferred as the listener ("You") when imperative forms, direct requests, or second-person discourse markers are present.
@@ -34,11 +34,11 @@ When a sentence utilizes imperative structures, direct instructions, or second-p
 
 **3. Psychological Verb Default for Omitted Subjects**:
 
-   When a psychological verb (e.g., 'think', 'feel', 'want', 'hope', 'stressed') appears without an explicit subject, assign the speaker as the agent by default.
+   When a psychological verb (e.g., `think`, `feel`, `want`, `hope`, `stressed`) appears without an explicit subject, assign the speaker as the agent by default.
 
 **4. Evidentiality & Attribution Override**:
 
-   If a sentence contains markers of evidentialities or indirect speech (e.g., 'seemingly', 'allegedly', 'they say', 'I heard', 'it is told'), treat the agent as a second or third party, overriding the speaker-default.
+   If a sentence contains markers of evidentialities or indirect speech (e.g., `seemingly`, `allegedly`, `they say`, `I heard`,`it is told`), treat the agent as a second or third party, overriding the speaker-default.
 
 **5. Formal Subject Framework (It ... that ...)**:
 

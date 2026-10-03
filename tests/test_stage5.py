@@ -6,7 +6,26 @@ if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
 from src.analyzer import LogicAnalyzer
+from src.rules.stage1_rule import determine_subject
+from src.rules.stage2_rule import analyze_causality_and_ambiguity
 from src.rules.stage5_rule import analyze_semantic_structure
+
+
+def test_stage1_unknown_subject_falls_to_stage2_clarification():
+    text = "Went to the cafe yesterday."
+    subject_status = determine_subject(text)
+    analyzer = LogicAnalyzer({})
+
+    stage1 = analyzer.stage1_analyze(text, subject_status)
+    assert stage1 == {
+        "process": "Null Subject + No Core Markers",
+        "decision": "Fallback: Stage 2 Clarification",
+        "agent": "Unknown"
+    }
+
+    stage2 = analyzer.stage2_analyze(text, stage1, analyze_causality_and_ambiguity(text, subject_status))
+    assert stage2["decision"] == "Clarification Required (Undetermined Agent)"
+    assert stage2["agent"] == "Unknown"
 
 
 def test_passive_without_by_is_detected():

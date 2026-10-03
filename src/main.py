@@ -53,6 +53,13 @@ def run_test(input_file):
         append_log_entry(log_entry)
 
 
+def reset_log_file():
+    log_file_path = Path(__file__).resolve().parent.parent / "data" / "log.json"
+    log_file_path.parent.mkdir(parents=True, exist_ok=True)
+    with log_file_path.open("w", encoding="utf-8") as f:
+        json.dump([], f, ensure_ascii=False, indent=4)
+
+
 def append_log_entry(log_entry):
     log_file_path = Path(__file__).resolve().parent.parent / "data" / "log.json"
     log_file_path.parent.mkdir(parents=True, exist_ok=True)
@@ -70,6 +77,7 @@ def append_log_entry(log_entry):
         json.dump(existing_logs, f, ensure_ascii=False, indent=4)
         
 if __name__ == "__main__":
+    reset_log_file()
     examples_dir = Path(__file__).resolve().parent.parent / "data" / "examples"
     for input_file in sorted(examples_dir.glob("stage*_input.json")):
         run_test(input_file)

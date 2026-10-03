@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-02T08:41:25.985255",
+        "timestamp": "2026-10-03T15:32:40.004090",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -31,7 +31,34 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.985878",
+        "timestamp": "2026-10-03T15:32:40.004796",
+        "input": "Please review the document.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "process": "[Morphology: Base] → [Category: Action]",
+            "result": "General action statement."
+        }
+    },
+    {
+        "timestamp": "2026-10-03T15:32:40.005571",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -58,7 +85,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.986538",
+        "timestamp": "2026-10-03T15:32:40.006289",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Psychological Verb + Null Subject + Evidential Marker",
@@ -85,7 +112,34 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.987016",
+        "timestamp": "2026-10-03T15:32:40.007039",
+        "input": "Went to the cafe yesterday.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "process": "[Morphology: Base] → [Category: Action]",
+            "result": "General action statement."
+        }
+    },
+    {
+        "timestamp": "2026-10-03T15:32:40.007654",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -113,7 +167,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.987537",
+        "timestamp": "2026-10-03T15:32:40.008261",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -140,7 +194,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.988078",
+        "timestamp": "2026-10-03T15:32:40.008891",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -167,17 +221,17 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.988973",
+        "timestamp": "2026-10-03T15:32:40.009952",
         "input": "Succeeded because you helped.",
         "stage1": {
-            "process": "Standard",
-            "decision": "None",
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
             "agent": "Unknown"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Clause Present [Fallback: Ambiguous Clause]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "Agent: Unknown + Marker: because",
@@ -198,17 +252,17 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.989751",
+        "timestamp": "2026-10-03T15:32:40.010806",
         "input": "Failed despite the effort.",
         "stage1": {
-            "process": "Standard",
-            "decision": "None",
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
             "agent": "Unknown"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
+            "process": "[Stage 2] Null Subject + No Psychological Verb + No Contextual Clues [Fallback: Completely Ambiguous]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No context relation found",
@@ -225,17 +279,17 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.990558",
+        "timestamp": "2026-10-03T15:32:40.011707",
         "input": "Required further investigation.",
         "stage1": {
-            "process": "Standard",
-            "decision": "None",
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
             "agent": "Unknown"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No context relation found",
@@ -252,17 +306,17 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.991358",
+        "timestamp": "2026-10-03T15:32:40.012618",
         "input": "Submitted the form yesterday.",
         "stage1": {
-            "process": "Standard",
-            "decision": "None",
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
             "agent": "Unknown"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No context relation found",
@@ -279,17 +333,17 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.992244",
+        "timestamp": "2026-10-03T15:32:40.013579",
         "input": "Succeeded in the meeting.",
         "stage1": {
-            "process": "Standard",
-            "decision": "None",
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
             "agent": "Unknown"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No context relation found",
@@ -306,7 +360,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.993124",
+        "timestamp": "2026-10-03T15:32:40.014574",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -337,7 +391,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.993934",
+        "timestamp": "2026-10-03T15:32:40.015475",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -368,7 +422,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.994776",
+        "timestamp": "2026-10-03T15:32:40.016451",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -401,7 +455,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.995716",
+        "timestamp": "2026-10-03T15:32:40.017457",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -434,7 +488,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.996853",
+        "timestamp": "2026-10-03T15:32:40.018647",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -461,7 +515,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.997880",
+        "timestamp": "2026-10-03T15:32:40.019663",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -488,7 +542,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.998876",
+        "timestamp": "2026-10-03T15:32:40.020771",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -515,7 +569,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:25.999930",
+        "timestamp": "2026-10-03T15:32:40.021941",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -542,7 +596,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:26.001258",
+        "timestamp": "2026-10-03T15:32:40.023316",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -569,7 +623,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:26.002345",
+        "timestamp": "2026-10-03T15:32:40.024471",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -596,7 +650,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:26.003499",
+        "timestamp": "2026-10-03T15:32:40.026626",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -623,657 +677,7 @@
         }
     },
     {
-        "timestamp": "2026-10-02T08:41:26.004692",
-        "input": "The report was completed quickly.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "The report"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "The report"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Passive: be + V-en + by]",
-            "result": "Actor: Unknown / Receiver: The report."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.602567",
-        "input": "He succeeded because I helped.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "He"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "He"
-        },
-        "stage3": {
-            "process": "Agent: He + Marker: because",
-            "mapping": "i helped -> Causes -> he succeeded",
-            "structure": {
-                "cause": "i helped",
-                "effect": "he succeeded"
-            }
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.604400",
-        "input": "Thought was strange.",
-        "stage1": {
-            "process": "Psychological Verb + Null Subject",
-            "decision": "Default: Speaker",
-            "agent": "I"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.605917",
-        "input": "Thought it was strange apparently.",
-        "stage1": {
-            "process": "Psychological Verb + Null Subject + Evidential Marker",
-            "decision": "Override: 3rd Party",
-            "agent": "He/She/They"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "He/She/They"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.607258",
-        "input": "It is required that you submit the form.",
-        "stage1": {
-            "process": "Formal Subject Detected (It ... that)",
-            "decision": "Priority: True Subject in Clause",
-            "agent": "you",
-            "structure": "It is [required] that [you submit the form]"
-        },
-        "stage2": {
-            "process": "[Stage 2] Structural Subject Verified",
-            "decision": "Proceed with True Subject",
-            "resolved_agent": "you"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Defining clause",
-            "decision": "Essential",
-            "result": "AI defines the primary identity of 'It is required'."
-        },
-        "stage5": {
-            "process": "[Passive: be + V-en + by]",
-            "result": "Actor: Unknown / Receiver: It."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.608661",
-        "input": "I submitted the form yesterday.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "I"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.610056",
-        "input": "I wrote the report at the office.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "I"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.611782",
-        "input": "Succeeded because you helped.",
-        "stage1": {
-            "process": "Standard",
-            "decision": "None",
-            "agent": "Unknown"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
-        },
-        "stage3": {
-            "process": "Agent: Unknown + Marker: because",
-            "mapping": "you helped -> Causes -> succeeded",
-            "structure": {
-                "cause": "you helped",
-                "effect": "succeeded"
-            }
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.613386",
-        "input": "Failed despite the effort.",
-        "stage1": {
-            "process": "Standard",
-            "decision": "None",
-            "agent": "Unknown"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.615155",
-        "input": "Required further investigation.",
-        "stage1": {
-            "process": "Standard",
-            "decision": "None",
-            "agent": "Unknown"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.616854",
-        "input": "Submitted the form yesterday.",
-        "stage1": {
-            "process": "Standard",
-            "decision": "None",
-            "agent": "Unknown"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.618592",
-        "input": "Succeeded in the meeting.",
-        "stage1": {
-            "process": "Standard",
-            "decision": "None",
-            "agent": "Unknown"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "Unknown"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.620333",
-        "input": "I'm stressed due to the project.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "I"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "Agent: I + Marker: due to",
-            "mapping": "the project -> Causes -> i'm stressed",
-            "structure": {
-                "cause": "the project",
-                "effect": "i'm stressed"
-            }
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.621987",
-        "input": "I succeeded because you helped.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "I"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "Agent: I + Marker: because",
-            "mapping": "you helped -> Causes -> i succeeded",
-            "structure": {
-                "cause": "you helped",
-                "effect": "i succeeded"
-            }
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.623710",
-        "input": "He succeeded by working hard.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "He"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "He"
-        },
-        "stage3": {
-            "process": "Agent: He + Manner Marker: by",
-            "mapping": "working hard -> Means -> He succeeded",
-            "structure": {
-                "relation": "Manner",
-                "marker": "by",
-                "context": "working hard",
-                "event": "He succeeded"
-            }
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.625515",
-        "input": "I was stressed after the long meeting.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "I"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "Agent: I + Temporal Marker: after",
-            "mapping": "the long meeting -> Occurs After -> I was stressed",
-            "structure": {
-                "relation": "Temporal",
-                "marker": "after",
-                "context": "the long meeting",
-                "event": "I was stressed"
-            }
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Passive: be + V-en + by]",
-            "result": "Actor: Unknown / Receiver: I."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.627470",
-        "input": "The report, which was long, is done.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "The report"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "The report"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Non-defining clause",
-            "decision": "Supplementary",
-            "result": "AI treats 'was long' as an attribute, not the primary identifier."
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.629286",
-        "input": "The report that I wrote is done.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "The report"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "The report"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Defining clause",
-            "decision": "Essential",
-            "result": "AI links 'The report' (Agent) to the specific the report as a defining marker."
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "result": "General action statement."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.631099",
-        "input": "The office where I wrote the report was quiet.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "The office"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "The office"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Passive: be + V-en + by]",
-            "result": "Actor: Unknown / Receiver: The office where I wrote the report."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.632919",
-        "input": "The day where he succeeded was bright.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "The day"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "The day"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Passive: be + V-en + by]",
-            "result": "Actor: Unknown / Receiver: The day where he succeeded."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.634986",
-        "input": "I have a car.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "I"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: Base] → [Category: Stative]",
-            "result": "Possession status."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.638774",
-        "input": "I am having a party.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "I"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Morphology: be + V-ing] → [Category: Action]",
-            "result": "Active event participation."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.641909",
-        "input": "I was told by him.",
-        "stage1": {
-            "process": "Explicit Subject Present",
-            "decision": "Priority: Explicit Subject",
-            "agent": "I"
-        },
-        "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
-            "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
-        },
-        "stage5": {
-            "process": "[Passive: be + V-en + by]",
-            "result": "Actor: him / Receiver: I."
-        }
-    },
-    {
-        "timestamp": "2026-10-02T08:44:09.645213",
+        "timestamp": "2026-10-03T15:32:40.027905",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",

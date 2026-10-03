@@ -6,10 +6,10 @@ class LogicAnalyzer:
 
     def stage1_analyze(self, text, subject_result):
     
-        if not subject_result:
+        if subject_result in (None, "Unknown", "Neutral"):
             return {
-                "process": "Null Subject",
-                "decision": "Clarification Required",
+                "process": "Null Subject + No Core Markers",
+                "decision": "Fallback: Stage 2 Clarification",
                 "agent": "Unknown"
             }
             
@@ -47,14 +47,14 @@ class LogicAnalyzer:
                 }
         else:
             return {
-                "process": "Standard",
-                "decision": "None",
+                "process": "Null Subject + No Core Markers",
+                "decision": "Fallback: Stage 2 Clarification",
                 "agent": "Unknown"
                 }
 
     def stage2_analyze(self, text, stage1_result, stage2_rule_result):
         # Stage 1 で既に形式主語や通常主語が綺麗に決まっている場合は、それを尊重して流す
-        if stage1_result and stage1_result.get("decision") != "Clarification Required":
+        if stage1_result and stage1_result.get("agent") not in (None, "Unknown"):
             # 形式主語（It ... that）の場合は、Stage 2 ではそれをそのまま引き継ぐ
             if "Formal Subject" in stage1_result.get("process", ""):
                 return {
@@ -70,9 +70,26 @@ class LogicAnalyzer:
                 "resolved_agent": stage1_result.get("agent")
             }
 
-        # 【本題】Stage 2 のルールで「隠れた主語（Undetermined Agent）」としてフラグが立っていた場合
+        # Stage 1 で Unknown と判定された場合は、Stage 2 で聞き返しを発火する
+        if stage1_result and stage1_result.get("agent") == "Unknown":
+            target_text_lower = text.lower()
+            process_label = "Null Subject + No Psychological Verb"
+            
+            if "because" in target_text_lower or "due to" in target_text_lower:
+                process_label += " + Clause Present [Fallback: Ambiguous Clause]"
+            elif "despite" in target_text_lower:
+                process_label += " + No Contextual Clues [Fallback: Completely Ambiguous]"
+            else:
+                process_label += " + Objective Obligation [Fallback: Missing Formal/Logical Agent]"
+
+            return {
+                "process": f"[Stage 2] {process_label}",
+                "decision": "Clarification Required (Undetermined Agent)",
+                "agent": "Unknown"
+            }
+
+        # Stage 2 のルールで「隠れた主語（Undetermined Agent）」としてフラグが立っていた場合
         if stage2_rule_result and stage2_rule_result.get("status") == "Ambiguous":
-            # 三文の毛色に合わせて、ログにプロセスを詳細に残す
             target_text_lower = text.lower()
             process_label = "Null Subject + No Psychological Verb"
             
@@ -92,7 +109,7 @@ class LogicAnalyzer:
         # デフォルトのフォールバック
         return {
             "process": "[Stage 2] Default Analysis",
-            "decision": "Clarification Required",
+            "decision": "Clarification Required (Undetermined Agent)",
             "agent": "Unknown"
         }
 

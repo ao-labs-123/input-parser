@@ -44,6 +44,19 @@ When a sentence utilizes a dummy or formal subject structure (`It is/was [predic
     "structure": "It is [required] that [you submit the form]"
   }
 
+#### Example (Imperative/Directive):
+* **Input Example:** "Please check the attached file."
+* **Logic Process:** Imperative Marker Detected → Infers Listener Directive → Assigns "You" as the agent.
+* **Result:**
+  ```json
+  {
+    "process": "Imperative / Directive Detected",
+    "decision": "Priority: Listener Direct Address",
+    "agent": "you",
+    "structure": "[Imperative Verb] [Object]"
+  }
+
+
 
 ## Logic Comparison: Implicit Subject vs. Evidential Override
 

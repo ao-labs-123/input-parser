@@ -30,6 +30,7 @@ The system then validates consistency between the category of knowledge and past
 - [stage2:Context & Causality Inference](docs/en/stage2_design.md)
 - [stage3:Modification Clarification](docs/en/stage3_design.md)
 - [stage4:Argument Mapping](docs/en/stage4_design.md)
+- [Stage 5: 5W1H Frame Extraction & Semantic Synthesis](docs/en/stage5_design.md)
 
 # Verification with `log.json`
 

@@ -62,7 +62,8 @@ When a sentence utilizes a dummy or formal subject structure (`It is/was [predic
 | Input | Logic Process | Result |
 | --- | --- | --- |
 | "He succeeded because I helped." | Explicit Subject Present $\rightarrow$ [Priority: Explicit Subject] | AI directly assigns "He" and "I" as the respective agents. |
-| Please review the document. | Imperative/Direct Directive → [Priority: Listener Address] | AI assigns "You" as the agent. |
+| "Please review the document." | Imperative/Direct Directive → [Priority: Listener Address] | AI assigns "You" as the agent. |
 | "Thought was strange." | Psychological Verb + Null Subject → [Default: Speaker] | AI assigns "I" as the agent. |
 | "Thought it was strange apparently." | Psychological Verb + Null Subject + Evidential Marker → [Override: 3rd Party] | AI assigns "He/She/They" as the agent. |
+| "Went to the cafe yesterday." | Null Subject + No Psychological/Evidential Markers → [Fallback: Stage 2] | AI assigns "Unknown" and triggers clarification rule. |
 | ⁠"It is required that you submit the form."⁠ | Formal Subject Frame Detection → Clause Extraction | AI bypasses "It" and assigns "you" as the agent. |

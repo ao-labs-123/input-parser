@@ -54,6 +54,7 @@ When an input consists of a plain factual statement without syntactic markers, t
    "agent": "Unknown",
    "action_required": "Trigger Stage 1 Clarification / Context Resolution"
   }
+```
 
 ## Logic Comparison: Deterministic Rules vs. Undetermined Fallback
 | Input | Logic Process | Result |

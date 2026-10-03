@@ -20,8 +20,8 @@ Modifiers are cross-referenced with the agent profiles established in Stage 1, e
 ## Logic Comparison: Modifier Parsing
 | Input | Logic Process | Result |
 |--|--|--|
-| "The report, which was long, is done." | [Non-defining clause] → [Supplementary] | AI treats "long" as an attribute, not the primary identifier. |
-| "The report that I wrote is done." | [Defining clause] → [Essential] | AI links "I" (Agent) to the specific report as a defining marker. |
+| **"The report, which was long, is done."** | [Non-defining clause] → [Supplementary] | AI treats "long" as an attribute, not the primary identifier. |
+| **"The report that I wrote is done."** | [Defining clause] → [Essential] | AI links "I" (Agent) to the specific report as a defining marker. |
 
 
 ## Example of Structural Clarification:

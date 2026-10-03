@@ -3,17 +3,12 @@
 ## Overview:
 This step focuses on optimizing the model's ability to interpret sentences with implicit subjects. By codifying linguistic patterns—such as the way psychological verbs (e.g., 'think', 'feel', 'notice') consistently map to the speaker as the primary agent—the model eliminates ambiguity in subject identification and significantly increases conversational accuracy, regardless of the underlying language.
 
-1. Explicit Subject Present: 
-   Highest priority; directly assigned as specified.
-2. Null Subject + Psychological Verb: 
-   Inferred as the speaker ("I") based on syntactic structure.
-3. Null Subject + Evidential Marker: 
-   Overridden and assigned to a third party ("He/She/They").
-4. Null Subject + Psychological Verb + Evidential Marker: 
-   Overridden and assigned to a third party ("He/She/They").
-5. Null Subject + No Core Markers: 
-   Falls back to Stage 2 clarification (Undetermined agent).
-
+1. **Explicit Subject Present:** Highest priority; directly assigned as specified.
+2. **Imperative / Direct Address Marker:** Inferred as the listener ("You") when imperative forms, direct requests, or second-person discourse markers are present.
+3. **Null Subject + Psychological Verb:** Inferred as the speaker ("I") based on syntactic structure.
+4. **Null Subject + Evidential Marker:** Overridden and assigned to a third party ("He/She/They").
+5. **Null Subject + Psychological Verb + Evidential Marker:** Overridden and assigned to a third party ("He/She/They").
+6. **Null Subject + No Core Markers:** Falls back to Stage 2 clarification (Undetermined / Unknown agent).
 
 ## Key Points:
 

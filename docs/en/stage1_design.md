@@ -56,3 +56,12 @@ When an input consists of a plain factual statement without syntactic markers, t
   }
 
 ## Logic Comparison: Deterministic Rules vs. Undetermined Fallback
+| Input | Logic Process | Result |
+|--|--|--|
+| **"He succeeded because I helped."** | **Explicit Subject Present** → [Priority: Explicit Subject] | AI directly assigns "He" and "I" as the respective agents. |
+| **"Please review the document."** | **Imperative / Direct Directive** → [Priority: Listener Address] | AI assigns "You" as the agent. |
+| **"Thought was strange."** | **Psychological Verb + Null Subject** → [Default: Speaker] | AI assigns "I" as the agent. |
+| **"Thought it was strange apparently."** | **Psychological Verb + Null Subject + Evidential Marker** → [Override: 3rd Party] | AI assigns "He/She/They" as the agent. |
+| **"It is required that you submit the form."** | **Formal Subject Frame Detection** → Clause Extraction | AI bypasses "It" and assigns "you" as the agent. |
+| **"Went to the cafe yesterday."** | **Null Subject + No Core Markers** → [Fallback: Undetermined Agent] | AI assigns ⁠Unknown⁠ and prepares clarification / context mapping. |
+| **"Failed despite the effort."** | **Null Subject + No Core Markers** → [Fallback: Undetermined Agent] | AI assigns ⁠Unknown⁠ and prepares clarification / context mapping. |

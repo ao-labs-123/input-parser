@@ -38,6 +38,6 @@ When an Agent is marked as `Unknown` at Stage 1:
 
 | Input | Logic Process | Result |
 | :--- | :--- | :--- |
-| **"Succeeded because you helped."** | Null Subject + Action Verb + No Psychological/Evidential Markers → [Fallback: Ambiguous Clause] | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
-| **"Failed despite the effort."** | Null Subject + No Contextual Clues + Action Verb → [Fallback: Completely Ambiguous] | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
-| **"Required further investigation."** | Null Subject + Objective Obligation/State → [Fallback: Missing Logical Agent] | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
+| **"Succeeded because you helped."** | **Null Subject + No Core Markers** (Action Verb in Main Clause) → Assigned `Unknown` | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
+| **"Failed despite the effort."** | **Null Subject + No Core Markers** (Action Verb) → Assigned `Unknown` | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
+| **"Required further investigation."** | **Null Subject + No Core Markers** (Objective State / Obligation) → Assigned `Unknown` | AI marks agent as `Unknown` and prepares Stage 2 clarification. |

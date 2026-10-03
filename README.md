@@ -26,7 +26,7 @@ The system then validates consistency between the category of knowledge and past
 ## The 5-Stage Logical Pipeline
 **Our engine processes language through a bottom-up logical hierarchy:**
 
-- [stage1:Subject Inference](docs/en/stage1_design.md)
+- [stage1:Agent and Subject Estimation](docs/en/stage1_design.md)
 - [stage2:Context & Causality Inference](docs/en/stage2_design.md)
 - [stage3:Modification Clarification](docs/en/stage3_design.md)
 - [stage4:Argument Mapping](docs/en/stage4_design.md)

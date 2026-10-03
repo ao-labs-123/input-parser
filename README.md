@@ -41,10 +41,10 @@ Our engine avoids errors by using structural overrides instead of statistical we
 
 | Input | Logic Process | Result |
 |--|--|--|
-| **"Thought it was strange."** | Psychological Verb + Null Subject → [Default: Speaker] | AI correctly identifies "I". |
-| **"Please review the document."** | Imperative/Direct Directive → [Priority: Listener Address] | AI assigns "You" as the agent. |
-| **"Thought it was strange, apparently."** | Psychological Verb + Evidential Marker → [Override: 3rd Party] | AI identifies the agent as a 3rd party. |
-| **"Went to the cafe yesterday."** | Null Subject + No Psychological/Evidential Markers → [Fallback: Stage 2] | AI assigns "Unknown" and triggers clarification rule. |
+| **"Thought it was strange."** | **Psychological Verb + Null Subject** → [Default: Speaker] | AI correctly identifies "I". |
+| **"Please review the document."** | **Imperative/Direct Directive** → [Priority: Listener Address] | AI assigns "You" as the agent. |
+| **"Thought it was strange, apparently."** | **Psychological Verb + Evidential Marker** → [Override: 3rd Party] | AI identifies the agent as a 3rd party. |
+| **"Went to the cafe yesterday."** | **Null Subject + No Psychological/Evidential Markers** → [Fallback: Stage 2] | AI assigns "Unknown" and triggers clarification rule. |
 
 In the second case, the "Evidential Marker" (⁠apparently⁠) acts as a logical trigger to override the default speaker-centric perspective. This deterministic logic ensures precision that probabilistic models often miss.
 

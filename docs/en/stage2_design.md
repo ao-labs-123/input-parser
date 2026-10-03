@@ -10,10 +10,14 @@ If the agent cannot be resolved through short-term contextual analysis (e.g., vi
 
 ### 1. Rule-Based Ambiguity Trigger:
 
-The system designates an agent as `Undetermined (Unknown)` and routes it to Stage 2 based on explicit structural conditions rather than probabilistic scores:
+The system designates an agent as `Undetermined (Unknown)` and routes it to Stage 2 based on explicit structural conditions:
 
-* **Missing Core Markers:** A clarification trigger is activated when a sentence features no explicit subject, no psychological verbs (which default to 1st person), and no evidential/directive markers (which default to 2nd or 3rd person).
-* **Equally Plausible Candidates:** Activated when multiple potential agents remain equally valid and cannot be disambiguated by syntactic rules alone.
+* **Null Subject + No Core Markers (Primary Trigger):** 
+  When an input contains a null subject and lacks all core identification markers (i.e., no psychological verbs for 1st person, no imperative markers for 2nd person, and no evidential markers for 3rd person), the system cannot deterministically infer the agent. 
+  * *Example:* "Went to the cafe yesterday." (カフェに行った。) → Triggers Stage 2 Clarification.
+
+* **Equally Plausible Candidates:** 
+  When multiple potential agents exist with equal structural weight and cannot be disambiguated by syntactic rules alone.
 
 ### 2. Minimalist Intervention:
 

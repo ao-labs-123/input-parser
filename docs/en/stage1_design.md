@@ -16,20 +16,20 @@ This step focuses on optimizing the model's ability to interpret sentences with 
 
    When an explicit subject is present in the sentence (e.g., "I," "He," "The company"), the model bypasses inference heuristics and directly assigns the specified agent. This acts as the highest-priority deterministic rule.
 
-### Second-Person Inferences (Imperatives & Listener Directives):
+**2. Second-Person Inferences (Imperatives & Listener Directives)**:
 
 When a sentence utilizes imperative structures, direct instructions, or second-person discourse markers without an explicit subject (e.g., "Please submit by tomorrow", "Do not enter"), the system directly infers the agent as the listener ("You").
 
 
-**2. Psychological Verb Default for Omitted Subjects**:
+**3. Psychological Verb Default for Omitted Subjects**:
 
    When a psychological verb (e.g., 'think', 'feel', 'want', 'hope', 'stressed') appears without an explicit subject, assign the speaker as the agent by default.
 
-**3. Evidentiality & Attribution Override**:
+**4. Evidentiality & Attribution Override**:
 
    If a sentence contains markers of evidentialities or indirect speech (e.g., 'seemingly', 'allegedly', 'they say', 'I heard', 'it is told'), treat the agent as a second or third party, overriding the speaker-default.
 
-**4. Formal Subject Framework (It ... that ...)**:
+**5. Formal Subject Framework (It ... that ...)**:
 
 When a sentence utilizes a dummy or formal subject structure (`It is/was [predicate] that...`), the system skips the surface-level `"It"` and extracts the actual logical agent from within the embedded clause.
 

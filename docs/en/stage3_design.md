@@ -1,6 +1,6 @@
 # Stage 3 — Causal Direction Analysis
 ## Overview:
-This step builds upon the identified agents from Stage 1 to map the logical flow of the conversation. By analyzing conjunctions, conjunctive adverbs, and causal prepositions (e.g., 'because', 'due to', 'therefore', 'however'), the model determines the direction of causality between events, preventing the misinterpretation of premise and conclusion.
+This step builds upon the identified agents from Stage 1 to map the logical flow of the conversation. By analyzing conjunctions, conjunctive adverbs, and causal prepositions (e.g., `because`,`due to`, `therefore`, `however`), the model determines the direction of causality between events, preventing the misinterpretation of premise and conclusion.
 
 ## Key Points:
 **1. Logical Marker Mapping**:

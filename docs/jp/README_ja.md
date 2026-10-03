@@ -8,6 +8,7 @@
 - [Stage 2: 因果関係推定](docs/jp/stage2_design.md)
 - [Stage 3: 修飾構造の理解](docs/jp/stage3_design.md)
 - [Stage 4: 名詞間の格関係推定](docs/jp/stage4_design.md)
+- [Stage 5: 5W1Hフレームの特定と合成](docs/jp/stage5_design.md)
 	
 これにより、従来の形態素解析を前提としつつ、
 文法・意味レベルでの理解精度向上を目指します。

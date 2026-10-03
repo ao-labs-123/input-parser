@@ -16,6 +16,11 @@ This step focuses on optimizing the model's ability to interpret sentences with 
 
    When an explicit subject is present in the sentence (e.g., "I," "He," "The company"), the model bypasses inference heuristics and directly assigns the specified agent. This acts as the highest-priority deterministic rule.
 
+### Second-Person Inferences (Imperatives & Listener Directives):
+
+When a sentence utilizes imperative structures, direct instructions, or second-person discourse markers without an explicit subject (e.g., "Please submit by tomorrow", "Do not enter"), the system directly infers the agent as the listener ("You").
+
+
 **2. Psychological Verb Default for Omitted Subjects**:
 
    When a psychological verb (e.g., 'think', 'feel', 'want', 'hope', 'stressed') appears without an explicit subject, assign the speaker as the agent by default.

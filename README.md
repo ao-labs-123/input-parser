@@ -27,10 +27,9 @@ The system then validates consistency between the category of knowledge and past
 **Our engine processes language through a bottom-up logical hierarchy:**
 
 - [stage1:Subject Inference](docs/en/stage1_design.md)
-- [stage2:Clarification Request](docs/en/stage2_design.md)
-- [stage3:Context & Causality Inference](docs/en/stage3_design.md)
-- [stage4:Modification Clarification](docs/en/stage4_design.md)
-- [stage5:Argument Mapping](docs/en/stage5_design.md)
+- [stage2:Context & Causality Inference](docs/en/stage2_design.md)
+- [stage3:Modification Clarification](docs/en/stage3_design.md)
+- [stage4:Argument Mapping](docs/en/stage4_design.md)
 
 # Verification with `log.json`
 

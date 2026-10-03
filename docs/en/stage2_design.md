@@ -1,30 +1,39 @@
 # Stage 2 — Clarification Requests for Undetermined Agents
 
 ## Overview:
-This step functions as an intelligent fallback mechanism. When Stage 1's deterministic mapping fails to resolve a subject—or when multiple potential agents remain equally valid after contextual analysis—the model triggers a targeted, natural-language clarification request. This mirrors human conversational behavior by only intervening when ambiguity exceeds a manageable threshold.
+
+This step functions as an intelligent resolution and fallback mechanism. When Stage 1's deterministic mapping encounters structural ambiguity—such as plain factual statements lacking psychological or evidential markers—the model refrains from making speculative assumptions. Instead, it marks the agent as `Unknown`.
+
+If the agent cannot be resolved through short-term contextual analysis (e.g., via the topological mapper), the model triggers a targeted, natural-language clarification request. This mirrors human conversational behavior by intervening only when logical constraints remain unresolved.
 
 ## Key Points:
-**1. Threshold-Based Trigger**:
 
-The system initiates a clarification request only when the confidence score for agent identification is low or when the syntax contains multiple, equally plausible subjects that cannot be resolved through linguistic patterns alone.
+### 1. Rule-Based Ambiguity Trigger:
 
-**Missing Core Markers:** A clarification request is strictly required when a sentence features **no explicit subject, no psychological verbs, and no evidential markers** (e.g., plain/ambiguous factual statements).
+The system designates an agent as `Undetermined (Unknown)` and routes it to Stage 2 based on explicit structural conditions rather than probabilistic scores:
 
-**2. Minimalist Intervention**:
+* **Missing Core Markers:** A clarification trigger is activated when a sentence features no explicit subject, no psychological verbs (which default to 1st person), and no evidential/directive markers (which default to 2nd or 3rd person).
+* **Equally Plausible Candidates:** Activated when multiple potential agents remain equally valid and cannot be disambiguated by syntactic rules alone.
 
-To maintain natural flow, the inquiry is limited to the specific ambiguity. The model avoids exhaustive questioning, opting for contextual re-confirmation (e.g., "Are you referring to yourself or [mentioned party]?").
+### 2. Minimalist Intervention:
 
-**3. Human-Centric Reliability**:
+To maintain natural conversational flow, inquiries are strictly limited to resolving the specific ambiguity. The model avoids exhaustive questioning, relying on targeted re-confirmation (e.g., "Are you referring to yourself or someone else?").
 
-By acknowledging that some sentences are genuinely ambiguous even to human listeners, this step prevents the AI from making inaccurate assumptions, thereby ensuring data integrity and user trust.
+### 3. Human-Centric Data Integrity:
 
-## Note on Context Resolution:
-If the Agent remains ⁠**Unknown**⁠ at Stage 2, it will be logically inferred and resolved in the subsequent ⁠**topological-mapper**⁠ module using context, or queried via ⁠**match-and-select**⁠. This repository strictly focuses on structural Agent detection from the immediate input.
+By acknowledging that certain sentences are genuinely ambiguous even to human listeners, this step prevents the AI from assigning hallucinated or unverified agents, thereby ensuring logical integrity and user trust.
 
-### Logic Comparison: Undetermined Agents
+## Note on Context Resolution Order:
+
+When an Agent is marked as `Unknown` at Stage 1:
+1. **Immediate Input Parsing:** The agent status is set to `Unknown`.
+2. **Contextual Resolution:** The subsequent `topological-mapper` module attempts to resolve the `Unknown` agent using active discourse context or match-and-select rules.
+3. **Clarification Trigger:** If contextual resolution fails to yield a unique agent, the system officially executes the Stage 2 Clarification Request to the user.
+
+## Logic Comparison: Undetermined Agents
 
 | Input | Logic Process | Result |
 | :--- | :--- | :--- |
-| "Succeeded because you helped." | Null Subject + No Psychological Verb + No Evidential Marker $\rightarrow$ [Fallback: Ambiguous Clause] | AI triggers Stage 2 clarification (Undetermined agent). |
-| "Failed despite the effort." | Null Subject + No Contextual Clues + Action Verb $\rightarrow$ [Fallback: Completely Ambiguous] | AI triggers Stage 2 clarification (Undetermined agent). |
-| "Required further investigation." | Null Subject + Objective Obligation/State $\rightarrow$ [Fallback: Missing Formal/Logical Agent] | AI triggers Stage 2 clarification (Undetermined agent). |
+| **"Succeeded because you helped."** | Null Subject + Action Verb + No Psychological/Evidential Markers → [Fallback: Ambiguous Clause] | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
+| **"Failed despite the effort."** | Null Subject + No Contextual Clues + Action Verb → [Fallback: Completely Ambiguous] | AI marks agent as `Unknown` and prepares Stage 2 clarification. |
+| **"Required further investigation."** | Null Subject + Objective Obligation/State → [Fallback: Missing Logical Agent] | AI marks agent as `Unknown` and prepares Stage 2 clarification. |

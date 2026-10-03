@@ -14,7 +14,7 @@ The system designates an agent as `Undetermined (Unknown)` and routes it to Stag
 
 * **Null Subject + No Core Markers (Primary Trigger):** 
   When an input contains a null subject and lacks all core identification markers (i.e., no psychological verbs for 1st person, no imperative markers for 2nd person, and no evidential markers for 3rd person), the system cannot deterministically infer the agent. 
-  * *Example:* "Went to the cafe yesterday." (カフェに行った。) → Triggers Stage 2 Clarification.
+  * *Example:* "Went to the cafe yesterday." → Triggers Stage 2 Clarification.
 
 * **Equally Plausible Candidates:** 
   When multiple potential agents exist with equal structural weight and cannot be disambiguated by syntactic rules alone.

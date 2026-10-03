@@ -22,9 +22,9 @@ For irregular cases (e.g., "stand" as a posture vs. "stand" as a situation), the
 
 | Input | Logic Process | Result |
 |--|--|--|
-| "I have a car." | [Morphology: Base] → [Category: Stative] | Possession status.|
-| "I am having a party." | [Morphology: be + V-ing] → [Category: Action] | Active event participation. |
-| "I was told by him." | [Passive: be + V-en + by] | Actor: Him / Receiver: I. |
+| **"I have a car."** | [Morphology: Base] → [Category: Stative] | Possession status.|
+| **"I am having a party."** | [Morphology: be + V-ing] → [Category: Action] | Active event participation. |
+| **"I was told by him."** | [Passive: be + V-en + by] | Actor: Him / Receiver: I. |
 
 ## Example of Structural & State Tracking:
 **Input**: "I was standing there when I understood what was happening."

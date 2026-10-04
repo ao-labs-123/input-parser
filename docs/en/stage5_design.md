@@ -39,7 +39,7 @@ Synthesis of a complex sentence through all previous parsing stages into a unifi
   * Why = "to study logic" (Stage 2: Causal Goal)
   * How = `Unspecified`
 * **Result:**
-  ```json
+```json
   {
     "stage": "Stage 5 - 5W1H Synthesis",
     "frame": {

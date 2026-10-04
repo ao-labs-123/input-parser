@@ -57,16 +57,19 @@ Synthesis of a complex sentence through all previous parsing stages into a unifi
 ## Logic Comparison: Attribute Mapping Matrix
 | Input | 5W1H Mapping Strategy | Target Frame Output |
 |--|--|--|
-| **"Went to the cafe yesterday."** | Agent=⁠Unknown⁠ (Stage 1 Fallback), Location="cafe", Time="yesterday" | Who: ⁠Unknown⁠
-What: "went"
-When: "yesterday"
-Where: "cafe"
-Why/How: ⁠Unspecified⁠ |
-| **"Please review the document carefully."** | Agent=⁠you⁠ (Stage 1 Imperative), Manner="carefully" | Who: "you"
-What: "review the document"
-How: "carefully"
-When/Where/Why: ⁠Unspecified⁠ |
-| **"Failed the exam because of bad luck."** | Agent=⁠Unknown⁠ (Stage 1 Fallback), Cause="bad luck" | Who: ⁠Unknown⁠
-What: "failed the exam"
-Why: "because of bad luck"
-When/Where/How: ⁠Unspecified⁠ |
+| **"Went to the cafe yesterday."** | Agent=⁠Unknown⁠ (Stage 1 Fallback), Location="cafe", Time="yesterday" | 
+`Who`: ⁠Unknown⁠
+`What`: "went"
+`When`: "yesterday"
+`Where`: "cafe"
+`Why/How`: ⁠Unspecified⁠ |
+| **"Please review the document carefully."** | Agent=⁠you⁠ (Stage 1 Imperative), Manner="carefully" | 
+`Who`: "you"
+`What`: "review the document"
+`How`: "carefully"
+`When/Where/Why`: ⁠Unspecified⁠ |
+| **"Failed the exam because of bad luck."** | Agent=⁠Unknown⁠ (Stage 1 Fallback), Cause="bad luck" | 
+`Who`: ⁠Unknown⁠
+`What`: "failed the exam"
+`Why`: "because of bad luck"
+`When/Where/How`: ⁠Unspecified⁠ |

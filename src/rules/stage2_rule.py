@@ -1,29 +1,34 @@
-import re
 
-def analyze_causality_and_ambiguity(text, subject_status):
-    target_text = text.strip().rstrip(".")
-    
-    # Stage 1 で主語が特定できていない（None, "Unknown"）または辞書型ではない単語の場合
-    is_subject_undetermined = (
-        subject_status is None or 
-        subject_status == "Unknown" or 
-        (isinstance(subject_status, str) and subject_status == "Unknown")
-    )
-    
-    if is_subject_undetermined:
-        # 3文に共通する「主語が特定できないAction動詞の省略」を検知
-        words = target_text.split()
-        if words:
-            # 心理動詞（Thoughtなど）はStage1で処理されているはずなので、
-            # ここに流れてきた主語なし文はすべて「聞き返し対象（Ambiguous）」としてマークする
+import json
+import re
+from pathlib import Path
+
+def get_lexicon():
+    lexicon_path = Path(__file__).resolve().parent.parent / "lexicon" / "causality_markers.json"
+    with lexicon_path.open("r", encoding="utf-8") as f:
+        causality_list = json.load(f)
+    return causality_list
+
+def analyze_causality(text):
+    lexicon = get_lexicon()
+
+    is_causal = any(marker.lower() in text.lower() for marker in lexicon)
+    return is_causal
+
+def analyze_context_relation(text):
+    patterns = [
+        (r"\bafter\s+(?P<context>[^,.!?]+)", "Temporal", "after"),
+        (r"\bby\s+(?P<context>\w+ing(?:\s+\w+)*)", "Manner", "by"),
+    ]
+
+    for pattern, relation, marker in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
             return {
-                "ambiguity_type": "Undetermined_Agent",
-                "status": "Ambiguous",
-                "fallback": "Trigger Clarification"
+                "relation": relation,
+                "marker": marker,
+                "context": match.group("context").strip(),
+                "event": text[:match.start()].strip(),
             }
-            
-    return {
-        "ambiguity_type": "None",
-        "status": "Clear",
-        "fallback": "Proceed"
-    }
+
+    return None

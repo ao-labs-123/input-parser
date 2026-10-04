@@ -112,6 +112,7 @@ class LogicAnalyzer:
                 "structure": None,
                 "agent": agent,
             }
+        return result
 
     def stage3_analyze(self, text, stage1_result, modification_result=None):
         agent = (stage1_result or {}).get("agent", "Unknown")

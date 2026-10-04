@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-04T06:48:10.154673",
+        "timestamp": "2026-10-04T13:47:15.859845",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -16,9 +16,7 @@
                 "cause": "I helped",
                 "effect": "He succeeded"
             },
-            "agent": "He",
-            "decision": "Proceed",
-            "resolved_agent": "He"
+            "agent": "He"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -59,7 +57,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.155920",
+        "timestamp": "2026-10-04T13:47:15.860925",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -70,9 +68,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "You",
-            "decision": "Proceed",
-            "resolved_agent": "You"
+            "agent": "You"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -113,7 +109,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.157025",
+        "timestamp": "2026-10-04T13:47:15.861876",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -124,9 +120,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "I",
-            "decision": "Proceed",
-            "resolved_agent": "I"
+            "agent": "I"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -167,7 +161,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.158299",
+        "timestamp": "2026-10-04T13:47:15.862862",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -178,9 +172,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "He/She/They",
-            "decision": "Proceed",
-            "resolved_agent": "He/She/They"
+            "agent": "He/She/They"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -221,7 +213,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.160403",
+        "timestamp": "2026-10-04T13:47:15.864227",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -233,9 +225,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "Unknown",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -276,7 +266,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.161895",
+        "timestamp": "2026-10-04T13:47:15.865249",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -288,9 +278,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "you",
-            "decision": "Proceed",
-            "resolved_agent": "you"
+            "agent": "you"
         },
         "stage3": {
             "process": "Defining clause",
@@ -337,7 +325,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.163415",
+        "timestamp": "2026-10-04T13:47:15.866186",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -348,9 +336,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "I",
-            "decision": "Proceed",
-            "resolved_agent": "I"
+            "agent": "I"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -391,7 +377,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.165071",
+        "timestamp": "2026-10-04T13:47:15.867224",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -402,9 +388,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "I",
-            "decision": "Proceed",
-            "resolved_agent": "I"
+            "agent": "I"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -445,7 +429,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.166842",
+        "timestamp": "2026-10-04T13:47:15.868499",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -462,9 +446,7 @@
                 "cause": "you helped",
                 "effect": "Succeeded"
             },
-            "agent": "Unknown",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -505,7 +487,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.168285",
+        "timestamp": "2026-10-04T13:47:15.869717",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -517,9 +499,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "Unknown",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -560,7 +540,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.169854",
+        "timestamp": "2026-10-04T13:47:15.871015",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -572,9 +552,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "Unknown",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -615,7 +593,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.171469",
+        "timestamp": "2026-10-04T13:47:15.872400",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -627,9 +605,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "Unknown",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -670,7 +646,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.173115",
+        "timestamp": "2026-10-04T13:47:15.873846",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -682,9 +658,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "Unknown",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -725,7 +699,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.174852",
+        "timestamp": "2026-10-04T13:47:15.875413",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -741,9 +715,7 @@
                 "cause": "the project",
                 "effect": "I'm stressed"
             },
-            "agent": "I",
-            "decision": "Proceed",
-            "resolved_agent": "I"
+            "agent": "I"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -784,7 +756,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.176422",
+        "timestamp": "2026-10-04T13:47:15.876843",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -800,9 +772,7 @@
                 "cause": "you helped",
                 "effect": "I succeeded"
             },
-            "agent": "I",
-            "decision": "Proceed",
-            "resolved_agent": "I"
+            "agent": "I"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -843,7 +813,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.178092",
+        "timestamp": "2026-10-04T13:47:15.878413",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -854,15 +824,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "He",
-            "decision": "Proceed",
-            "resolved_agent": "He",
-            "context": {
-                "relation": "Manner",
-                "marker": "by",
-                "context": "working hard",
-                "event": "He succeeded"
-            }
+            "agent": "He"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -903,7 +865,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.179939",
+        "timestamp": "2026-10-04T13:47:15.879976",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -914,15 +876,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "I",
-            "decision": "Proceed",
-            "resolved_agent": "I",
-            "context": {
-                "relation": "Temporal",
-                "marker": "after",
-                "context": "the long meeting",
-                "event": "I was stressed"
-            }
+            "agent": "I"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -954,7 +908,7 @@
             "frame": {
                 "who": "I",
                 "what": "stressed I",
-                "when": "after the long meeting",
+                "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
                 "how": "Unspecified"
@@ -963,7 +917,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.181891",
+        "timestamp": "2026-10-04T13:47:15.881727",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -974,9 +928,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "The report",
-            "decision": "Proceed",
-            "resolved_agent": "The report"
+            "agent": "The report"
         },
         "stage3": {
             "process": "Non-defining clause",
@@ -1023,7 +975,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.183899",
+        "timestamp": "2026-10-04T13:47:15.883460",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1034,9 +986,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "The report",
-            "decision": "Proceed",
-            "resolved_agent": "The report"
+            "agent": "The report"
         },
         "stage3": {
             "process": "Defining clause",
@@ -1083,7 +1033,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.186066",
+        "timestamp": "2026-10-04T13:47:15.885313",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1094,9 +1044,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "The office",
-            "decision": "Proceed",
-            "resolved_agent": "The office"
+            "agent": "The office"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -1137,7 +1085,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.188175",
+        "timestamp": "2026-10-04T13:47:15.887297",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1148,9 +1096,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "The day",
-            "decision": "Proceed",
-            "resolved_agent": "The day"
+            "agent": "The day"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -1191,7 +1137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.190292",
+        "timestamp": "2026-10-04T13:47:15.889226",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1202,9 +1148,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "I",
-            "decision": "Proceed",
-            "resolved_agent": "I"
+            "agent": "I"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -1245,7 +1189,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.192414",
+        "timestamp": "2026-10-04T13:47:15.891204",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1256,9 +1200,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "I",
-            "decision": "Proceed",
-            "resolved_agent": "I"
+            "agent": "I"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -1299,7 +1241,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.194695",
+        "timestamp": "2026-10-04T13:47:15.893286",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1310,9 +1252,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "I",
-            "decision": "Proceed",
-            "resolved_agent": "I"
+            "agent": "I"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -1353,7 +1293,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.197051",
+        "timestamp": "2026-10-04T13:47:15.895484",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1364,9 +1304,7 @@
             "process": "No causal relation found",
             "mapping": "None",
             "structure": null,
-            "agent": "The report",
-            "decision": "Proceed",
-            "resolved_agent": "The report"
+            "agent": "The report"
         },
         "stage3": {
             "process": "No modification structure found",
@@ -1407,7 +1345,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:48:10.199561",
+        "timestamp": "2026-10-04T13:47:15.897786",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1424,9 +1362,7 @@
                 "cause": "bad luck",
                 "effect": "Failed the exam"
             },
-            "agent": "Unknown",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
+            "agent": "Unknown"
         },
         "stage3": {
             "process": "No modification structure found",

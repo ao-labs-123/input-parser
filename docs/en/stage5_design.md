@@ -52,6 +52,7 @@ Synthesis of a complex sentence through all previous parsing stages into a unifi
     },
     "status": "Ready for Particle Encapsulation"
   }
+```
 
 ## Logic Comparison: Attribute Mapping Matrix
 | Input | 5W1H Mapping Strategy | Target Frame Output |

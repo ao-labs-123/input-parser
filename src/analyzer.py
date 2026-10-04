@@ -101,13 +101,16 @@ class LogicAnalyzer:
             }
             result = {
                 "process": f"Causal Marker: {marker}",
+                "decision": "Causal relation mapped",
                 "mapping": f"{cause} -> Causes -> {effect}",
                 "structure": structure,
                 "agent": agent,
             }
         else:
+            decision = "Clarification Required (Undetermined Agent)" if agent == "Unknown" else "No causal relation found"
             result = {
                 "process": "No causal relation found",
+                "decision": decision,
                 "mapping": "None",
                 "structure": None,
                 "agent": agent,

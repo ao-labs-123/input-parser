@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-04T06:38:18.365446",
+        "timestamp": "2026-10-04T06:48:10.154673",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -8,22 +8,42 @@
             "agent": "He"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "Causal Marker: because",
+            "mapping": "I helped -> Causes -> He succeeded",
+            "structure": {
+                "relation": "CauseEffect",
+                "marker": "because",
+                "cause": "I helped",
+                "effect": "He succeeded"
+            },
+            "agent": "He",
             "decision": "Proceed",
             "resolved_agent": "He"
         },
         "stage3": {
-            "process": "Agent: He + Marker: because",
-            "mapping": "i helped -> Causes -> he succeeded",
-            "structure": {
-                "cause": "i helped",
-                "effect": "he succeeded"
-            }
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "He"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "succeeded",
+            "patient": "because I helped",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "He",
+            "structure": {
+                "form": "Base",
+                "verb": "succeeded",
+                "subject": "He",
+                "object": "because I helped",
+                "category": "Action",
+                "patient": "because I helped",
+                "agent": "He"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -39,31 +59,50 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.366670",
+        "timestamp": "2026-10-04T06:48:10.155920",
         "input": "Please review the document.",
         "stage1": {
-            "process": "Null Subject + No Core Markers",
-            "decision": "Fallback: Stage 2 Clarification",
-            "agent": "Unknown"
+            "process": "Imperative / Direct Directive",
+            "decision": "Priority: Listener Address",
+            "agent": "You"
         },
         "stage2": {
-            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "agent": "Unknown"
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "You",
+            "decision": "Proceed",
+            "resolved_agent": "You"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "You"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "review",
+            "patient": "the document",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Please",
+            "structure": {
+                "form": "Base",
+                "verb": "review",
+                "subject": "Please",
+                "object": "the document",
+                "category": "Action",
+                "patient": "the document",
+                "agent": "You"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
-                "who": "you",
+                "who": "You",
                 "what": "review the document",
                 "when": "Unspecified",
                 "where": "Unspecified",
@@ -74,7 +113,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.367707",
+        "timestamp": "2026-10-04T06:48:10.157025",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -82,18 +121,37 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "I",
             "decision": "Proceed",
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "I"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "was",
+            "patient": "strange",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Thought",
+            "structure": {
+                "form": "Base",
+                "verb": "was",
+                "subject": "Thought",
+                "object": "strange",
+                "category": "Action",
+                "patient": "strange",
+                "agent": "I"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -109,26 +167,45 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.368724",
+        "timestamp": "2026-10-04T06:48:10.158299",
         "input": "Thought it was strange apparently.",
         "stage1": {
-            "process": "Psychological Verb + Null Subject + Evidential Marker",
-            "decision": "Override: 3rd Party",
+            "process": "Null Subject + Evidential / Attribution Marker",
+            "decision": "Override: Third Person",
             "agent": "He/She/They"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "He/She/They",
             "decision": "Proceed",
             "resolved_agent": "He/She/They"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "He/She/They"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "it",
+            "patient": "was strange apparently",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Thought",
+            "structure": {
+                "form": "Base",
+                "verb": "it",
+                "subject": "Thought",
+                "object": "was strange apparently",
+                "category": "Action",
+                "patient": "was strange apparently",
+                "agent": "He/She/They"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -144,26 +221,46 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.370127",
+        "timestamp": "2026-10-04T06:48:10.160403",
         "input": "Went to the cafe yesterday.",
         "stage1": {
-            "process": "Null Subject + No Core Markers",
-            "decision": "Fallback: Stage 2 Clarification",
-            "agent": "Unknown"
+            "process": "Null Subject + No Core Markers Detected",
+            "decision": "Fallback: Undetermined Agent",
+            "agent": "Unknown",
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "Unknown",
             "decision": "Clarification Required (Undetermined Agent)",
-            "agent": "Unknown"
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "Unknown"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "to",
+            "patient": "the cafe yesterday",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Went",
+            "structure": {
+                "form": "Base",
+                "verb": "to",
+                "subject": "Went",
+                "object": "the cafe yesterday",
+                "category": "Action",
+                "patient": "the cafe yesterday",
+                "agent": "Unknown"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -179,7 +276,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.371062",
+        "timestamp": "2026-10-04T06:48:10.161895",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -188,18 +285,43 @@
             "structure": "It is [required] that [you submit the form]"
         },
         "stage2": {
-            "process": "[Stage 2] Structural Subject Verified",
-            "decision": "Proceed with True Subject",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "you",
+            "decision": "Proceed",
             "resolved_agent": "you"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
             "process": "Defining clause",
             "decision": "Essential",
-            "result": "AI defines the primary identity of 'It is required'."
+            "target": "It is required",
+            "modifier": "you submit the form",
+            "structure": {
+                "type": "Defining",
+                "antecedent": "It is required",
+                "clause": "you submit the form"
+            },
+            "agent": "you"
+        },
+        "stage4": {
+            "process": "[Passive: be + V-en + by]",
+            "form": "Passive",
+            "category": "Action",
+            "verb": "required",
+            "patient": "It",
+            "actor": "Unknown",
+            "receiver": "It",
+            "subject": "Unspecified",
+            "structure": {
+                "form": "Passive",
+                "verb": "required",
+                "actor": "Unknown",
+                "receiver": "It",
+                "category": "Action",
+                "patient": "It",
+                "agent": "you"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -215,7 +337,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.371942",
+        "timestamp": "2026-10-04T06:48:10.163415",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -223,18 +345,37 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "I",
             "decision": "Proceed",
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "I"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "submitted",
+            "patient": "the form yesterday",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "I",
+            "structure": {
+                "form": "Base",
+                "verb": "submitted",
+                "subject": "I",
+                "object": "the form yesterday",
+                "category": "Action",
+                "patient": "the form yesterday",
+                "agent": "I"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -250,7 +391,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.372906",
+        "timestamp": "2026-10-04T06:48:10.165071",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -258,18 +399,37 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "I",
             "decision": "Proceed",
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "I"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "wrote",
+            "patient": "the report at the office",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "I",
+            "structure": {
+                "form": "Base",
+                "verb": "wrote",
+                "subject": "I",
+                "object": "the report at the office",
+                "category": "Action",
+                "patient": "the report at the office",
+                "agent": "I"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -285,30 +445,51 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.374063",
+        "timestamp": "2026-10-04T06:48:10.166842",
         "input": "Succeeded because you helped.",
         "stage1": {
-            "process": "Null Subject + No Core Markers",
-            "decision": "Fallback: Stage 2 Clarification",
-            "agent": "Unknown"
+            "process": "Null Subject + No Core Markers Detected",
+            "decision": "Fallback: Undetermined Agent",
+            "agent": "Unknown",
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "[Stage 2] Null Subject + No Psychological Verb + Clause Present [Fallback: Ambiguous Clause]",
+            "process": "Causal Marker: because",
+            "mapping": "you helped -> Causes -> Succeeded",
+            "structure": {
+                "relation": "CauseEffect",
+                "marker": "because",
+                "cause": "you helped",
+                "effect": "Succeeded"
+            },
+            "agent": "Unknown",
             "decision": "Clarification Required (Undetermined Agent)",
-            "agent": "Unknown"
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage3": {
-            "process": "Agent: Unknown + Marker: because",
-            "mapping": "you helped -> Causes -> succeeded",
-            "structure": {
-                "cause": "you helped",
-                "effect": "succeeded"
-            }
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "Unknown"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "because",
+            "patient": "you helped",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Succeeded",
+            "structure": {
+                "form": "Base",
+                "verb": "because",
+                "subject": "Succeeded",
+                "object": "you helped",
+                "category": "Action",
+                "patient": "you helped",
+                "agent": "Unknown"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -324,26 +505,46 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.375193",
+        "timestamp": "2026-10-04T06:48:10.168285",
         "input": "Failed despite the effort.",
         "stage1": {
-            "process": "Null Subject + No Core Markers",
-            "decision": "Fallback: Stage 2 Clarification",
-            "agent": "Unknown"
+            "process": "Null Subject + No Core Markers Detected",
+            "decision": "Fallback: Undetermined Agent",
+            "agent": "Unknown",
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "[Stage 2] Null Subject + No Psychological Verb + No Contextual Clues [Fallback: Completely Ambiguous]",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "Unknown",
             "decision": "Clarification Required (Undetermined Agent)",
-            "agent": "Unknown"
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "Unknown"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "despite",
+            "patient": "the effort",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Failed",
+            "structure": {
+                "form": "Base",
+                "verb": "despite",
+                "subject": "Failed",
+                "object": "the effort",
+                "category": "Action",
+                "patient": "the effort",
+                "agent": "Unknown"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -359,26 +560,46 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.376387",
+        "timestamp": "2026-10-04T06:48:10.169854",
         "input": "Required further investigation.",
         "stage1": {
-            "process": "Null Subject + No Core Markers",
-            "decision": "Fallback: Stage 2 Clarification",
-            "agent": "Unknown"
+            "process": "Null Subject + No Core Markers Detected",
+            "decision": "Fallback: Undetermined Agent",
+            "agent": "Unknown",
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "Unknown",
             "decision": "Clarification Required (Undetermined Agent)",
-            "agent": "Unknown"
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "Unknown"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "further",
+            "patient": "investigation",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Required",
+            "structure": {
+                "form": "Base",
+                "verb": "further",
+                "subject": "Required",
+                "object": "investigation",
+                "category": "Action",
+                "patient": "investigation",
+                "agent": "Unknown"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -394,26 +615,46 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.377593",
+        "timestamp": "2026-10-04T06:48:10.171469",
         "input": "Submitted the form yesterday.",
         "stage1": {
-            "process": "Null Subject + No Core Markers",
-            "decision": "Fallback: Stage 2 Clarification",
-            "agent": "Unknown"
+            "process": "Null Subject + No Core Markers Detected",
+            "decision": "Fallback: Undetermined Agent",
+            "agent": "Unknown",
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "Unknown",
             "decision": "Clarification Required (Undetermined Agent)",
-            "agent": "Unknown"
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "Unknown"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "the",
+            "patient": "form yesterday",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Submitted",
+            "structure": {
+                "form": "Base",
+                "verb": "the",
+                "subject": "Submitted",
+                "object": "form yesterday",
+                "category": "Action",
+                "patient": "form yesterday",
+                "agent": "Unknown"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -429,26 +670,46 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.379019",
+        "timestamp": "2026-10-04T06:48:10.173115",
         "input": "Succeeded in the meeting.",
         "stage1": {
-            "process": "Null Subject + No Core Markers",
-            "decision": "Fallback: Stage 2 Clarification",
-            "agent": "Unknown"
+            "process": "Null Subject + No Core Markers Detected",
+            "decision": "Fallback: Undetermined Agent",
+            "agent": "Unknown",
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "Unknown",
             "decision": "Clarification Required (Undetermined Agent)",
-            "agent": "Unknown"
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "Unknown"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "in",
+            "patient": "the meeting",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Succeeded",
+            "structure": {
+                "form": "Base",
+                "verb": "in",
+                "subject": "Succeeded",
+                "object": "the meeting",
+                "category": "Action",
+                "patient": "the meeting",
+                "agent": "Unknown"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -464,7 +725,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.380434",
+        "timestamp": "2026-10-04T06:48:10.174852",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -472,22 +733,42 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "Causal Marker: due to",
+            "mapping": "the project -> Causes -> I'm stressed",
+            "structure": {
+                "relation": "CauseEffect",
+                "marker": "due to",
+                "cause": "the project",
+                "effect": "I'm stressed"
+            },
+            "agent": "I",
             "decision": "Proceed",
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "Agent: I + Marker: due to",
-            "mapping": "the project -> Causes -> i'm stressed",
-            "structure": {
-                "cause": "the project",
-                "effect": "i'm stressed"
-            }
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "I"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "stressed",
+            "patient": "due to the project",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "I'm",
+            "structure": {
+                "form": "Base",
+                "verb": "stressed",
+                "subject": "I'm",
+                "object": "due to the project",
+                "category": "Action",
+                "patient": "due to the project",
+                "agent": "I"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -503,7 +784,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.381634",
+        "timestamp": "2026-10-04T06:48:10.176422",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -511,22 +792,42 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "Causal Marker: because",
+            "mapping": "you helped -> Causes -> I succeeded",
+            "structure": {
+                "relation": "CauseEffect",
+                "marker": "because",
+                "cause": "you helped",
+                "effect": "I succeeded"
+            },
+            "agent": "I",
             "decision": "Proceed",
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "Agent: I + Marker: because",
-            "mapping": "you helped -> Causes -> i succeeded",
-            "structure": {
-                "cause": "you helped",
-                "effect": "i succeeded"
-            }
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "I"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "succeeded",
+            "patient": "because you helped",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "I",
+            "structure": {
+                "form": "Base",
+                "verb": "succeeded",
+                "subject": "I",
+                "object": "because you helped",
+                "category": "Action",
+                "patient": "because you helped",
+                "agent": "I"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -542,7 +843,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.382988",
+        "timestamp": "2026-10-04T06:48:10.178092",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -550,24 +851,43 @@
             "agent": "He"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "He",
             "decision": "Proceed",
-            "resolved_agent": "He"
-        },
-        "stage3": {
-            "process": "Agent: He + Manner Marker: by",
-            "mapping": "working hard -> Means -> He succeeded",
-            "structure": {
+            "resolved_agent": "He",
+            "context": {
                 "relation": "Manner",
                 "marker": "by",
                 "context": "working hard",
                 "event": "He succeeded"
             }
         },
+        "stage3": {
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "He"
+        },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "succeeded",
+            "patient": "by working hard",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "He",
+            "structure": {
+                "form": "Base",
+                "verb": "succeeded",
+                "subject": "He",
+                "object": "by working hard",
+                "category": "Action",
+                "patient": "by working hard",
+                "agent": "He"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -583,7 +903,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.384342",
+        "timestamp": "2026-10-04T06:48:10.179939",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -591,24 +911,43 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "I",
             "decision": "Proceed",
-            "resolved_agent": "I"
-        },
-        "stage3": {
-            "process": "Agent: I + Temporal Marker: after",
-            "mapping": "the long meeting -> Occurs After -> I was stressed",
-            "structure": {
+            "resolved_agent": "I",
+            "context": {
                 "relation": "Temporal",
                 "marker": "after",
                 "context": "the long meeting",
                 "event": "I was stressed"
             }
         },
+        "stage3": {
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "I"
+        },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Passive: be + V-en + by]",
+            "form": "Passive",
+            "category": "Action",
+            "verb": "stressed",
+            "patient": "I",
+            "actor": "Unknown",
+            "receiver": "I",
+            "subject": "Unspecified",
+            "structure": {
+                "form": "Passive",
+                "verb": "stressed",
+                "actor": "Unknown",
+                "receiver": "I",
+                "category": "Action",
+                "patient": "I",
+                "agent": "I"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -624,7 +963,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.385858",
+        "timestamp": "2026-10-04T06:48:10.181891",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -632,18 +971,43 @@
             "agent": "The report"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "The report",
             "decision": "Proceed",
             "resolved_agent": "The report"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
             "process": "Non-defining clause",
             "decision": "Supplementary",
-            "result": "AI treats 'was long' as an attribute, not the primary identifier."
+            "target": "The report",
+            "modifier": "was long",
+            "structure": {
+                "type": "Non-defining",
+                "antecedent": "The report",
+                "clause": "was long"
+            },
+            "agent": "The report"
+        },
+        "stage4": {
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "report,",
+            "patient": "which was long, is done",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "The",
+            "structure": {
+                "form": "Base",
+                "verb": "report,",
+                "subject": "The",
+                "object": "which was long, is done",
+                "category": "Action",
+                "patient": "which was long, is done",
+                "agent": "The report"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -659,7 +1023,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.387349",
+        "timestamp": "2026-10-04T06:48:10.183899",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -667,18 +1031,43 @@
             "agent": "The report"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "The report",
             "decision": "Proceed",
             "resolved_agent": "The report"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
-        },
-        "stage4": {
             "process": "Defining clause",
             "decision": "Essential",
-            "result": "AI links 'The report' (Agent) to the specific the report as a defining marker."
+            "target": "The report",
+            "modifier": "I wrote",
+            "structure": {
+                "type": "Defining",
+                "antecedent": "The report",
+                "clause": "I wrote"
+            },
+            "agent": "The report"
+        },
+        "stage4": {
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "report",
+            "patient": "that I wrote is done",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "The",
+            "structure": {
+                "form": "Base",
+                "verb": "report",
+                "subject": "The",
+                "object": "that I wrote is done",
+                "category": "Action",
+                "patient": "that I wrote is done",
+                "agent": "The report"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -694,7 +1083,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.388873",
+        "timestamp": "2026-10-04T06:48:10.186066",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -702,18 +1091,37 @@
             "agent": "The office"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "The office",
             "decision": "Proceed",
             "resolved_agent": "The office"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "The office"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Passive: be + V-en + by]",
+            "form": "Passive",
+            "category": "Action",
+            "verb": "quiet",
+            "patient": "The office where I wrote the report",
+            "actor": "Unknown",
+            "receiver": "The office where I wrote the report",
+            "subject": "Unspecified",
+            "structure": {
+                "form": "Passive",
+                "verb": "quiet",
+                "actor": "Unknown",
+                "receiver": "The office where I wrote the report",
+                "category": "Action",
+                "patient": "The office where I wrote the report",
+                "agent": "The office"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -729,7 +1137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.390433",
+        "timestamp": "2026-10-04T06:48:10.188175",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -737,18 +1145,37 @@
             "agent": "The day"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "The day",
             "decision": "Proceed",
             "resolved_agent": "The day"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "The day"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Passive: be + V-en + by]",
+            "form": "Passive",
+            "category": "Action",
+            "verb": "bright",
+            "patient": "The day where he succeeded",
+            "actor": "Unknown",
+            "receiver": "The day where he succeeded",
+            "subject": "Unspecified",
+            "structure": {
+                "form": "Passive",
+                "verb": "bright",
+                "actor": "Unknown",
+                "receiver": "The day where he succeeded",
+                "category": "Action",
+                "patient": "The day where he succeeded",
+                "agent": "The day"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -764,7 +1191,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.391983",
+        "timestamp": "2026-10-04T06:48:10.190292",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -772,18 +1199,37 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "I",
             "decision": "Proceed",
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "I"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Stative]",
+            "form": "Base",
+            "category": "Stative",
+            "verb": "have",
+            "patient": "a car",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "I",
+            "structure": {
+                "form": "Base",
+                "verb": "have",
+                "subject": "I",
+                "object": "a car",
+                "category": "Stative",
+                "patient": "a car",
+                "agent": "I"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -799,7 +1245,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.393544",
+        "timestamp": "2026-10-04T06:48:10.192414",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -807,18 +1253,37 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "I",
             "decision": "Proceed",
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "I"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: be + V-ing] → [Category: Action]",
+            "form": "Progressive",
+            "category": "Action",
+            "verb": "having",
+            "patient": "a party",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "I",
+            "structure": {
+                "form": "Progressive",
+                "verb": "having",
+                "subject": "I",
+                "object": "a party",
+                "category": "Action",
+                "patient": "a party",
+                "agent": "I"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -834,7 +1299,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.395242",
+        "timestamp": "2026-10-04T06:48:10.194695",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -842,18 +1307,37 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "I",
             "decision": "Proceed",
             "resolved_agent": "I"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "I"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Passive: be + V-en + by]",
+            "form": "Passive",
+            "category": "Action",
+            "verb": "told",
+            "patient": "I",
+            "actor": "him",
+            "receiver": "I",
+            "subject": "Unspecified",
+            "structure": {
+                "form": "Passive",
+                "verb": "told",
+                "actor": "him",
+                "receiver": "I",
+                "category": "Action",
+                "patient": "I",
+                "agent": "I"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -869,7 +1353,7 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.396945",
+        "timestamp": "2026-10-04T06:48:10.197051",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -877,18 +1361,37 @@
             "agent": "The report"
         },
         "stage2": {
-            "process": "[Stage 2] Explicit Context Clear",
+            "process": "No causal relation found",
+            "mapping": "None",
+            "structure": null,
+            "agent": "The report",
             "decision": "Proceed",
             "resolved_agent": "The report"
         },
         "stage3": {
-            "process": "No context relation found",
-            "mapping": "None"
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "The report"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Passive: be + V-en + by]",
+            "form": "Passive",
+            "category": "Action",
+            "verb": "completed",
+            "patient": "The report",
+            "actor": "Unknown",
+            "receiver": "The report",
+            "subject": "Unspecified",
+            "structure": {
+                "form": "Passive",
+                "verb": "completed",
+                "actor": "Unknown",
+                "receiver": "The report",
+                "category": "Action",
+                "patient": "The report",
+                "agent": "The report"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
@@ -904,30 +1407,51 @@
         }
     },
     {
-        "timestamp": "2026-10-04T06:38:18.398852",
+        "timestamp": "2026-10-04T06:48:10.199561",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
-            "process": "Null Subject + No Core Markers",
-            "decision": "Fallback: Stage 2 Clarification",
-            "agent": "Unknown"
+            "process": "Null Subject + No Core Markers Detected",
+            "decision": "Fallback: Undetermined Agent",
+            "agent": "Unknown",
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "[Stage 2] Null Subject + No Psychological Verb + Clause Present [Fallback: Ambiguous Clause]",
+            "process": "Causal Marker: because of",
+            "mapping": "bad luck -> Causes -> Failed the exam",
+            "structure": {
+                "relation": "CauseEffect",
+                "marker": "because of",
+                "cause": "bad luck",
+                "effect": "Failed the exam"
+            },
+            "agent": "Unknown",
             "decision": "Clarification Required (Undetermined Agent)",
-            "agent": "Unknown"
+            "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage3": {
-            "process": "Agent: Unknown + Marker: because",
-            "mapping": "of bad luck -> Causes -> failed the exam",
-            "structure": {
-                "cause": "of bad luck",
-                "effect": "failed the exam"
-            }
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "structure": null,
+            "agent": "Unknown"
         },
         "stage4": {
-            "process": "Standard",
-            "decision": "None",
-            "structure": "No relative clause found"
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "the",
+            "patient": "exam because of bad luck",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Failed",
+            "structure": {
+                "form": "Base",
+                "verb": "the",
+                "subject": "Failed",
+                "object": "exam because of bad luck",
+                "category": "Action",
+                "patient": "exam because of bad luck",
+                "agent": "Unknown"
+            }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",

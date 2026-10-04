@@ -10,7 +10,7 @@ if __package__:
     )
     from .rules.stage2_rule import analyze_causality_and_ambiguity, analyze_context_relation
     from .rules.stage3_rule import analyze_modification_structure
-    from .rules.stage5_rule import analyze_semantic_structure
+    from .rules.stage4_rule import analyze_semantic_structure
     from .analyzer import LogicAnalyzer
 else:
     from rules.stage1_rule import (
@@ -20,7 +20,7 @@ else:
     )
     from rules.stage2_rule import analyze_causality_and_ambiguity, analyze_context_relation
     from rules.stage3_rule import analyze_modification_structure
-    from rules.stage5_rule import analyze_semantic_structure
+    from rules.stage4_rule import analyze_semantic_structure
     from analyzer import LogicAnalyzer
 
 
@@ -56,15 +56,15 @@ def run_test(input_file):
         log1 = analyzer.stage1_analyze(text, subject_status)
 
         stage2_res = analyze_causality_and_ambiguity(text, subject_status)
-        log2 = analyzer.stage2_analyze(text, log1, stage2_res)
-
         context_res = analyze_context_relation(text)
-        log3 = analyzer.stage3_analyze(text, log1, context_res)
+        log2 = analyzer.stage2_analyze(text, log1, stage2_res, context_res)
 
         mod_res = analyze_modification_structure(text)
-        log4 = analyzer.stage4_analyze(text, mod_res, log1)
+        log3 = analyzer.stage3_analyze(text, log1, mod_res)
 
         sem_res = analyze_semantic_structure(text)
+        log4 = analyzer.stage4_analyze(text, sem_res, log1)
+
         log5 = analyzer.stage5_analyze(
             text,
             sem_res,

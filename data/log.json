@@ -1,0 +1,945 @@
+[
+    {
+        "timestamp": "2026-10-04T06:38:18.365446",
+        "input": "He succeeded because I helped.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "He"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "He"
+        },
+        "stage3": {
+            "process": "Agent: He + Marker: because",
+            "mapping": "i helped -> Causes -> he succeeded",
+            "structure": {
+                "cause": "i helped",
+                "effect": "he succeeded"
+            }
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "He",
+                "what": "succeeded",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "because I helped",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.366670",
+        "input": "Please review the document.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "you",
+                "what": "review the document",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.367707",
+        "input": "Thought was strange.",
+        "stage1": {
+            "process": "Psychological Verb + Null Subject",
+            "decision": "Default: Speaker",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "I",
+                "what": "thought was strange",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.368724",
+        "input": "Thought it was strange apparently.",
+        "stage1": {
+            "process": "Psychological Verb + Null Subject + Evidential Marker",
+            "decision": "Override: 3rd Party",
+            "agent": "He/She/They"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "He/She/They"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "He/She/They",
+                "what": "thought it was strange",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "apparently"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.370127",
+        "input": "Went to the cafe yesterday.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "Unknown",
+                "what": "went",
+                "when": "yesterday",
+                "where": "cafe",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.371062",
+        "input": "It is required that you submit the form.",
+        "stage1": {
+            "process": "Formal Subject Detected (It ... that)",
+            "decision": "Priority: True Subject in Clause",
+            "agent": "you",
+            "structure": "It is [required] that [you submit the form]"
+        },
+        "stage2": {
+            "process": "[Stage 2] Structural Subject Verified",
+            "decision": "Proceed with True Subject",
+            "resolved_agent": "you"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Defining clause",
+            "decision": "Essential",
+            "result": "AI defines the primary identity of 'It is required'."
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "you",
+                "what": "required It",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.371942",
+        "input": "I submitted the form yesterday.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "I",
+                "what": "submitted the form",
+                "when": "yesterday",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.372906",
+        "input": "I wrote the report at the office.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "I",
+                "what": "wrote the report",
+                "when": "Unspecified",
+                "where": "at the office",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.374063",
+        "input": "Succeeded because you helped.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Clause Present [Fallback: Ambiguous Clause]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "Agent: Unknown + Marker: because",
+            "mapping": "you helped -> Causes -> succeeded",
+            "structure": {
+                "cause": "you helped",
+                "effect": "succeeded"
+            }
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "Unknown",
+                "what": "succeeded",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "because you helped",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.375193",
+        "input": "Failed despite the effort.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + No Contextual Clues [Fallback: Completely Ambiguous]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "Unknown",
+                "what": "failed despite the effort",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.376387",
+        "input": "Required further investigation.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "Unknown",
+                "what": "required further investigation",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.377593",
+        "input": "Submitted the form yesterday.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "Unknown",
+                "what": "submitted the form",
+                "when": "yesterday",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.379019",
+        "input": "Succeeded in the meeting.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Objective Obligation [Fallback: Missing Formal/Logical Agent]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "Unknown",
+                "what": "succeeded",
+                "when": "Unspecified",
+                "where": "in the meeting",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.380434",
+        "input": "I'm stressed due to the project.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": {
+            "process": "Agent: I + Marker: due to",
+            "mapping": "the project -> Causes -> i'm stressed",
+            "structure": {
+                "cause": "the project",
+                "effect": "i'm stressed"
+            }
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "I",
+                "what": "'m stressed due",
+                "when": "Unspecified",
+                "where": "project",
+                "why": "due to the project",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.381634",
+        "input": "I succeeded because you helped.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": {
+            "process": "Agent: I + Marker: because",
+            "mapping": "you helped -> Causes -> i succeeded",
+            "structure": {
+                "cause": "you helped",
+                "effect": "i succeeded"
+            }
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "I",
+                "what": "succeeded",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "because you helped",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.382988",
+        "input": "He succeeded by working hard.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "He"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "He"
+        },
+        "stage3": {
+            "process": "Agent: He + Manner Marker: by",
+            "mapping": "working hard -> Means -> He succeeded",
+            "structure": {
+                "relation": "Manner",
+                "marker": "by",
+                "context": "working hard",
+                "event": "He succeeded"
+            }
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "He",
+                "what": "succeeded",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "by working hard"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.384342",
+        "input": "I was stressed after the long meeting.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": {
+            "process": "Agent: I + Temporal Marker: after",
+            "mapping": "the long meeting -> Occurs After -> I was stressed",
+            "structure": {
+                "relation": "Temporal",
+                "marker": "after",
+                "context": "the long meeting",
+                "event": "I was stressed"
+            }
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "I",
+                "what": "stressed I",
+                "when": "after the long meeting",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.385858",
+        "input": "The report, which was long, is done.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "The report"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "The report"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Non-defining clause",
+            "decision": "Supplementary",
+            "result": "AI treats 'was long' as an attribute, not the primary identifier."
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "The report",
+                "what": "which was long, is done",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.387349",
+        "input": "The report that I wrote is done.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "The report"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "The report"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Defining clause",
+            "decision": "Essential",
+            "result": "AI links 'The report' (Agent) to the specific the report as a defining marker."
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "The report",
+                "what": "that I wrote is done",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.388873",
+        "input": "The office where I wrote the report was quiet.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "The office"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "The office"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "The office",
+                "what": "quiet the office where I wrote the report",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.390433",
+        "input": "The day where he succeeded was bright.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "The day"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "The day"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "The day",
+                "what": "bright the day where he succeeded",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.391983",
+        "input": "I have a car.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "I",
+                "what": "have a car",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.393544",
+        "input": "I am having a party.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "I",
+                "what": "am having a party",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.395242",
+        "input": "I was told by him.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "I"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "him",
+                "what": "told I",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.396945",
+        "input": "The report was completed quickly.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "The report"
+        },
+        "stage2": {
+            "process": "[Stage 2] Explicit Context Clear",
+            "decision": "Proceed",
+            "resolved_agent": "The report"
+        },
+        "stage3": {
+            "process": "No context relation found",
+            "mapping": "None"
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "The report",
+                "what": "completed the report",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "quickly"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-04T06:38:18.398852",
+        "input": "Failed the exam because of bad luck.",
+        "stage1": {
+            "process": "Null Subject + No Core Markers",
+            "decision": "Fallback: Stage 2 Clarification",
+            "agent": "Unknown"
+        },
+        "stage2": {
+            "process": "[Stage 2] Null Subject + No Psychological Verb + Clause Present [Fallback: Ambiguous Clause]",
+            "decision": "Clarification Required (Undetermined Agent)",
+            "agent": "Unknown"
+        },
+        "stage3": {
+            "process": "Agent: Unknown + Marker: because",
+            "mapping": "of bad luck -> Causes -> failed the exam",
+            "structure": {
+                "cause": "of bad luck",
+                "effect": "failed the exam"
+            }
+        },
+        "stage4": {
+            "process": "Standard",
+            "decision": "None",
+            "structure": "No relative clause found"
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "Unknown",
+                "what": "failed the exam",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "because of bad luck",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    }
+]

@@ -46,7 +46,7 @@ What: "資料を確認"
 How: "注意深く"
 When/Where/Why: 未指定 |
 | **「運悪く試験に落ちた)」** | Agent=Unknown (ステージ1 フォールバック)
-Cause="bad luck" | Who: Unknown
-What: "failed the exam"
-Why: "because of bad luck"
-When/Where/How: Unspecified |
+Cause="運悪く" | Who: 未指定
+What: "試験に落ちた"
+Why: "運が悪かったから"
+When/Where/How: 未指定 |

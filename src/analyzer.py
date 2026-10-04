@@ -113,21 +113,6 @@ class LogicAnalyzer:
                 "agent": agent,
             }
 
-        if agent in (None, "", "Unknown"):
-            result.update({
-                "decision": "Clarification Required (Undetermined Agent)",
-                "agent": "Unknown",
-                "action_required": "Trigger Stage 1 Clarification / Context Resolution",
-            })
-        else:
-            result.update({
-                "decision": "Proceed",
-                "resolved_agent": agent,
-            })
-        if context_result:
-            result["context"] = context_result
-        return result
-
     def stage3_analyze(self, text, stage1_result, modification_result=None):
         agent = (stage1_result or {}).get("agent", "Unknown")
         if not modification_result:
@@ -239,3 +224,4 @@ class LogicAnalyzer:
             stage4_result=stage4_result,
             semantic_result=stage4_result or semantic_result,
         )
+

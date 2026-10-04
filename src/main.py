@@ -3,13 +3,18 @@ from datetime import datetime
 from itertools import chain
 from pathlib import Path
 
-from rules.stage1_rule import determine_explicit_subject
-from rules.stage1_rule import determine_subject
-from rules.stage2_rule import analyze_causality_and_ambiguity
-from rules.stage3_rule import analyze_context_relation
-from rules.stage4_rule import analyze_modification_structure
-from rules.stage5_rule import analyze_semantic_structure
-from analyzer import LogicAnalyzer
+if __package__:
+    from .rules.stage1_rule import determine_explicit_subject, determine_subject
+    from .rules.stage2_rule import analyze_causality_and_ambiguity, analyze_context_relation
+    from .rules.stage3_rule import analyze_modification_structure
+    from .rules.stage5_rule import analyze_semantic_structure
+    from .analyzer import LogicAnalyzer
+else:
+    from rules.stage1_rule import determine_explicit_subject, determine_subject
+    from rules.stage2_rule import analyze_causality_and_ambiguity, analyze_context_relation
+    from rules.stage3_rule import analyze_modification_structure
+    from rules.stage5_rule import analyze_semantic_structure
+    from analyzer import LogicAnalyzer
 
 def run_test(input_file):
     with open(input_file, 'r', encoding='utf-8') as f:

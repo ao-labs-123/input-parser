@@ -11,9 +11,36 @@ def get_lexicon():
 
 def analyze_causality(text):
     lexicon = get_lexicon()
+    markers = [
+        marker
+        for category_markers in lexicon.values()
+        for marker in category_markers
+    ]
+    return any(
+        re.search(rf"(?<!\w){re.escape(marker)}(?!\w)", text, re.IGNORECASE)
+        for marker in markers
+    )
 
-    is_causal = any(marker.lower() in text.lower() for marker in lexicon)
-    return is_causal
+
+def analyze_causality_and_ambiguity(text, subject_status):
+    lexicon = get_lexicon()
+    markers = [
+        marker
+        for category_markers in lexicon.values()
+        for marker in category_markers
+    ]
+    matched_markers = [
+        marker
+        for marker in markers
+        if re.search(rf"(?<!\w){re.escape(marker)}(?!\w)", text, re.IGNORECASE)
+    ]
+    ambiguous_agent = subject_status in (None, "Unknown", "Neutral")
+
+    return {
+        "status": "Ambiguous" if ambiguous_agent else "Resolved",
+        "is_causal": bool(matched_markers),
+        "markers": matched_markers,
+    }
 
 def analyze_context_relation(text):
     patterns = [

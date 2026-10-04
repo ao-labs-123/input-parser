@@ -33,20 +33,10 @@
 ## 論理比較: 属性マッピングマトリクス
 | 入力 | 5W1H マッピング戦略 | ターゲットフレーム出力 |
 |--|--|--|
-| **「昨日カフェに行った」** | Agent=Unknown (ステージ1 フォールバック)
+| **「昨日カフェに行った」** | Agent=未指定 (ステージ1 フォールバック)
 Location="カフェ"
-Time="昨日" | Who: Unknown
-What: "行った"
-When: "昨日"
-Where: "カフェ"
-Why/How: 未指定 |
+Time="昨日" | Who: 未指定<br>What: "行った"<br>When: "昨日"<br>Where: "カフェ"<br>Why/How: 未指定 |
 | **「資料を注意深く確認してください」** | Agent=あなた (ステージ1 命令形)
-Manner="注意深く" | Who: "あなた"
-What: "資料を確認"
-How: "注意深く"
-When/Where/Why: 未指定 |
-| **「運悪く試験に落ちた)」** | Agent=Unknown (ステージ1 フォールバック)
-Cause="運悪く" | Who: 未指定
-What: "試験に落ちた"
-Why: "運が悪かったから"
-When/Where/How: 未指定 |
+Manner="注意深く" | Who: "あなた"<br>What: "資料を確認"<br>How: "注意深く"<br>When/Where/Why: 未指定 |
+| **「運悪く試験に落ちた)」** | Agent=未指定 (ステージ1 フォールバック)
+Cause="運悪く" | Who: 未指定<br>What: "試験に落ちた"<br>Why: "運が悪かったから"<br>When/Where/How: 未指定 |

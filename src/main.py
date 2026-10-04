@@ -1,31 +1,52 @@
 import json
 from datetime import datetime
-from itertools import chain
 from pathlib import Path
 
 if __package__:
-    from .rules.stage1_rule import determine_explicit_subject, determine_subject
+    from .rules.stage1_rule import (
+        determine_explicit_subject,
+        determine_subject,
+        get_lexicon,
+    )
     from .rules.stage2_rule import analyze_causality_and_ambiguity, analyze_context_relation
     from .rules.stage3_rule import analyze_modification_structure
     from .rules.stage5_rule import analyze_semantic_structure
     from .analyzer import LogicAnalyzer
 else:
-    from rules.stage1_rule import determine_explicit_subject, determine_subject
+    from rules.stage1_rule import (
+        determine_explicit_subject,
+        determine_subject,
+        get_lexicon,
+    )
     from rules.stage2_rule import analyze_causality_and_ambiguity, analyze_context_relation
     from rules.stage3_rule import analyze_modification_structure
     from rules.stage5_rule import analyze_semantic_structure
     from analyzer import LogicAnalyzer
 
+
+def _extract_examples(input_data):
+    if isinstance(input_data, list):
+        examples = input_data
+    elif isinstance(input_data, dict):
+        examples = []
+        for category, category_examples in input_data.items():
+            if not isinstance(category_examples, list):
+                raise ValueError(f"Examples for {category!r} must be a JSON array.")
+            examples.extend(category_examples)
+    else:
+        raise ValueError("Examples JSON must be an array of strings or an object of arrays.")
+
+    if not all(isinstance(example, str) for example in examples):
+        raise ValueError("Every example must be a string.")
+    return examples
+
+
 def run_test(input_file):
     with open(input_file, 'r', encoding='utf-8') as f:
         input_data = json.load(f)
 
-    examples = chain.from_iterable(input_data.values())
-    
-    from rules.stage1_rule import get_lexicon
-    from rules.stage3_rule import get_lexicon
-    lexicon_data = get_lexicon()
-    analyzer = LogicAnalyzer(lexicon_data)
+    examples = _extract_examples(input_data)
+    analyzer = LogicAnalyzer(get_lexicon())
 
     for text in examples:
         log1 = log2 = log3 = log4 = log5 = None

@@ -39,7 +39,14 @@ def run_test(input_file):
         log4 = analyzer.stage4_analyze(text, mod_res, log1)
 
         sem_res = analyze_semantic_structure(text)
-        log5 = analyzer.stage5_analyze(text, sem_res, log1)
+        log5 = analyzer.stage5_analyze(
+            text,
+            sem_res,
+            log1,
+            stage2_result=log2,
+            stage3_result=log3,
+            stage4_result=log4,
+        )
 
         log_entry = {
             "timestamp": datetime.now().isoformat(),

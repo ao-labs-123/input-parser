@@ -1,4 +1,8 @@
 # analyzer.py
+if __package__ == "src":
+    from .rules.stage5_rule import synthesize_5w1h
+else:
+    from rules.stage5_rule import synthesize_5w1h
 
 class LogicAnalyzer:
     def __init__(self, lexicon_data):
@@ -183,7 +187,25 @@ class LogicAnalyzer:
             }
 
     
-    def stage5_analyze(self, text, semantic_result,log1):
+    def stage5_analyze(
+        self,
+        text,
+        semantic_result,
+        log1,
+        stage2_result=None,
+        stage3_result=None,
+        stage4_result=None,
+    ):
+        if any(result is not None for result in (stage2_result, stage3_result, stage4_result)):
+            return synthesize_5w1h(
+                text,
+                stage1_result=log1,
+                stage2_result=stage2_result,
+                stage3_result=stage3_result,
+                stage4_result=stage4_result,
+                semantic_result=semantic_result,
+            )
+
         if semantic_result is None:
             return {
                 "process": "Standard",

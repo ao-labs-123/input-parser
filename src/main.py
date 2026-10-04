@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+from itertools import chain
 from pathlib import Path
 
 from rules.stage1_rule import determine_explicit_subject
@@ -14,7 +15,7 @@ def run_test(input_file):
     with open(input_file, 'r', encoding='utf-8') as f:
         input_data = json.load(f)
 
-    examples = next(iter(input_data.values()))
+    examples = chain.from_iterable(input_data.values())
     
     from rules.stage1_rule import get_lexicon
     from rules.stage3_rule import get_lexicon
@@ -79,5 +80,4 @@ def append_log_entry(log_entry):
 if __name__ == "__main__":
     reset_log_file()
     examples_dir = Path(__file__).resolve().parent.parent / "data" / "examples"
-    for input_file in sorted(examples_dir.glob("stage*_input.json")):
-        run_test(input_file)
+    run_test(examples_dir / "all_examples.json")

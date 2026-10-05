@@ -60,6 +60,23 @@ def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
     assert stage3["target"] == "The report"
 
 
+def test_stage2_maps_despite_as_concession_not_causality():
+    text = "Failed despite the effort."
+    stage1 = {"agent": "Unknown"}
+    rule_result = analyze_causality_and_ambiguity(text, "Unknown")
+    stage2 = LogicAnalyzer({}).stage2_analyze(text, stage1, rule_result)
+
+    assert rule_result["is_causal"] is False
+    assert rule_result["markers"] == []
+    assert rule_result["concession_markers"] == ["despite"]
+    assert stage2["structure"] == {
+        "relation": "Concession",
+        "marker": "despite",
+        "concession": "the effort",
+        "outcome": "Failed",
+    }
+
+
 def test_stage5_synthesizes_the_documented_5w1h_frame():
     text = "Yesterday, I bought a book at the store to study logic."
     analyzer = LogicAnalyzer({})

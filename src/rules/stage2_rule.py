@@ -9,6 +9,12 @@ def get_lexicon():
         causality_list = json.load(f)
     return causality_list
 
+def get_concession_markers():
+    lexicon_path = Path(__file__).resolve().parent.parent / "lexicon" / "concession_markers.json"
+    with lexicon_path.open("r", encoding="utf-8") as f:
+        concession_lexicon = json.load(f)
+    return [marker for markers in concession_lexicon.values() for marker in markers]
+
 def analyze_causality(text):
     lexicon = get_lexicon()
     markers = [
@@ -34,12 +40,18 @@ def analyze_causality_and_ambiguity(text, subject_status):
         for marker in markers
         if re.search(rf"(?<!\w){re.escape(marker)}(?!\w)", text, re.IGNORECASE)
     ]
+    matched_concession_markers = [
+        marker
+        for marker in get_concession_markers()
+        if re.search(rf"(?<!\w){re.escape(marker)}(?!\w)", text, re.IGNORECASE)
+    ]
     ambiguous_agent = subject_status in (None, "Unknown", "Neutral")
 
     return {
         "status": "Ambiguous" if ambiguous_agent else "Resolved",
         "is_causal": bool(matched_markers),
         "markers": matched_markers,
+        "concession_markers": matched_concession_markers,
     }
 
 def analyze_context_relation(text):

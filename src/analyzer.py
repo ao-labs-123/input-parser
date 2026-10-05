@@ -65,6 +65,36 @@ class LogicAnalyzer:
         stage1_result = stage1_result or {}
         rule_result = stage2_rule_result or {}
         agent = stage1_result.get("agent", "Unknown")
+        concession_markers = rule_result.get("concession_markers", [])
+        concession_match = None
+
+        for marker in sorted(concession_markers, key=len, reverse=True):
+            concession_match = re.search(
+                rf"(?<!\w){re.escape(marker)}(?!\w)",
+                text,
+                re.IGNORECASE,
+            )
+            if concession_match:
+                break
+
+        if concession_match:
+            marker = concession_match.group(0)
+            outcome = text[:concession_match.start()].strip(" ,")
+            concession = text[concession_match.end():].strip(" ,.!?")
+            structure = {
+                "relation": "Concession",
+                "marker": marker,
+                "concession": concession,
+                "outcome": outcome,
+            }
+            return {
+                "process": f"Concessive Marker: {marker}",
+                "decision": "Concessive relation mapped",
+                "mapping": f"{concession} -> Concession -> {outcome}",
+                "structure": structure,
+                "agent": agent,
+            }
+
         markers = rule_result.get("markers", [])
         marker_match = None
 

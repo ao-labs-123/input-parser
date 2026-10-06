@@ -27,7 +27,7 @@ This step resolves complex multi-event structures, ensuring the AI correctly iso
 | Input | Logic Process | Topological Mapping Result |
 | :--- | :--- | :--- |
 | **"I'm stressed due to the project."** | [State: Stressed] + [Cause Marker: due to] + [Node: Project] | `Node: Project` $\xrightarrow{\text{Cause}}$ `State: Stressed (Agent: I)` |
-| **"I succeeded because you helped."** | [Action: Succeeded] + [Cause Marker: because] + [Action: Helped] | `Agent: I`$\xrightarrow{\text{Action}}$`succeeded`<br>`you` $\xrightarrow{\text{Action}}$`helped`<br>`helped(you)`$\xrightarrow{\text{Cause}}$`succeeded(I)`|
+| **"I succeeded because you helped."** | [Action: Succeeded] + [Cause Marker: because] + [Action: Helped] | `Action: You (Help)` $\xrightarrow{\text{Cause}}$ `Action/Outcome: I (Success)` |
 | **"I thought it was strange."** | [Agent: I] + [Mental State: Thought] + [Target Evaluation: Strange] | `Agent: I` $\xrightarrow{\text{Internal Eval}}$ `State: Strange` *(Non-Action)* |
 
 ---
@@ -37,13 +37,13 @@ This step resolves complex multi-event structures, ensuring the AI correctly iso
 **Input:** `"I couldn't finish the report because the system was down."`
 
 **Analysis:**
-* **Agent:** `"I"` (Speaker)
+* **Agent:** `"I"` (Speaker)[span_0](start_span)[span_0](end_span)
 * **State Node:** `"the system was down"` (Environmental Condition / Initial State)
 * **Action/Outcome Node:** `"couldn't finish the report"` (Failed Execution)
-* **Causal Marker:** `"because"` (Establishes direction: State $\to$ Outcome)
+* **Causal Marker:** `"because"` (Establishes direction: State $\to$ Outcome)[span_1](start_span)[span_1](end_span)
 
 **Topological Graph Generation:**
 * `State: System Down` $\xrightarrow{\text{Cause}}$ `Action: Fail to finish report`
 
 **AI Understanding:**
-The system outage is the primary environmental **State (Cause)**; the speaker is the affected agent whose physical **Action** was obstructed
+The system outage is the primary environmental **State (Cause)**; the speaker is the affected agent whose physical **Action** was obstructed[span_2](start_span)[span_2](end_span).

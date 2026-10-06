@@ -60,7 +60,7 @@ def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
         "patient": None,
     }
     assert stage2["mapping"] == (
-        "you helped -> Causes -> I succeeded; I -> Action -> succeeded"
+        "you helped -> Cause -> I succeeded; I -> Action -> succeeded"
     )
 
     modification = analyze_modification_structure("The report, which was long, is done.")
@@ -90,6 +90,21 @@ def test_stage2_emits_action_while_stage4_keeps_category_label():
     }
     assert stage2["mapping"] == "You -> Action -> review the document"
     assert stage4["category"] == "Action"
+
+
+def test_stage2_uses_state_label_for_state_like_events():
+    text = "I am stressed due to the project."
+    analyzer = LogicAnalyzer({})
+    stage1 = {"agent": "I"}
+    stage2 = analyzer.stage2_analyze(
+        text,
+        stage1,
+        analyze_causality_and_ambiguity(text, "I"),
+        semantic_result=analyze_semantic_structure(text),
+    )
+
+    assert "-> Cause ->" in stage2["mapping"]
+    assert "-> State ->" in stage2["mapping"]
 
 
 def test_stage2_maps_despite_as_concession_not_causality():

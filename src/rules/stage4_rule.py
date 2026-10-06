@@ -51,7 +51,25 @@ def analyze_semantic_structure(text):
             "object": object_noun if object_noun else None
         }
         
-    # 3. 一般形（現在形・過去形など）の判定 (Morphology: Base)
+    # 3. 状態述語の判定（be + adjective / be + state noun）
+    # 例: "I am stressed due to the project."
+    be_state_match = re.search(
+        r"\b(am|is|are|was|were)\b\s+([A-Za-z]+)\b(?:\s+(.*))?",
+        text_clean,
+        re.IGNORECASE,
+    )
+    if be_state_match:
+        subject = text_clean[:be_state_match.start()].strip()
+        state_verb = be_state_match.group(2)
+        remainder = be_state_match.group(3)
+        return {
+            "form": "State",
+            "verb": state_verb,
+            "subject": subject,
+            "object": remainder.strip() if remainder else None,
+        }
+
+    # 4. 一般形（現在形・過去形など）の判定 (Morphology: Base)
     # 例: "I have a car"
     # 簡易パース：最初の単語を主語、2つ目を動詞、残りを目的語とみなす
     words = text_clean.split()

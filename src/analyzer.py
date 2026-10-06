@@ -7,8 +7,76 @@ else:
 
 
 class LogicAnalyzer:
+    STATE_LIKE_WORDS = {
+        "am",
+        "is",
+        "are",
+        "was",
+        "were",
+        "be",
+        "been",
+        "stressed",
+        "angry",
+        "happy",
+        "sad",
+        "afraid",
+        "tired",
+        "worried",
+        "upset",
+        "confused",
+        "strange",
+        "ready",
+        "late",
+        "down",
+        "sick",
+        "broken",
+        "nervous",
+    }
+
     def __init__(self, lexicon_data):
         self.lexicon = lexicon_data
+
+    def _normalize_subject_prefix(self, text):
+        text = text.strip()
+        patterns = [
+            (r"^(i|you|he|she|they|we|it)'m\b", r"\1", True),
+            (r"^(i|you|he|she|they|we|it)'re\b", r"\1", True),
+            (r"^(i|you|he|she|they|we|it)'s\b", r"\1", True),
+            (r"^(i|you|he|she|they|we|it)\s+am\b", r"\1", True),
+            (r"^(i|you|he|she|they|we|it)\s+are\b", r"\1", True),
+            (r"^(i|you|he|she|they|we|it)\s+is\b", r"\1", True),
+            (r"^(i|you|he|she|they|we|it)\s+was\b", r"\1", True),
+            (r"^(i|you|he|she|they|we|it)\s+were\b", r"\1", True),
+        ]
+        for pattern, replacement, _ in patterns:
+            text, count = re.subn(pattern, replacement, text, flags=re.IGNORECASE)
+            if count:
+                break
+        return text
+
+    def _split_actor_and_event(self, phrase):
+        normalized = self._normalize_subject_prefix(phrase)
+        match = re.match(
+            r"^(I|You|He|She|They|We|It|[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\b\s*(.*)$",
+            normalized,
+        )
+        if not match:
+            return None, normalized.strip()
+        actor = match.group(1)
+        event = match.group(2).strip()
+        return actor, event
+
+    def _classify_mapping_label(self, phrase):
+        normalized = self._normalize_subject_prefix(phrase).strip()
+        lower = normalized.lower()
+        if re.match(r"^(?:am|is|are|was|were|be)\b", lower):
+            return "State"
+        if any(
+            re.search(rf"\b{re.escape(word)}\b", lower)
+            for word in self.STATE_LIKE_WORDS
+        ):
+            return "State"
+        return "Action"
 
     def stage1_analyze(self, text, subject_result):
         if isinstance(subject_result, dict) and subject_result.get("structure_type") == "FormalSubject":
@@ -104,7 +172,14 @@ class LogicAnalyzer:
             action_phrase = action["verb"]
             if action["patient"]:
                 action_phrase = f"{action_phrase} {action['patient']}"
-            action_mapping = f"{action['actor']} -> Action -> {action_phrase}"
+            actor, event = self._split_actor_and_event(action_phrase)
+            if actor:
+                action_phrase = event or action_phrase
+                action_actor = actor
+            else:
+                action_actor = action["actor"]
+            action_label = self._classify_mapping_label(action_phrase)
+            action_mapping = f"{action_actor} -> {action_label} -> {action_phrase}"
             if relation_mapping == "None":
                 return action_mapping
             return f"{relation_mapping}; {action_mapping}"
@@ -179,7 +254,7 @@ class LogicAnalyzer:
             result = {
                 "process": f"Causal Marker: {marker}",
                 "decision": "Causal relation mapped",
-                "mapping": add_action_mapping(f"{cause} -> Causes -> {effect}"),
+                "mapping": add_action_mapping(f"{cause} -> Cause -> {effect}"),
                 "structure": structure,
                 "agent": agent,
                 "action": action,
@@ -249,6 +324,9 @@ class LogicAnalyzer:
         elif form == "Passive":
             category = "Action"
             process = "[Passive: be + V-en + by]"
+        elif form == "State":
+            category = "State"
+            process = "[State predicate] → [Category: State]"
         else:
             stative_verbs = {"have", "has", "had", "know", "knows", "knew", "love", "loves", "like", "likes", "understand", "understands", "understood"}
             category = "Stative" if verb.lower() in stative_verbs else "Action"

@@ -27,7 +27,7 @@ This step resolves complex multi-event structures, ensuring the AI correctly iso
 | Input | Logic Process | Topological Mapping Result |
 | :--- | :--- | :--- |
 | **"I'm stressed due to the project."** | [State: Stressed] + [Cause Marker: due to] + [Node: Project] | `Node: Project` $\xrightarrow{\text{Cause}}$ `State: Stressed (Agent: I)` |
-| **"I succeeded because you helped."** | [Action: Succeeded] + [Cause Marker: because] + [Action: Helped] | `Action: You (Help)` $\xrightarrow{\text{Cause}}$ `Action/Outcome: I (Success)` |
+| **"I succeeded because you helped."** | [Action: Succeeded] + [Cause Marker: because] + [Action: Helped] | `Agent: I`$\xrightarrow{\text{Action}}$`succeeded` $\xrightarrow{\text{Cause}}$ `you` $\xrightarrow{\text{Action}}$`helped`|
 | **"I thought it was strange."** | [Agent: I] + [Mental State: Thought] + [Target Evaluation: Strange] | `Agent: I` $\xrightarrow{\text{Internal Eval}}$ `State: Strange` *(Non-Action)* |
 
 ---

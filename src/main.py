@@ -55,14 +55,16 @@ def run_test(input_file):
         subject_status = explicit_status or determine_subject(text)
         log1 = analyzer.stage1_analyze(text, subject_status)
 
+        sem_res = analyze_semantic_structure(text)
         stage2_res = analyze_causality_and_ambiguity(text, subject_status)
         context_res = analyze_context_relation(text)
-        log2 = analyzer.stage2_analyze(text, log1, stage2_res, context_res)
+        log2 = analyzer.stage2_analyze(
+            text, log1, stage2_res, context_res, semantic_result=sem_res
+        )
 
         mod_res = analyze_modification_structure(text)
         log3 = analyzer.stage3_analyze(text, log1, mod_res)
 
-        sem_res = analyze_semantic_structure(text)
         log4 = analyzer.stage4_analyze(text, sem_res, log1)
 
         log5 = analyzer.stage5_analyze(

@@ -46,6 +46,7 @@ def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
         text,
         stage1,
         analyze_causality_and_ambiguity(text, "I"),
+        semantic_result=analyze_semantic_structure(text),
     )
     assert stage2["structure"] == {
         "relation": "CauseEffect",
@@ -53,6 +54,14 @@ def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
         "cause": "you helped",
         "effect": "I succeeded",
     }
+    assert stage2["action"] == {
+        "verb": "succeeded",
+        "actor": "I",
+        "patient": None,
+    }
+    assert stage2["mapping"] == (
+        "you helped -> Causes -> I succeeded; I -> Action -> succeeded"
+    )
 
     modification = analyze_modification_structure("The report, which was long, is done.")
     stage3 = analyzer.stage3_analyze("The report, which was long, is done.", stage1, modification)
@@ -60,11 +69,39 @@ def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
     assert stage3["target"] == "The report"
 
 
+def test_stage2_emits_action_while_stage4_keeps_category_label():
+    text = "Please review the document."
+    analyzer = LogicAnalyzer({})
+    stage1 = analyzer.stage1_analyze(text, "Neutral")
+    semantic = analyze_semantic_structure(text)
+
+    stage2 = analyzer.stage2_analyze(
+        text,
+        stage1,
+        analyze_causality_and_ambiguity(text, "Neutral"),
+        semantic_result=semantic,
+    )
+    stage4 = analyzer.stage4_analyze(text, semantic, stage1)
+
+    assert stage2["action"] == {
+        "verb": "review",
+        "actor": "You",
+        "patient": "the document",
+    }
+    assert stage2["mapping"] == "You -> Action -> review the document"
+    assert stage4["category"] == "Action"
+
+
 def test_stage2_maps_despite_as_concession_not_causality():
-    text = "Failed despite the effort."
+    text = "I failed despite the effort."
     stage1 = {"agent": "Unknown"}
     rule_result = analyze_causality_and_ambiguity(text, "Unknown")
-    stage2 = LogicAnalyzer({}).stage2_analyze(text, stage1, rule_result)
+    stage2 = LogicAnalyzer({}).stage2_analyze(
+        text,
+        stage1,
+        rule_result,
+        semantic_result=analyze_semantic_structure(text),
+    )
 
     assert rule_result["is_causal"] is False
     assert rule_result["markers"] == []
@@ -73,8 +110,11 @@ def test_stage2_maps_despite_as_concession_not_causality():
         "relation": "Concession",
         "marker": "despite",
         "concession": "the effort",
-        "outcome": "Failed",
+        "outcome": "I failed",
     }
+    assert stage2["mapping"] == (
+        "the effort -> Concession -> I failed; Unknown -> Action -> failed"
+    )
 
 
 def test_stage2_does_not_treat_role_as_as_causal():

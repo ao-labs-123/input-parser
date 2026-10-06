@@ -61,10 +61,54 @@ class LogicAnalyzer:
             "action_required": "Trigger Stage 1 Clarification / Context Resolution",
         }
 
-    def stage2_analyze(self, text, stage1_result, stage2_rule_result, context_result=None):
+    def stage2_analyze(
+        self,
+        text,
+        stage1_result,
+        stage2_rule_result,
+        context_result=None,
+        semantic_result=None,
+    ):
         stage1_result = stage1_result or {}
         rule_result = stage2_rule_result or {}
         agent = stage1_result.get("agent", "Unknown")
+        action = None
+        if semantic_result and semantic_result.get("verb"):
+            form = semantic_result.get("form")
+            patient = (
+                semantic_result.get("receiver")
+                if form == "Passive"
+                else semantic_result.get("object")
+            )
+            relation_markers = rule_result.get("markers", []) + rule_result.get(
+                "concession_markers", []
+            )
+            if patient and any(
+                re.search(rf"(?<!\w){re.escape(marker)}(?!\w)", patient, re.IGNORECASE)
+                for marker in relation_markers
+            ):
+                patient = None
+            action = {
+                "verb": semantic_result["verb"],
+                "actor": (
+                    semantic_result.get("actor", "Unknown")
+                    if form == "Passive"
+                    else agent
+                ),
+                "patient": patient,
+            }
+
+        def add_action_mapping(relation_mapping):
+            if not action:
+                return relation_mapping
+            action_phrase = action["verb"]
+            if action["patient"]:
+                action_phrase = f"{action_phrase} {action['patient']}"
+            action_mapping = f"{action['actor']} -> Action -> {action_phrase}"
+            if relation_mapping == "None":
+                return action_mapping
+            return f"{relation_mapping}; {action_mapping}"
+
         concession_markers = rule_result.get("concession_markers", [])
         concession_match = None
 
@@ -90,9 +134,12 @@ class LogicAnalyzer:
             return {
                 "process": f"Concessive Marker: {marker}",
                 "decision": "Concessive relation mapped",
-                "mapping": f"{concession} -> Concession -> {outcome}",
+                "mapping": add_action_mapping(
+                    f"{concession} -> Concession -> {outcome}"
+                ),
                 "structure": structure,
                 "agent": agent,
+                "action": action,
             }
 
         markers = rule_result.get("markers", [])
@@ -132,18 +179,20 @@ class LogicAnalyzer:
             result = {
                 "process": f"Causal Marker: {marker}",
                 "decision": "Causal relation mapped",
-                "mapping": f"{cause} -> Causes -> {effect}",
+                "mapping": add_action_mapping(f"{cause} -> Causes -> {effect}"),
                 "structure": structure,
                 "agent": agent,
+                "action": action,
             }
         else:
             decision = "Clarification Required (Undetermined Agent)" if agent == "Unknown" else "No causal relation found"
             result = {
                 "process": "No causal relation found",
                 "decision": decision,
-                "mapping": "None",
+                "mapping": add_action_mapping("None"),
                 "structure": None,
                 "agent": agent,
+                "action": action,
             }
         return result
 

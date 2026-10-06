@@ -77,6 +77,14 @@ def test_stage2_maps_despite_as_concession_not_causality():
     }
 
 
+def test_stage2_does_not_treat_role_as_as_causal():
+    text = "I work as a teacher."
+    rule_result = analyze_causality_and_ambiguity(text, "I")
+
+    assert rule_result["is_causal"] is False
+    assert rule_result["markers"] == []
+
+
 def test_stage5_synthesizes_the_documented_5w1h_frame():
     text = "Yesterday, I bought a book at the store to study logic."
     analyzer = LogicAnalyzer({})

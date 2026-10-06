@@ -2,7 +2,7 @@
 
 ## Overview:
 
-This step builds upon the identified agents from Stage 1 to map the core logical flow and semantic structure of the input. Beyond identifying causal connections, Stage 2 categorizes nodes and morphisms into **Actions** (external dynamic behaviors), **States** (internal conditions or situational static nodes), and **Causes** (directional causal dependencies between events). By analyzing verbs, conjunctions, and logical markers, the system construct a clear topological graph before passing attributes to downstream modification and framing stages.
+This step builds upon the identified agents from Stage 1 to map the core logical flow and semantic structure of the input. Beyond identifying causal connections, Stage 2 categorizes all nodes and morphisms into **Actions** (external dynamic transformations), **States** (internal conditions or static nodes), and **Causes** (directional dependencies between events). By converting verbs, conjunctions, and logical markers into directional morphisms ($\xrightarrow{}$), the system constructs a unified topological graph before passing attributes to downstream modification and framing stages.
 
 ---
 
@@ -10,12 +10,12 @@ This step builds upon the identified agents from Stage 1 to map the core logical
 
 ### 1. Triadic Classification (Action, State, Cause):
 The module explicitly distinguishes between dynamic actions, static/internal states, and the causal links connecting them:
-* **Action (Dynamic Morphism):** External behaviors, physical operations, or explicit task execution (e.g., *wrote*, *submitted*, *bought*).
-* **State (Static Node / Internal Condition):** Cognitive/mental conditions, emotional states, or passive situational statuses (e.g., *stressed*, *thought*, *system was down*).
-* **Cause (Directional Dependency):** Connective logic linking an initial State/Action to a resulting State/Action (e.g., *because*, *due to*, *therefore*).
+* **Action Morphism ($\xrightarrow{\text{Action}}$):** External behaviors, physical operations, or explicit task executions transforming states.
+* **State Node ($\text{State}(\dots)$):** Cognitive/mental conditions, emotional states, or passive situational statuses.
+* **Cause Morphism ($\xrightarrow{\text{Cause}}$):** Directional dependencies linking an initial State/Event to a resulting State/Event.
 
-### 2. Directional Dependency & Node Transition:
-By anchoring Cause arrows to Agents and distinguishing Actions from States, the model accurately maps event sequences (e.g., `State: System Down` $\to$ `Cause` $\to$ `Action/Failure: Could not finish report`). This prevents the system from confusing an internal psychological state with an external physical action.
+### 2. Directional Morphisms & Node Transitions:
+By representing both Actions and Causes as directed arrows between nodes, the model accurately traces multi-step event chains (e.g., $\text{Agent(I)} \xrightarrow{\text{Action}} \text{Node(Report)} \xrightarrow{\text{Cause}} \text{State(Success)}$). This prevents the system from confusing internal psychological evaluations with external physical actions.
 
 ### 3. Structural Disambiguation:
 This step resolves complex multi-event structures, ensuring the AI correctly isolates whether an event is a driving motivation (Cause), an executed movement (Action), or a resulting psychological/environmental condition (State).
@@ -24,11 +24,12 @@ This step resolves complex multi-event structures, ensuring the AI correctly iso
 
 ## Logic Comparison: Structural & Causal Parsing
 
-| Input | Logic Process | Topological Mapping Result |
+| Input | Logic Process | Topological Morphism Mapping |
 | :--- | :--- | :--- |
-| **"I'm stressed due to the project."** | [State: Stressed] + [Cause Marker: due to] + [Node: Project] | `Node: Project` $\xrightarrow{\text{Cause}}$ `State: Stressed (Agent: I)` |
-| **"I succeeded because you helped."** | [Action: Succeeded] + [Cause Marker: because] + [Action: Helped] | `Action: You (Help)` $\xrightarrow{\text{Cause}}$ `Action/Outcome: I (Success)` |
-| **"I thought it was strange."** | [Agent: I] + [Mental State: Thought] + [Target Evaluation: Strange] | `Agent: I` $\xrightarrow{\text{Internal Eval}}$ `State: Strange` *(Non-Action)* |
+| **"I'm stressed due to the project."** | [State: Stressed] + [Cause Marker: due to] + [Node: Project] | $\text{Node(Project)} \xrightarrow{\text{Cause}} \text{Agent(I)} \to \text{State(Stressed)}$ |
+| **"I succeeded because you helped."** | [Action: Succeeded] + [Cause Marker: because] + [Action: Helped] | $(\text{Agent(You)} \xrightarrow{\text{Action}} \text{Node(Help)}) \xrightarrow{\text{Cause}} (\text{Agent(I)} \xrightarrow{\text{Action}} \text{State(Success)})$ |
+| **"I thought it was strange."** | [Agent: I] + [Mental State: Thought] + [Target Evaluation: Strange] | $\text{Agent(I)} \xrightarrow{\text{Internal Eval}} (\text{Node(It)} \to \text{State(Strange)})$ |
+| **"I wrote the report at the office."** | [Agent: I] + [Action: wrote] + [Node: report] | $\text{Agent(I)} \xrightarrow{\text{Action: Write}} \text{Node(Report)}$ |
 
 ---
 
@@ -37,13 +38,13 @@ This step resolves complex multi-event structures, ensuring the AI correctly iso
 **Input:** `"I couldn't finish the report because the system was down."`
 
 **Analysis:**
-* **Agent:** `"I"` (Speaker)[span_0](start_span)[span_0](end_span)
-* **State Node:** `"the system was down"` (Environmental Condition / Initial State)
-* **Action/Outcome Node:** `"couldn't finish the report"` (Failed Execution)
-* **Causal Marker:** `"because"` (Establishes direction: State $\to$ Outcome)[span_1](start_span)[span_1](end_span)
+* **Agent Node:** `Agent(I)`
+* **Initial State Node:** `State(System Down)`
+* **Target Object Node:** `Node(Report)`
+* **Causal Marker:** `"because"` (Links initial state to action failure)
 
-**Topological Graph Generation:**
-* `State: System Down` $\xrightarrow{\text{Cause}}$ `Action: Fail to finish report`
+**Topological Morphism Graph:**
+* $\text{State(System Down)} \xrightarrow{\text{Cause}} (\text{Agent(I)} \xRightarrow[\text{Failed}]{\text{Action: Finish}} \text{Node(Report)})$
 
 **AI Understanding:**
-The system outage is the primary environmental **State (Cause)**; the speaker is the affected agent whose physical **Action** was obstructed[span_2](start_span)[span_2](end_span).
+The system outage is the primary environmental **State (Cause)** that obstructs the directed **Action Morphism** from `Agent(I)` to `Node(Report)`.

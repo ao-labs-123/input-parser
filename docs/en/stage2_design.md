@@ -37,13 +37,13 @@ This step resolves complex multi-event structures, ensuring the AI correctly iso
 **Input:** `"I couldn't finish the report because the system was down."`
 
 **Analysis:**
-* **Agent:** `"I"` (Speaker)[span_0](start_span)[span_0](end_span)
+* **Agent:** `"I"` (Speaker)
 * **State Node:** `"the system was down"` (Environmental Condition / Initial State)
 * **Action/Outcome Node:** `"couldn't finish the report"` (Failed Execution)
-* **Causal Marker:** `"because"` (Establishes direction: State $\to$ Outcome)[span_1](start_span)[span_1](end_span)
+* **Causal Marker:** `"because"` (Establishes direction: State $\to$ Outcome)
 
 **Topological Graph Generation:**
 * `State: System Down` $\xrightarrow{\text{Cause}}$ `Action: Fail to finish report`
 
 **AI Understanding:**
-The system outage is the primary environmental **State (Cause)**; the speaker is the affected agent whose physical **Action** was obstructed[span_2](start_span)[span_2](end_span).
+The system outage is the primary environmental **State (Cause)**; the speaker is the affected agent whose physical **Action** was obstructed

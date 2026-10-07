@@ -388,6 +388,18 @@ def test_base_and_progressive_classification_stays_correct():
     assert analyzer.stage4_analyze("I am having a party.", analyze_semantic_structure("I am having a party."))["category"] == "Action"
 
 
+def test_base_parsing_ignores_causal_and_concessive_markers_as_verbs():
+    assert analyze_semantic_structure("Succeeded because you helped.")["verb"] == "succeeded"
+    assert analyze_semantic_structure("Failed despite the effort.")["verb"] == "failed"
+
+
+def test_state_predicates_expose_state_value_separately():
+    result = analyze_semantic_structure("Thought was strange.")
+    assert result["form"] == "State"
+    assert result["state"] == "strange"
+    assert result["verb"] == "strange"
+
+
 if __name__ == "__main__":
     test_stage1_unknown_subject_falls_to_stage2_clarification()
     test_stage1_prioritizes_formal_subject_imperative_and_psychological_agent()

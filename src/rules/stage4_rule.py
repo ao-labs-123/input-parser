@@ -28,7 +28,7 @@ def analyze_semantic_structure(text):
                 receiver = text_clean[:idx].strip()
                 return {
                     "form": "Passive",
-                    "verb": v_en,
+                    "verb": v_en.lower(),
                     "actor": by_actor.strip() if by_actor else "Unknown",
                     "receiver": receiver
                 }
@@ -46,7 +46,7 @@ def analyze_semantic_structure(text):
         
         return {
             "form": "Progressive",
-            "verb": v_ing,
+            "verb": v_ing.lower(),
             "subject": subject,
             "object": object_noun if object_noun else None
         }
@@ -64,23 +64,35 @@ def analyze_semantic_structure(text):
         remainder = be_state_match.group(3)
         return {
             "form": "State",
-            "verb": state_verb,
+            "verb": state_verb.lower(),
+            "state": state_verb.lower(),
             "subject": subject,
             "object": remainder.strip() if remainder else None,
         }
 
     # 4. 一般形（現在形・過去形など）の判定 (Morphology: Base)
     # 例: "I have a car"
-    # 簡易パース：最初の単語を主語、2つ目を動詞、残りを目的語とみなす
+    # 2語目が前置詞や因果・逆接マーカーなら、1語目が述語である場合がある
+    non_verb_second_words = {
+        "a", "an", "the", "to", "in", "on", "at", "of", "by", "for", "with",
+        "from", "into", "onto", "after", "before", "because", "despite", "although",
+        "though", "if", "when", "while", "as", "and", "or", "but", "not"
+    }
     words = text_clean.split()
     if len(words) >= 2:
-        subject = words[0]
-        verb = words[1]
-        object_noun = " ".join(words[2:]) if len(words) > 2 else None
-        
+        second_word = words[1].lower()
+        if second_word in non_verb_second_words:
+            subject = words[0]
+            verb = words[0]
+            object_noun = " ".join(words[1:]) if len(words) > 1 else None
+        else:
+            subject = words[0]
+            verb = words[1]
+            object_noun = " ".join(words[2:]) if len(words) > 2 else None
+
         return {
             "form": "Base",
-            "verb": verb,
+            "verb": verb.lower(),
             "subject": subject,
             "object": object_noun
         }

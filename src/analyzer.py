@@ -181,6 +181,12 @@ class LogicAnalyzer:
                 "patient": patient,
             }
             if (
+                agent == "Unknown"
+                and semantic_result.get("subject")
+                and semantic_result["subject"].lower() == action["verb"].lower()
+            ):
+                action = None
+            if (
                 form == "Passive"
                 and semantic_result["verb"].lower() in self.STATE_LIKE_WORDS
                 and semantic_result.get("receiver") == agent
@@ -193,12 +199,15 @@ class LogicAnalyzer:
             relation_markers = rule_result.get("markers", []) + rule_result.get(
                 "concession_markers", []
             )
-            if action["verb"].lower() in invalid_action_words or any(
-                action["verb"].lower() == marker.lower().split()[0]
-                for marker in relation_markers
+            if action is not None and (
+                action["verb"].lower() in invalid_action_words
+                or any(
+                    action["verb"].lower() == marker.lower().split()[0]
+                    for marker in relation_markers
+                )
             ):
                 action = None
-            elif context_result:
+            elif action is not None and context_result:
                 context_marker = context_result.get("marker")
                 if context_marker and patient and re.search(
                     rf"(?<!\w){re.escape(context_marker)}(?!\w)",
@@ -226,6 +235,8 @@ class LogicAnalyzer:
                 "actor": action["actor"],
                 "patient": action["patient"],
             }
+            if event_category == "State":
+                event_info["state"] = verb
 
         def add_event_decision(decision):
             if event_category:
@@ -527,6 +538,8 @@ class LogicAnalyzer:
             "category": category,
             "patient": patient,
         }
+        if form == "State":
+            structure["state"] = semantic_result.get("state", verb)
         if stage1_result:
             structure["agent"] = stage1_result.get("agent", "Unknown")
 

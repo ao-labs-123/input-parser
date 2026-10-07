@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-07T09:43:36.732920",
+        "timestamp": "2026-10-07T14:25:13.285257",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -70,7 +70,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.734283",
+        "timestamp": "2026-10-07T14:25:13.286574",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.735496",
+        "timestamp": "2026-10-07T14:25:13.287747",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -204,7 +204,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.737138",
+        "timestamp": "2026-10-07T14:25:13.289292",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -286,7 +286,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.738794",
+        "timestamp": "2026-10-07T14:25:13.290950",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -313,18 +313,18 @@
             "process": "[Morphology: Base] → [Category: Action]",
             "form": "Base",
             "category": "Action",
-            "verb": "to",
-            "patient": "the cafe yesterday",
+            "verb": "went",
+            "patient": "to the cafe yesterday",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Went",
             "structure": {
                 "form": "Base",
-                "verb": "to",
+                "verb": "went",
                 "subject": "Went",
-                "object": "the cafe yesterday",
+                "object": "to the cafe yesterday",
                 "category": "Action",
-                "patient": "the cafe yesterday",
+                "patient": "to the cafe yesterday",
                 "agent": "Unknown"
             }
         },
@@ -342,7 +342,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.740629",
+        "timestamp": "2026-10-07T14:25:13.292763",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -426,7 +426,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.741901",
+        "timestamp": "2026-10-07T14:25:13.293978",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -493,7 +493,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.743313",
+        "timestamp": "2026-10-07T14:25:13.295295",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -560,7 +560,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.744928",
+        "timestamp": "2026-10-07T14:25:13.296846",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -592,18 +592,18 @@
             "process": "[Morphology: Base] → [Category: Action]",
             "form": "Base",
             "category": "Action",
-            "verb": "because",
-            "patient": "you helped",
+            "verb": "succeeded",
+            "patient": "because you helped",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Succeeded",
             "structure": {
                 "form": "Base",
-                "verb": "because",
+                "verb": "succeeded",
                 "subject": "Succeeded",
-                "object": "you helped",
+                "object": "because you helped",
                 "category": "Action",
-                "patient": "you helped",
+                "patient": "because you helped",
                 "agent": "Unknown"
             }
         },
@@ -621,7 +621,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.746575",
+        "timestamp": "2026-10-07T14:25:13.298464",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -653,18 +653,18 @@
             "process": "[Morphology: Base] → [Category: Action]",
             "form": "Base",
             "category": "Action",
-            "verb": "despite",
-            "patient": "the effort",
+            "verb": "failed",
+            "patient": "despite the effort",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Failed",
             "structure": {
                 "form": "Base",
-                "verb": "despite",
+                "verb": "failed",
                 "subject": "Failed",
-                "object": "the effort",
+                "object": "despite the effort",
                 "category": "Action",
-                "patient": "the effort",
+                "patient": "despite the effort",
                 "agent": "Unknown"
             }
         },
@@ -682,7 +682,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.748282",
+        "timestamp": "2026-10-07T14:25:13.300065",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -750,7 +750,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.750027",
+        "timestamp": "2026-10-07T14:25:13.301824",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -777,18 +777,18 @@
             "process": "[Morphology: Base] → [Category: Action]",
             "form": "Base",
             "category": "Action",
-            "verb": "the",
-            "patient": "form yesterday",
+            "verb": "submitted",
+            "patient": "the form yesterday",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Submitted",
             "structure": {
                 "form": "Base",
-                "verb": "the",
+                "verb": "submitted",
                 "subject": "Submitted",
-                "object": "form yesterday",
+                "object": "the form yesterday",
                 "category": "Action",
-                "patient": "form yesterday",
+                "patient": "the form yesterday",
                 "agent": "Unknown"
             }
         },
@@ -806,7 +806,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.751933",
+        "timestamp": "2026-10-07T14:25:13.303670",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -833,18 +833,18 @@
             "process": "[Morphology: Base] → [Category: Action]",
             "form": "Base",
             "category": "Action",
-            "verb": "in",
-            "patient": "the meeting",
+            "verb": "succeeded",
+            "patient": "in the meeting",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Succeeded",
             "structure": {
                 "form": "Base",
-                "verb": "in",
+                "verb": "succeeded",
                 "subject": "Succeeded",
-                "object": "the meeting",
+                "object": "in the meeting",
                 "category": "Action",
-                "patient": "the meeting",
+                "patient": "in the meeting",
                 "agent": "Unknown"
             }
         },
@@ -862,7 +862,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.753909",
+        "timestamp": "2026-10-07T14:25:13.305620",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -932,7 +932,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.755771",
+        "timestamp": "2026-10-07T14:25:13.307515",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1002,7 +1002,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.760694",
+        "timestamp": "2026-10-07T14:25:13.310739",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1094,7 +1094,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.764000",
+        "timestamp": "2026-10-07T14:25:13.312998",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1182,7 +1182,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.766449",
+        "timestamp": "2026-10-07T14:25:13.315306",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1263,7 +1263,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.768739",
+        "timestamp": "2026-10-07T14:25:13.317577",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1346,7 +1346,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.771385",
+        "timestamp": "2026-10-07T14:25:13.320043",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1429,7 +1429,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.773967",
+        "timestamp": "2026-10-07T14:25:13.322675",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1512,7 +1512,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.776583",
+        "timestamp": "2026-10-07T14:25:13.325203",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1579,7 +1579,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.779252",
+        "timestamp": "2026-10-07T14:25:13.327845",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1646,7 +1646,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.781982",
+        "timestamp": "2026-10-07T14:25:13.330631",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1713,7 +1713,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.785193",
+        "timestamp": "2026-10-07T14:25:13.333755",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1796,7 +1796,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.788343",
+        "timestamp": "2026-10-07T14:25:13.336841",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1828,18 +1828,18 @@
             "process": "[Morphology: Base] → [Category: Action]",
             "form": "Base",
             "category": "Action",
-            "verb": "the",
-            "patient": "exam because of bad luck",
+            "verb": "failed",
+            "patient": "the exam because of bad luck",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Failed",
             "structure": {
                 "form": "Base",
-                "verb": "the",
+                "verb": "failed",
                 "subject": "Failed",
-                "object": "exam because of bad luck",
+                "object": "the exam because of bad luck",
                 "category": "Action",
-                "patient": "exam because of bad luck",
+                "patient": "the exam because of bad luck",
                 "agent": "Unknown"
             }
         },
@@ -1857,7 +1857,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.791379",
+        "timestamp": "2026-10-07T14:25:13.339844",
         "input": "I talked to the manager who was frustrated with the deadline.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1940,7 +1940,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:43:36.794595",
+        "timestamp": "2026-10-07T14:25:13.343068",
         "input": "Please review the long report.",
         "stage1": {
             "process": "Imperative / Direct Directive",

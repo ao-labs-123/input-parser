@@ -19,7 +19,7 @@ def analyze_semantic_structure(text):
         ):
             return {
                 "form": "Passive",
-                "verb": verb,
+                "verb": verb.lower(),
                 "actor": passive_match.group(3).strip() if passive_match.group(3) else "Unknown",
                 "receiver": text_clean[:passive_match.start()].strip(),
             }
@@ -32,18 +32,29 @@ def analyze_semantic_structure(text):
     if progressive_match:
         return {
             "form": "Progressive",
-            "verb": progressive_match.group(2),
+            "verb": progressive_match.group(2).lower(),
             "subject": text_clean[:progressive_match.start()].strip(),
             "object": progressive_match.group(3).strip() or None,
         }
 
+    non_verb_second_words = {
+        "a", "an", "the", "to", "in", "on", "at", "of", "by", "for", "with",
+        "from", "into", "onto", "after", "before", "because", "despite", "although",
+        "though", "if", "when", "while", "as", "and", "or", "but", "not"
+    }
     words = text_clean.split()
     if len(words) >= 2:
+        if words[1].lower() in non_verb_second_words:
+            verb = words[0].lower()
+            object_value = " ".join(words[1:]) or None
+        else:
+            verb = words[1].lower()
+            object_value = " ".join(words[2:]) or None
         return {
             "form": "Base",
-            "verb": words[1],
+            "verb": verb,
             "subject": words[0],
-            "object": " ".join(words[2:]) or None,
+            "object": object_value,
         }
     return None
 

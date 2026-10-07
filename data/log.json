@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-06T15:53:13.881773",
+        "timestamp": "2026-10-07T07:05:18.836982",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -8,14 +8,20 @@
             "agent": "He"
         },
         "stage2": {
-            "process": "Causal Marker: because",
-            "decision": "Causal relation mapped",
+            "process": "Causal Marker: because; Event: Action",
+            "decision": "Causal relation mapped; Event classified: Action",
             "mapping": "I helped -> Cause -> He succeeded; He -> Action -> succeeded",
             "structure": {
                 "relation": "CauseEffect",
                 "marker": "because",
                 "cause": "I helped",
-                "effect": "He succeeded"
+                "effect": "He succeeded",
+                "event": {
+                    "category": "Action",
+                    "verb": "succeeded",
+                    "actor": "He",
+                    "patient": null
+                }
             },
             "agent": "He",
             "action": {
@@ -63,7 +69,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.883617",
+        "timestamp": "2026-10-07T07:05:18.838236",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -71,10 +77,18 @@
             "agent": "You"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
             "mapping": "You -> Action -> review the document",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "review",
+                    "actor": "You",
+                    "patient": "the document"
+                }
+            },
             "agent": "You",
             "action": {
                 "verb": "review",
@@ -121,7 +135,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.885224",
+        "timestamp": "2026-10-07T07:05:18.839427",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -129,10 +143,18 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: State",
+            "decision": "No causal relation; Event classified: State",
             "mapping": "I -> State -> strange",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "State",
+                    "verb": "strange",
+                    "actor": "I",
+                    "patient": null
+                }
+            },
             "agent": "I",
             "action": {
                 "verb": "strange",
@@ -179,7 +201,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.886965",
+        "timestamp": "2026-10-07T07:05:18.840718",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -187,10 +209,18 @@
             "agent": "He/She/They"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: State",
+            "decision": "No causal relation; Event classified: State",
             "mapping": "He/She/They -> State -> strange apparently",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "State",
+                    "verb": "strange",
+                    "actor": "He/She/They",
+                    "patient": "apparently"
+                }
+            },
             "agent": "He/She/They",
             "action": {
                 "verb": "strange",
@@ -237,7 +267,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.889334",
+        "timestamp": "2026-10-07T07:05:18.842578",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -248,14 +278,10 @@
         "stage2": {
             "process": "No causal relation found",
             "decision": "Clarification Required (Undetermined Agent)",
-            "mapping": "Unknown -> Action -> to the cafe yesterday",
+            "mapping": "None",
             "structure": null,
             "agent": "Unknown",
-            "action": {
-                "verb": "to",
-                "actor": "Unknown",
-                "patient": "the cafe yesterday"
-            }
+            "action": null
         },
         "stage3": {
             "process": "No modification structure found",
@@ -296,7 +322,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.891154",
+        "timestamp": "2026-10-07T07:05:18.843762",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -305,10 +331,18 @@
             "structure": "It is [required] that [you submit the form]"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
             "mapping": "Unknown -> Action -> required It",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "required",
+                    "actor": "Unknown",
+                    "patient": "It"
+                }
+            },
             "agent": "you",
             "action": {
                 "verb": "required",
@@ -361,7 +395,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.892909",
+        "timestamp": "2026-10-07T07:05:18.844868",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -369,10 +403,18 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
             "mapping": "I -> Action -> submitted the form yesterday",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "submitted",
+                    "actor": "I",
+                    "patient": "the form yesterday"
+                }
+            },
             "agent": "I",
             "action": {
                 "verb": "submitted",
@@ -419,7 +461,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.894919",
+        "timestamp": "2026-10-07T07:05:18.846290",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -427,10 +469,18 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
             "mapping": "I -> Action -> wrote the report at the office",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "wrote",
+                    "actor": "I",
+                    "patient": "the report at the office"
+                }
+            },
             "agent": "I",
             "action": {
                 "verb": "wrote",
@@ -477,7 +527,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.899894",
+        "timestamp": "2026-10-07T07:05:18.848282",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -488,7 +538,7 @@
         "stage2": {
             "process": "Causal Marker: because",
             "decision": "Causal relation mapped",
-            "mapping": "you helped -> Cause -> Succeeded; Unknown -> Action -> because you helped",
+            "mapping": "you helped -> Cause -> Succeeded",
             "structure": {
                 "relation": "CauseEffect",
                 "marker": "because",
@@ -496,11 +546,7 @@
                 "effect": "Succeeded"
             },
             "agent": "Unknown",
-            "action": {
-                "verb": "because",
-                "actor": "Unknown",
-                "patient": "you helped"
-            }
+            "action": null
         },
         "stage3": {
             "process": "No modification structure found",
@@ -541,7 +587,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.906136",
+        "timestamp": "2026-10-07T07:05:18.850097",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -552,7 +598,7 @@
         "stage2": {
             "process": "Concessive Marker: despite",
             "decision": "Concessive relation mapped",
-            "mapping": "the effort -> Concession -> Failed; Unknown -> Action -> despite the effort",
+            "mapping": "the effort -> Concession -> Failed",
             "structure": {
                 "relation": "Concession",
                 "marker": "despite",
@@ -560,11 +606,7 @@
                 "outcome": "Failed"
             },
             "agent": "Unknown",
-            "action": {
-                "verb": "despite",
-                "actor": "Unknown",
-                "patient": "the effort"
-            }
+            "action": null
         },
         "stage3": {
             "process": "No modification structure found",
@@ -605,7 +647,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.910805",
+        "timestamp": "2026-10-07T07:05:18.851884",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -614,10 +656,18 @@
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "Clarification Required (Undetermined Agent)",
+            "process": "Event: Action",
+            "decision": "Clarification Required (Undetermined Agent); Event classified: Action",
             "mapping": "Unknown -> Action -> further investigation",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "further",
+                    "actor": "Unknown",
+                    "patient": "investigation"
+                }
+            },
             "agent": "Unknown",
             "action": {
                 "verb": "further",
@@ -664,7 +714,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.919708",
+        "timestamp": "2026-10-07T07:05:18.853495",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -675,14 +725,10 @@
         "stage2": {
             "process": "No causal relation found",
             "decision": "Clarification Required (Undetermined Agent)",
-            "mapping": "Unknown -> Action -> the form yesterday",
+            "mapping": "None",
             "structure": null,
             "agent": "Unknown",
-            "action": {
-                "verb": "the",
-                "actor": "Unknown",
-                "patient": "form yesterday"
-            }
+            "action": null
         },
         "stage3": {
             "process": "No modification structure found",
@@ -723,7 +769,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.923144",
+        "timestamp": "2026-10-07T07:05:18.855179",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -734,14 +780,10 @@
         "stage2": {
             "process": "No causal relation found",
             "decision": "Clarification Required (Undetermined Agent)",
-            "mapping": "Unknown -> Action -> in the meeting",
+            "mapping": "None",
             "structure": null,
             "agent": "Unknown",
-            "action": {
-                "verb": "in",
-                "actor": "Unknown",
-                "patient": "the meeting"
-            }
+            "action": null
         },
         "stage3": {
             "process": "No modification structure found",
@@ -782,7 +824,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.925221",
+        "timestamp": "2026-10-07T07:05:18.857037",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -790,14 +832,20 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "Causal Marker: due to",
-            "decision": "Causal relation mapped",
+            "process": "Causal Marker: due to; Event: State",
+            "decision": "Causal relation mapped; Event classified: State",
             "mapping": "the project -> Cause -> I'm stressed; I -> State -> stressed",
             "structure": {
                 "relation": "CauseEffect",
                 "marker": "due to",
                 "cause": "the project",
-                "effect": "I'm stressed"
+                "effect": "I'm stressed",
+                "event": {
+                    "category": "State",
+                    "verb": "stressed",
+                    "actor": "I",
+                    "patient": null
+                }
             },
             "agent": "I",
             "action": {
@@ -845,7 +893,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.927119",
+        "timestamp": "2026-10-07T07:05:18.858774",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -853,14 +901,20 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "Causal Marker: because",
-            "decision": "Causal relation mapped",
+            "process": "Causal Marker: because; Event: Action",
+            "decision": "Causal relation mapped; Event classified: Action",
             "mapping": "you helped -> Cause -> I succeeded; I -> Action -> succeeded",
             "structure": {
                 "relation": "CauseEffect",
                 "marker": "because",
                 "cause": "you helped",
-                "effect": "I succeeded"
+                "effect": "I succeeded",
+                "event": {
+                    "category": "Action",
+                    "verb": "succeeded",
+                    "actor": "I",
+                    "patient": null
+                }
             },
             "agent": "I",
             "action": {
@@ -908,7 +962,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.929273",
+        "timestamp": "2026-10-07T07:05:18.860653",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -916,15 +970,29 @@
             "agent": "He"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
-            "mapping": "He -> Action -> succeeded by working hard",
-            "structure": null,
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
+            "mapping": "He -> Action -> succeeded",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "succeeded",
+                    "actor": "He",
+                    "patient": null
+                }
+            },
             "agent": "He",
             "action": {
                 "verb": "succeeded",
                 "actor": "He",
-                "patient": "by working hard"
+                "patient": null
+            },
+            "context": {
+                "relation": "Manner",
+                "marker": "by",
+                "context": "working hard",
+                "event": "He succeeded"
             }
         },
         "stage3": {
@@ -966,7 +1034,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.931575",
+        "timestamp": "2026-10-07T07:05:18.863728",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -974,15 +1042,29 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
-            "mapping": "Unknown -> State -> stressed I",
-            "structure": null,
+            "process": "Event: State",
+            "decision": "No causal relation; Event classified: State",
+            "mapping": "I -> State -> stressed",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "State",
+                    "verb": "stressed",
+                    "actor": "I",
+                    "patient": null
+                }
+            },
             "agent": "I",
             "action": {
                 "verb": "stressed",
-                "actor": "Unknown",
-                "patient": "I"
+                "actor": "I",
+                "patient": null
+            },
+            "context": {
+                "relation": "Temporal",
+                "marker": "after",
+                "context": "the long meeting",
+                "event": "I was stressed"
             }
         },
         "stage3": {
@@ -1015,7 +1097,7 @@
             "frame": {
                 "who": "I",
                 "what": "stressed I",
-                "when": "Unspecified",
+                "when": "after the long meeting",
                 "where": "Unspecified",
                 "why": "Unspecified",
                 "how": "Unspecified"
@@ -1024,7 +1106,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.933738",
+        "timestamp": "2026-10-07T07:05:18.865793",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1032,10 +1114,18 @@
             "agent": "The report"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
-            "mapping": "The report -> Action -> long",
-            "structure": null,
+            "process": "Event: State",
+            "decision": "No causal relation; Event classified: State",
+            "mapping": "The report -> State -> long",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "State",
+                    "verb": "long",
+                    "actor": "The report",
+                    "patient": null
+                }
+            },
             "agent": "The report",
             "action": {
                 "verb": "long",
@@ -1088,7 +1178,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.935899",
+        "timestamp": "2026-10-07T07:05:18.867830",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1096,10 +1186,18 @@
             "agent": "The report"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
-            "mapping": "The report -> Action -> done",
-            "structure": null,
+            "process": "Event: State",
+            "decision": "No causal relation; Event classified: State",
+            "mapping": "The report -> State -> done",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "State",
+                    "verb": "done",
+                    "actor": "The report",
+                    "patient": null
+                }
+            },
             "agent": "The report",
             "action": {
                 "verb": "done",
@@ -1152,7 +1250,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.938964",
+        "timestamp": "2026-10-07T07:05:18.870030",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1160,10 +1258,18 @@
             "agent": "The office"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
             "mapping": "Unknown -> Action -> quiet The office where I wrote the report",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "quiet",
+                    "actor": "Unknown",
+                    "patient": "The office where I wrote the report"
+                }
+            },
             "agent": "The office",
             "action": {
                 "verb": "quiet",
@@ -1210,7 +1316,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.941498",
+        "timestamp": "2026-10-07T07:05:18.872319",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1218,10 +1324,18 @@
             "agent": "The day"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
             "mapping": "Unknown -> Action -> bright The day where he succeeded",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "bright",
+                    "actor": "Unknown",
+                    "patient": "The day where he succeeded"
+                }
+            },
             "agent": "The day",
             "action": {
                 "verb": "bright",
@@ -1268,7 +1382,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.945296",
+        "timestamp": "2026-10-07T07:05:18.874562",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1276,10 +1390,18 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
-            "mapping": "I -> Action -> have a car",
-            "structure": null,
+            "process": "Event: Stative",
+            "decision": "No causal relation; Event classified: Stative",
+            "mapping": "I -> Stative -> have a car",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Stative",
+                    "verb": "have",
+                    "actor": "I",
+                    "patient": "a car"
+                }
+            },
             "agent": "I",
             "action": {
                 "verb": "have",
@@ -1326,7 +1448,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.948589",
+        "timestamp": "2026-10-07T07:05:18.876876",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1334,10 +1456,18 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
             "mapping": "I -> Action -> having a party",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "having",
+                    "actor": "I",
+                    "patient": "a party"
+                }
+            },
             "agent": "I",
             "action": {
                 "verb": "having",
@@ -1384,7 +1514,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.952602",
+        "timestamp": "2026-10-07T07:05:18.879385",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1392,10 +1522,18 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
             "mapping": "him -> Action -> told I",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "told",
+                    "actor": "him",
+                    "patient": "I"
+                }
+            },
             "agent": "I",
             "action": {
                 "verb": "told",
@@ -1442,7 +1580,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.955308",
+        "timestamp": "2026-10-07T07:05:18.881910",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1450,10 +1588,18 @@
             "agent": "The report"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "No causal relation found",
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
             "mapping": "Unknown -> Action -> completed The report",
-            "structure": null,
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "completed",
+                    "actor": "Unknown",
+                    "patient": "The report"
+                }
+            },
             "agent": "The report",
             "action": {
                 "verb": "completed",
@@ -1500,7 +1646,7 @@
         }
     },
     {
-        "timestamp": "2026-10-06T15:53:13.958096",
+        "timestamp": "2026-10-07T07:05:18.884639",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1511,7 +1657,7 @@
         "stage2": {
             "process": "Causal Marker: because of",
             "decision": "Causal relation mapped",
-            "mapping": "bad luck -> Cause -> Failed the exam; Unknown -> Action -> the",
+            "mapping": "bad luck -> Cause -> Failed the exam",
             "structure": {
                 "relation": "CauseEffect",
                 "marker": "because of",
@@ -1519,11 +1665,7 @@
                 "effect": "Failed the exam"
             },
             "agent": "Unknown",
-            "action": {
-                "verb": "the",
-                "actor": "Unknown",
-                "patient": null
-            }
+            "action": null
         },
         "stage3": {
             "process": "No modification structure found",

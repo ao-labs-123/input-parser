@@ -7,7 +7,7 @@ if ROOT not in sys.path:
 
 from src.analyzer import LogicAnalyzer
 from src.rules.stage1_rule import determine_explicit_subject, determine_subject
-from src.rules.stage2_rule import analyze_causality_and_ambiguity
+from src.rules.stage2_rule import analyze_causality_and_ambiguity, analyze_context_relation
 from src.rules.stage3_rule import analyze_modification_structure
 from src.rules.stage4_rule import analyze_semantic_structure
 
@@ -53,7 +53,14 @@ def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
         "marker": "because",
         "cause": "you helped",
         "effect": "I succeeded",
+        "event": {
+            "category": "Action",
+            "verb": "succeeded",
+            "actor": "I",
+            "patient": None,
+        },
     }
+    assert stage2["decision"] == "Causal relation mapped; Event classified: Action"
     assert stage2["action"] == {
         "verb": "succeeded",
         "actor": "I",
@@ -67,6 +74,73 @@ def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
     stage3 = analyzer.stage3_analyze("The report, which was long, is done.", stage1, modification)
     assert stage3["decision"] == "Supplementary"
     assert stage3["target"] == "The report"
+
+
+def test_stage2_does_not_emit_relation_words_as_actions():
+    analyzer = LogicAnalyzer({})
+    for text, expected_mapping in (
+        (
+            "Succeeded because you helped.",
+            "you helped -> Cause -> Succeeded",
+        ),
+        (
+            "Failed the exam because of bad luck.",
+            "bad luck -> Cause -> Failed the exam",
+        ),
+    ):
+        stage2 = analyzer.stage2_analyze(
+            text,
+            {"agent": "Unknown"},
+            analyze_causality_and_ambiguity(text, "Unknown"),
+            semantic_result=analyze_semantic_structure(text),
+        )
+
+        assert stage2["action"] is None
+        assert stage2["mapping"] == expected_mapping
+
+
+def test_stage2_preserves_manner_context_without_adding_it_to_patient():
+    text = "He succeeded by working hard."
+    stage2 = LogicAnalyzer({}).stage2_analyze(
+        text,
+        {"agent": "He"},
+        analyze_causality_and_ambiguity(text, "He"),
+        context_result=analyze_context_relation(text),
+        semantic_result=analyze_semantic_structure(text),
+    )
+
+    assert stage2["action"] == {
+        "verb": "succeeded",
+        "actor": "He",
+        "patient": None,
+    }
+    assert stage2["mapping"] == "He -> Action -> succeeded"
+    assert stage2["context"] == {
+        "relation": "Manner",
+        "marker": "by",
+        "context": "working hard",
+        "event": "He succeeded",
+    }
+
+
+def test_stage2_preserves_temporal_context_for_state_predicate():
+    text = "I was stressed after the long meeting."
+    stage2 = LogicAnalyzer({}).stage2_analyze(
+        text,
+        {"agent": "I"},
+        analyze_causality_and_ambiguity(text, "I"),
+        context_result=analyze_context_relation(text),
+        semantic_result=analyze_semantic_structure(text),
+    )
+
+    assert stage2["action"] == {
+        "verb": "stressed",
+        "actor": "I",
+        "patient": None,
+    }
+    assert stage2["mapping"] == "I -> State -> stressed"
+    assert stage2["context"]["relation"] == "Temporal"
+    assert stage2["context"]["context"] == "the long meeting"
 
 
 def test_stage2_emits_action_while_stage4_keeps_category_label():
@@ -92,6 +166,37 @@ def test_stage2_emits_action_while_stage4_keeps_category_label():
     assert stage4["category"] == "Action"
 
 
+def test_stage2_classifies_events_without_causal_relations():
+    analyzer = LogicAnalyzer({})
+    examples = (
+        ("Please review the document.", "Action", "review", "You"),
+        ("I am stressed.", "State", "stressed", "I"),
+        ("I have a car.", "Stative", "have", "I"),
+    )
+
+    for text, category, verb, actor in examples:
+        stage2 = analyzer.stage2_analyze(
+            text,
+            {"agent": actor},
+            analyze_causality_and_ambiguity(text, actor),
+            semantic_result=analyze_semantic_structure(text),
+        )
+
+        assert stage2["process"] == f"Event: {category}"
+        assert stage2["decision"] == (
+            f"No causal relation; Event classified: {category}"
+        )
+        assert stage2["structure"] == {
+            "relation": "Event",
+            "event": {
+                "category": category,
+                "verb": verb,
+                "actor": actor,
+                "patient": stage2["action"]["patient"],
+            },
+        }
+
+
 def test_stage2_uses_state_label_for_state_like_events():
     text = "I am stressed due to the project."
     analyzer = LogicAnalyzer({})
@@ -105,6 +210,8 @@ def test_stage2_uses_state_label_for_state_like_events():
 
     assert "-> Cause ->" in stage2["mapping"]
     assert "-> State ->" in stage2["mapping"]
+    assert stage2["structure"]["event"]["category"] == "State"
+    assert stage2["decision"] == "Causal relation mapped; Event classified: State"
 
 
 def test_stage2_maps_despite_as_concession_not_causality():
@@ -126,7 +233,14 @@ def test_stage2_maps_despite_as_concession_not_causality():
         "marker": "despite",
         "concession": "the effort",
         "outcome": "I failed",
+        "event": {
+            "category": "Action",
+            "verb": "failed",
+            "actor": "Unknown",
+            "patient": None,
+        },
     }
+    assert stage2["decision"] == "Concessive relation mapped; Event classified: Action"
     assert stage2["mapping"] == (
         "the effort -> Concession -> I failed; Unknown -> Action -> failed"
     )

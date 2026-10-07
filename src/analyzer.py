@@ -7,6 +7,21 @@ else:
 
 
 class LogicAnalyzer:
+    STATIVE_VERBS = {
+        "have",
+        "has",
+        "had",
+        "know",
+        "knows",
+        "knew",
+        "love",
+        "loves",
+        "like",
+        "likes",
+        "understand",
+        "understands",
+        "understood",
+    }
     STATE_LIKE_WORDS = {
         "am",
         "is",
@@ -165,6 +180,57 @@ class LogicAnalyzer:
                 ),
                 "patient": patient,
             }
+            if (
+                form == "Passive"
+                and semantic_result["verb"].lower() in self.STATE_LIKE_WORDS
+                and semantic_result.get("receiver") == agent
+            ):
+                action["actor"] = agent
+                action["patient"] = None
+            invalid_action_words = {
+                "a", "an", "the", "in", "on", "at", "to", "of", "by", "after"
+            }
+            relation_markers = rule_result.get("markers", []) + rule_result.get(
+                "concession_markers", []
+            )
+            if action["verb"].lower() in invalid_action_words or any(
+                action["verb"].lower() == marker.lower().split()[0]
+                for marker in relation_markers
+            ):
+                action = None
+            elif context_result:
+                context_marker = context_result.get("marker")
+                if context_marker and patient and re.search(
+                    rf"(?<!\w){re.escape(context_marker)}(?!\w)",
+                    patient,
+                    re.IGNORECASE,
+                ):
+                    action["patient"] = None
+
+        event_info = None
+        event_category = None
+        if action:
+            verb = action["verb"]
+            if semantic_result.get("form") == "State" or verb.lower() in self.STATE_LIKE_WORDS:
+                event_category = "State"
+            elif (
+                semantic_result.get("form") != "Progressive"
+                and verb.lower() in self.STATIVE_VERBS
+            ):
+                event_category = "Stative"
+            else:
+                event_category = "Action"
+            event_info = {
+                "category": event_category,
+                "verb": verb,
+                "actor": action["actor"],
+                "patient": action["patient"],
+            }
+
+        def add_event_decision(decision):
+            if event_category:
+                return f"{decision}; Event classified: {event_category}"
+            return decision
 
         def add_action_mapping(relation_mapping):
             if not action:
@@ -178,7 +244,7 @@ class LogicAnalyzer:
                 action_actor = actor
             else:
                 action_actor = action["actor"]
-            action_label = self._classify_mapping_label(action_phrase)
+            action_label = event_category
             action_mapping = f"{action_actor} -> {action_label} -> {action_phrase}"
             if relation_mapping == "None":
                 return action_mapping
@@ -206,9 +272,12 @@ class LogicAnalyzer:
                 "concession": concession,
                 "outcome": outcome,
             }
-            return {
-                "process": f"Concessive Marker: {marker}",
-                "decision": "Concessive relation mapped",
+            if event_info:
+                structure["event"] = event_info
+            result = {
+                "process": f"Concessive Marker: {marker}"
+                + (f"; Event: {event_category}" if event_category else ""),
+                "decision": add_event_decision("Concessive relation mapped"),
                 "mapping": add_action_mapping(
                     f"{concession} -> Concession -> {outcome}"
                 ),
@@ -216,6 +285,9 @@ class LogicAnalyzer:
                 "agent": agent,
                 "action": action,
             }
+            if context_result:
+                result["context"] = context_result
+            return result
 
         markers = rule_result.get("markers", [])
         marker_match = None
@@ -251,24 +323,40 @@ class LogicAnalyzer:
                 "cause": cause,
                 "effect": effect,
             }
+            if event_info:
+                structure["event"] = event_info
             result = {
-                "process": f"Causal Marker: {marker}",
-                "decision": "Causal relation mapped",
+                "process": f"Causal Marker: {marker}"
+                + (f"; Event: {event_category}" if event_category else ""),
+                "decision": add_event_decision("Causal relation mapped"),
                 "mapping": add_action_mapping(f"{cause} -> Cause -> {effect}"),
                 "structure": structure,
                 "agent": agent,
                 "action": action,
             }
         else:
-            decision = "Clarification Required (Undetermined Agent)" if agent == "Unknown" else "No causal relation found"
+            decision = (
+                "Clarification Required (Undetermined Agent)"
+                if agent == "Unknown"
+                else "No causal relation"
+            )
             result = {
-                "process": "No causal relation found",
-                "decision": decision,
+                "process": f"Event: {event_category}"
+                if event_category
+                else "No causal relation found",
+                "decision": add_event_decision(decision),
                 "mapping": add_action_mapping("None"),
-                "structure": None,
+                "structure": {
+                    "relation": "Event",
+                    "event": event_info,
+                }
+                if event_info
+                else None,
                 "agent": agent,
                 "action": action,
             }
+        if context_result:
+            result["context"] = context_result
         return result
 
     def stage3_analyze(self, text, stage1_result, modification_result=None):

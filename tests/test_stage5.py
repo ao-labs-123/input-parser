@@ -74,6 +74,37 @@ def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
     stage3 = analyzer.stage3_analyze("The report, which was long, is done.", stage1, modification)
     assert stage3["decision"] == "Supplementary"
     assert stage3["target"] == "The report"
+    assert stage3["structure"]["classification"] == "Supplementary"
+    assert stage3["attribution"] == {
+        "target": "The report",
+        "modifier_agent": "The report",
+        "primary_agent": "I",
+    }
+
+
+def test_stage3_keeps_modifier_agent_separate_from_primary_agent():
+    text = "I talked to the manager who was frustrated with the deadline."
+    modification = analyze_modification_structure(text)
+    stage3 = LogicAnalyzer({}).stage3_analyze(text, {"agent": "I"}, modification)
+
+    assert stage3["target"] == "manager"
+    assert stage3["modifier"] == "was frustrated with the deadline"
+    assert stage3["attribution"] == {
+        "target": "manager",
+        "modifier_agent": "manager",
+        "primary_agent": "I",
+    }
+
+
+def test_stage3_classifies_adjectival_description_as_supplementary():
+    text = "Please review the long report."
+    modification = analyze_modification_structure(text)
+    stage3 = LogicAnalyzer({}).stage3_analyze(text, {"agent": "You"}, modification)
+
+    assert stage3["decision"] == "Supplementary"
+    assert stage3["target"] == "report"
+    assert stage3["modifier"] == "long"
+    assert analyze_modification_structure("The report was completed quickly.") is None
 
 
 def test_stage2_does_not_emit_relation_words_as_actions():

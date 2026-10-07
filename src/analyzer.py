@@ -370,9 +370,13 @@ class LogicAnalyzer:
             }
 
         modification_type = modification_result.get("type")
-        if modification_type == "Non-defining":
+        if modification_type in ("Non-defining", "Supplementary"):
             decision = "Supplementary"
-            process = "Non-defining clause"
+            process = (
+                "Adjectival modifier"
+                if modification_result.get("kind") == "Adjective"
+                else "Non-defining clause"
+            )
         elif modification_type == "Defining":
             decision = "Essential"
             process = "Defining clause"
@@ -384,12 +388,43 @@ class LogicAnalyzer:
                 "agent": agent,
             }
 
+        target = modification_result.get(
+            "target", modification_result.get("antecedent", "Unspecified")
+        )
+        modifier = modification_result.get("clause", "Unspecified")
+        relative_marker = modification_result.get("relative_marker")
+        modifier_subject = None
+        if relative_marker == "who" or (
+            relative_marker in ("which", "where")
+            and re.match(r"^(?:is|was|are|were)\b", modifier, re.IGNORECASE)
+        ):
+            modifier_subject = target
+        else:
+            subject_match = re.match(
+                r"^(I|You|He|She|They|We|[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\b",
+                modifier,
+            )
+            if subject_match:
+                modifier_subject = subject_match.group(1)
+
+        structure = dict(modification_result)
+        structure.update({
+            "classification": decision,
+            "target": target,
+            "modifier_kind": modification_result.get("kind", "RelativeClause"),
+        })
+
         return {
             "process": process,
             "decision": decision,
-            "target": modification_result.get("antecedent", "Unspecified"),
-            "modifier": modification_result.get("clause", "Unspecified"),
-            "structure": modification_result,
+            "target": target,
+            "modifier": modifier,
+            "attribution": {
+                "target": target,
+                "modifier_agent": modifier_subject or target,
+                "primary_agent": agent,
+            },
+            "structure": structure,
             "agent": agent,
         }
 

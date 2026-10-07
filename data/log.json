@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-07T07:05:18.836982",
+        "timestamp": "2026-10-07T09:01:58.185780",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -69,7 +69,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.838236",
+        "timestamp": "2026-10-07T09:01:58.187047",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -135,7 +135,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.839427",
+        "timestamp": "2026-10-07T09:01:58.188275",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -201,7 +201,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.840718",
+        "timestamp": "2026-10-07T09:01:58.189487",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -267,7 +267,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.842578",
+        "timestamp": "2026-10-07T09:01:58.191047",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -322,7 +322,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.843762",
+        "timestamp": "2026-10-07T09:01:58.192907",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -355,10 +355,20 @@
             "decision": "Essential",
             "target": "It is required",
             "modifier": "you submit the form",
+            "attribution": {
+                "target": "It is required",
+                "modifier_agent": "It is required",
+                "primary_agent": "you"
+            },
             "structure": {
                 "type": "Defining",
                 "antecedent": "It is required",
-                "clause": "you submit the form"
+                "target": "It is required",
+                "clause": "you submit the form",
+                "kind": "RelativeClause",
+                "relative_marker": "that",
+                "classification": "Essential",
+                "modifier_kind": "RelativeClause"
             },
             "agent": "you"
         },
@@ -395,7 +405,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.844868",
+        "timestamp": "2026-10-07T09:01:58.194248",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -461,7 +471,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.846290",
+        "timestamp": "2026-10-07T09:01:58.195569",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -527,7 +537,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.848282",
+        "timestamp": "2026-10-07T09:01:58.197141",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -587,7 +597,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.850097",
+        "timestamp": "2026-10-07T09:01:58.198658",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -647,7 +657,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.851884",
+        "timestamp": "2026-10-07T09:01:58.200999",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -714,7 +724,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.853495",
+        "timestamp": "2026-10-07T09:01:58.202715",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -769,7 +779,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.855179",
+        "timestamp": "2026-10-07T09:01:58.204515",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -824,7 +834,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.857037",
+        "timestamp": "2026-10-07T09:01:58.206409",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -893,7 +903,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.858774",
+        "timestamp": "2026-10-07T09:01:58.208236",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -962,7 +972,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.860653",
+        "timestamp": "2026-10-07T09:01:58.210188",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1034,7 +1044,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.863728",
+        "timestamp": "2026-10-07T09:01:58.212368",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1068,9 +1078,24 @@
             }
         },
         "stage3": {
-            "process": "No modification structure found",
-            "decision": "Standard",
-            "structure": null,
+            "process": "Adjectival modifier",
+            "decision": "Supplementary",
+            "target": "meeting",
+            "modifier": "long",
+            "attribution": {
+                "target": "meeting",
+                "modifier_agent": "meeting",
+                "primary_agent": "I"
+            },
+            "structure": {
+                "type": "Supplementary",
+                "antecedent": "meeting",
+                "target": "meeting",
+                "clause": "long",
+                "kind": "Adjective",
+                "classification": "Supplementary",
+                "modifier_kind": "Adjective"
+            },
             "agent": "I"
         },
         "stage4": {
@@ -1106,7 +1131,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.865793",
+        "timestamp": "2026-10-07T09:01:58.214601",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1138,10 +1163,18 @@
             "decision": "Supplementary",
             "target": "The report",
             "modifier": "was long",
+            "attribution": {
+                "target": "The report",
+                "modifier_agent": "The report",
+                "primary_agent": "The report"
+            },
             "structure": {
                 "type": "Non-defining",
                 "antecedent": "The report",
-                "clause": "was long"
+                "target": "The report",
+                "clause": "was long",
+                "classification": "Supplementary",
+                "modifier_kind": "RelativeClause"
             },
             "agent": "The report"
         },
@@ -1178,7 +1211,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.867830",
+        "timestamp": "2026-10-07T09:01:58.216807",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1210,10 +1243,20 @@
             "decision": "Essential",
             "target": "The report",
             "modifier": "I wrote",
+            "attribution": {
+                "target": "The report",
+                "modifier_agent": "I",
+                "primary_agent": "The report"
+            },
             "structure": {
                 "type": "Defining",
                 "antecedent": "The report",
-                "clause": "I wrote"
+                "target": "The report",
+                "clause": "I wrote",
+                "kind": "RelativeClause",
+                "relative_marker": "that",
+                "classification": "Essential",
+                "modifier_kind": "RelativeClause"
             },
             "agent": "The report"
         },
@@ -1250,7 +1293,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.870030",
+        "timestamp": "2026-10-07T09:01:58.219260",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1278,9 +1321,25 @@
             }
         },
         "stage3": {
-            "process": "No modification structure found",
-            "decision": "Standard",
-            "structure": null,
+            "process": "Defining clause",
+            "decision": "Essential",
+            "target": "The office",
+            "modifier": "I wrote the report",
+            "attribution": {
+                "target": "The office",
+                "modifier_agent": "I",
+                "primary_agent": "The office"
+            },
+            "structure": {
+                "type": "Defining",
+                "antecedent": "The office",
+                "target": "The office",
+                "clause": "I wrote the report",
+                "kind": "RelativeClause",
+                "relative_marker": "where",
+                "classification": "Essential",
+                "modifier_kind": "RelativeClause"
+            },
             "agent": "The office"
         },
         "stage4": {
@@ -1316,7 +1375,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.872319",
+        "timestamp": "2026-10-07T09:01:58.221726",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1344,9 +1403,25 @@
             }
         },
         "stage3": {
-            "process": "No modification structure found",
-            "decision": "Standard",
-            "structure": null,
+            "process": "Defining clause",
+            "decision": "Essential",
+            "target": "The day",
+            "modifier": "he succeeded",
+            "attribution": {
+                "target": "The day",
+                "modifier_agent": "The day",
+                "primary_agent": "The day"
+            },
+            "structure": {
+                "type": "Defining",
+                "antecedent": "The day",
+                "target": "The day",
+                "clause": "he succeeded",
+                "kind": "RelativeClause",
+                "relative_marker": "where",
+                "classification": "Essential",
+                "modifier_kind": "RelativeClause"
+            },
             "agent": "The day"
         },
         "stage4": {
@@ -1382,7 +1457,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.874562",
+        "timestamp": "2026-10-07T09:01:58.224246",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1448,7 +1523,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.876876",
+        "timestamp": "2026-10-07T09:01:58.226797",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1514,7 +1589,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.879385",
+        "timestamp": "2026-10-07T09:01:58.229459",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1580,7 +1655,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.881910",
+        "timestamp": "2026-10-07T09:01:58.232224",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1646,7 +1721,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T07:05:18.884639",
+        "timestamp": "2026-10-07T09:01:58.235252",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1700,6 +1775,169 @@
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "because of bad luck",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-07T09:01:58.238117",
+        "input": "I talked to the manager who was frustrated with the deadline.",
+        "stage1": {
+            "process": "Explicit Subject Present",
+            "decision": "Priority: Explicit Subject",
+            "agent": "I"
+        },
+        "stage2": {
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
+            "mapping": "Unknown -> Action -> frustrated I talked to the manager who",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "frustrated",
+                    "actor": "Unknown",
+                    "patient": "I talked to the manager who"
+                }
+            },
+            "agent": "I",
+            "action": {
+                "verb": "frustrated",
+                "actor": "Unknown",
+                "patient": "I talked to the manager who"
+            }
+        },
+        "stage3": {
+            "process": "Defining clause",
+            "decision": "Essential",
+            "target": "manager",
+            "modifier": "was frustrated with the deadline",
+            "attribution": {
+                "target": "manager",
+                "modifier_agent": "manager",
+                "primary_agent": "I"
+            },
+            "structure": {
+                "type": "Defining",
+                "antecedent": "I talked to the manager",
+                "target": "manager",
+                "clause": "was frustrated with the deadline",
+                "kind": "RelativeClause",
+                "relative_marker": "who",
+                "classification": "Essential",
+                "modifier_kind": "RelativeClause"
+            },
+            "agent": "I"
+        },
+        "stage4": {
+            "process": "[Passive: be + V-en + by]",
+            "form": "Passive",
+            "category": "Action",
+            "verb": "frustrated",
+            "patient": "I talked to the manager who",
+            "actor": "Unknown",
+            "receiver": "I talked to the manager who",
+            "subject": "Unspecified",
+            "structure": {
+                "form": "Passive",
+                "verb": "frustrated",
+                "actor": "Unknown",
+                "receiver": "I talked to the manager who",
+                "category": "Action",
+                "patient": "I talked to the manager who",
+                "agent": "I"
+            }
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "I",
+                "what": "frustrated I talked to the manager who",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "Unspecified"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    },
+    {
+        "timestamp": "2026-10-07T09:01:58.241355",
+        "input": "Please review the long report.",
+        "stage1": {
+            "process": "Imperative / Direct Directive",
+            "decision": "Priority: Listener Address",
+            "agent": "You"
+        },
+        "stage2": {
+            "process": "Event: Action",
+            "decision": "No causal relation; Event classified: Action",
+            "mapping": "You -> Action -> review the long report",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "review",
+                    "actor": "You",
+                    "patient": "the long report"
+                }
+            },
+            "agent": "You",
+            "action": {
+                "verb": "review",
+                "actor": "You",
+                "patient": "the long report"
+            }
+        },
+        "stage3": {
+            "process": "Adjectival modifier",
+            "decision": "Supplementary",
+            "target": "report",
+            "modifier": "long",
+            "attribution": {
+                "target": "report",
+                "modifier_agent": "report",
+                "primary_agent": "You"
+            },
+            "structure": {
+                "type": "Supplementary",
+                "antecedent": "report",
+                "target": "report",
+                "clause": "long",
+                "kind": "Adjective",
+                "classification": "Supplementary",
+                "modifier_kind": "Adjective"
+            },
+            "agent": "You"
+        },
+        "stage4": {
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
+            "category": "Action",
+            "verb": "review",
+            "patient": "the long report",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Please",
+            "structure": {
+                "form": "Base",
+                "verb": "review",
+                "subject": "Please",
+                "object": "the long report",
+                "category": "Action",
+                "patient": "the long report",
+                "agent": "You"
+            }
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "You",
+                "what": "review the long report",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
                 "how": "Unspecified"
             },
             "status": "Ready for Particle Encapsulation"

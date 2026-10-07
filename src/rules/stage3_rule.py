@@ -1,5 +1,18 @@
 import re
 
+
+def _extract_target(antecedent):
+    target_match = re.search(
+        r"\b(?:to|with|for|of|in|on|at)\s+(?:the|a|an)\s+"
+        r"([A-Za-z]+(?:\s+[A-Za-z]+)?)$",
+        antecedent,
+        re.IGNORECASE,
+    )
+    if target_match:
+        return target_match.group(1)
+    return antecedent
+
+
 def analyze_modification_structure(text):
     text_clean = text.strip()
     
@@ -16,11 +29,12 @@ def analyze_modification_structure(text):
             return {
                 "type": "Non-defining",
                 "antecedent": antecedent,
+                "target": _extract_target(antecedent),
                 "clause": clause_content
             }
 
-    # 2. 制限用法 (Defining clause) の判定: "that", "which", "who" (カンマなし)
-    for m_word in ["that", "which", "who"]:
+    # 2. 制限用法 (Defining clause) の判定: relative clauses without a comma
+    for m_word in ["that", "which", "who", "where"]:
         pattern = rf"\b{m_word}\b"
         
         # 文章の中に対象の単語が単体であるか（大文字小文字を無視）
@@ -36,8 +50,11 @@ def analyze_modification_structure(text):
             # 主節の動詞（is, wasなど）の手前までを関係節として切り出す
             clause_parts = parts[1].split()
             clause_words = []
-            for word in clause_parts:
-                if word.lower() in ['is', 'was', 'are', 'were', 'has', 'have', 'done']:
+            for index, word in enumerate(clause_parts):
+                is_clause_initial_copula = index == 0 and word.lower() in {
+                    "is", "was", "are", "were"
+                }
+                if word.lower() in ["is", "was", "are", "were", "has", "have", "done"] and not is_clause_initial_copula:
                     break
                 clause_words.append(word)
                 
@@ -51,7 +68,33 @@ def analyze_modification_structure(text):
             return {
                 "type": "Defining",
                 "antecedent": antecedent,
-                "clause": clause_content
+                "target": _extract_target(antecedent),
+                "clause": clause_content,
+                "kind": "RelativeClause",
+                "relative_marker": m_word,
             }
+
+    # 3. Pre-nominal adjectives are supplementary attributes, not target IDs.
+    adjective_match = re.search(
+        r"\b(?:the|a|an)\s+((?:(?:very|extremely|quite|really)\s+)?"
+        r"[A-Za-z]+)\s+([A-Za-z]+)\b",
+        text_clean,
+        re.IGNORECASE,
+    )
+    known_adjectives = {
+        "angry", "complex", "difficult", "frustrated", "happy", "hard",
+        "important", "large", "long", "new", "old", "quiet", "sad",
+        "small", "strange",
+    }
+    if adjective_match and adjective_match.group(1).split()[-1].lower() in known_adjectives:
+        adjective = adjective_match.group(1)
+        noun = adjective_match.group(2)
+        return {
+            "type": "Supplementary",
+            "antecedent": noun,
+            "target": noun,
+            "clause": adjective,
+            "kind": "Adjective",
+        }
             
     return None

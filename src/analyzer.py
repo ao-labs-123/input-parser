@@ -365,6 +365,7 @@ class LogicAnalyzer:
             return {
                 "process": "No modification structure found",
                 "decision": "Standard",
+                "mapping": None,
                 "structure": None,
                 "agent": agent,
             }
@@ -384,6 +385,7 @@ class LogicAnalyzer:
             return {
                 "process": "Unrecognized modification structure",
                 "decision": "Unspecified",
+                "mapping": None,
                 "structure": modification_result,
                 "agent": agent,
             }
@@ -414,9 +416,50 @@ class LogicAnalyzer:
             "modifier_kind": modification_result.get("kind", "RelativeClause"),
         })
 
+        mapping = f"Node({target})"
+        if modification_result.get("kind") == "Adjective":
+            degree_match = re.match(
+                r"^(very|extremely|quite|really)\s+(.+)$",
+                modifier,
+                re.IGNORECASE,
+            )
+            state = degree_match.group(2) if degree_match else modifier
+            state = state[0].upper() + state[1:] if state else state
+            mapping += f" -> Attribute -> State({state})"
+            if degree_match:
+                degree = degree_match.group(1)
+                degree = degree[0].upper() + degree[1:]
+                mapping += f" -> How: Degree({degree})"
+        else:
+            state_match = re.match(
+                r"^(?:is|was|are|were)\s+(.+)$", modifier, re.IGNORECASE
+            )
+            if state_match:
+                state = state_match.group(1)
+                cause_match = re.match(
+                    r"^(.+?)\s+with\s+(.+)$", state, re.IGNORECASE
+                )
+                if cause_match:
+                    state_name = cause_match.group(1)
+                    cause = cause_match.group(2)
+                    state_name = state_name[0].upper() + state_name[1:]
+                    mapping += (
+                        f" -> Attribute -> State({state_name})"
+                        f" -> Cause -> Node({cause})"
+                    )
+                else:
+                    state = state[0].upper() + state[1:]
+                    mapping += f" -> Attribute -> State({state})"
+            else:
+                attribute_type = (
+                    "Defining Attribute" if decision == "Essential" else "Attribute"
+                )
+                mapping += f" -> {attribute_type} -> Clause({modifier})"
+
         return {
             "process": process,
             "decision": decision,
+            "mapping": mapping,
             "target": target,
             "modifier": modifier,
             "attribution": {

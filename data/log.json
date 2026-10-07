@@ -34,7 +34,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "He"
+            "agent": "He",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -100,7 +101,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "You"
+            "agent": "You",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -166,7 +168,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "I"
+            "agent": "I",
+            "mapping": null
         },
         "stage4": {
             "process": "[State predicate] → [Category: State]",
@@ -232,7 +235,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "He/She/They"
+            "agent": "He/She/They",
+            "mapping": null
         },
         "stage4": {
             "process": "[State predicate] → [Category: State]",
@@ -287,7 +291,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unknown",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -370,7 +375,8 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "you"
+            "agent": "you",
+            "mapping": "Node(It is required) -> Defining Attribute -> Clause(you submit the form)"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -436,7 +442,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "I"
+            "agent": "I",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -502,7 +509,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "I"
+            "agent": "I",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -562,7 +570,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unknown",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -622,7 +631,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unknown",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -689,7 +699,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unknown",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -744,7 +755,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unknown",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -799,7 +811,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unknown",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -868,7 +881,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "I"
+            "agent": "I",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -937,7 +951,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "I"
+            "agent": "I",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -1009,7 +1024,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "He"
+            "agent": "He",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -1096,7 +1112,8 @@
                 "classification": "Supplementary",
                 "modifier_kind": "Adjective"
             },
-            "agent": "I"
+            "agent": "I",
+            "mapping": "Node(meeting) -> Attribute -> State(Long)"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1176,7 +1193,8 @@
                 "classification": "Supplementary",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "The report"
+            "agent": "The report",
+            "mapping": "Node(The report) -> Attribute -> State(Long)"
         },
         "stage4": {
             "process": "[State predicate] → [Category: State]",
@@ -1258,7 +1276,8 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "The report"
+            "agent": "The report",
+            "mapping": "Node(The report) -> Defining Attribute -> Clause(I wrote)"
         },
         "stage4": {
             "process": "[State predicate] → [Category: State]",
@@ -1340,7 +1359,8 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "The office"
+            "agent": "The office",
+            "mapping": "Node(The office) -> Defining Attribute -> Clause(I wrote the report)"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1422,7 +1442,8 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "The day"
+            "agent": "The day",
+            "mapping": "Node(The day) -> Defining Attribute -> Clause(he succeeded)"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1488,7 +1509,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "I"
+            "agent": "I",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Stative]",
@@ -1554,7 +1576,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "I"
+            "agent": "I",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: be + V-ing] → [Category: Action]",
@@ -1620,7 +1643,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "I"
+            "agent": "I",
+            "mapping": null
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1686,7 +1710,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "The report"
+            "agent": "The report",
+            "mapping": null
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1746,7 +1771,8 @@
             "process": "No modification structure found",
             "decision": "Standard",
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unknown",
+            "mapping": null
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -1828,7 +1854,8 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "I"
+            "agent": "I",
+            "mapping": "Node(manager) -> Attribute -> State(Frustrated) -> Cause -> Node(the deadline)"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1909,7 +1936,8 @@
                 "classification": "Supplementary",
                 "modifier_kind": "Adjective"
             },
-            "agent": "You"
+            "agent": "You",
+            "mapping": "Node(report) -> Attribute -> State(Long)"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",

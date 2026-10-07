@@ -75,6 +75,7 @@ def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
     assert stage3["decision"] == "Supplementary"
     assert stage3["target"] == "The report"
     assert stage3["structure"]["classification"] == "Supplementary"
+    assert stage3["mapping"] == "Node(The report) -> Attribute -> State(Long)"
     assert stage3["attribution"] == {
         "target": "The report",
         "modifier_agent": "The report",
@@ -89,6 +90,9 @@ def test_stage3_keeps_modifier_agent_separate_from_primary_agent():
 
     assert stage3["target"] == "manager"
     assert stage3["modifier"] == "was frustrated with the deadline"
+    assert stage3["mapping"] == (
+        "Node(manager) -> Attribute -> State(Frustrated) -> Cause -> Node(the deadline)"
+    )
     assert stage3["attribution"] == {
         "target": "manager",
         "modifier_agent": "manager",
@@ -104,6 +108,14 @@ def test_stage3_classifies_adjectival_description_as_supplementary():
     assert stage3["decision"] == "Supplementary"
     assert stage3["target"] == "report"
     assert stage3["modifier"] == "long"
+    assert stage3["mapping"] == "Node(report) -> Attribute -> State(Long)"
+    degree_modification = analyze_modification_structure("Please review the very long report.")
+    degree_stage3 = LogicAnalyzer({}).stage3_analyze(
+        "Please review the very long report.", {"agent": "You"}, degree_modification
+    )
+    assert degree_stage3["mapping"] == (
+        "Node(report) -> Attribute -> State(Long) -> How: Degree(Very)"
+    )
     assert analyze_modification_structure("The report was completed quickly.") is None
 
 

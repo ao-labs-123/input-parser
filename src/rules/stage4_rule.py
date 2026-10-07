@@ -1,5 +1,8 @@
 import re
 
+PSYCHOLOGICAL_VERBS = {"think", "thought", "feel", "want", "hope", "stressed"}
+
+
 def analyze_semantic_structure(text):
     text_clean = text.strip().rstrip(".")
     text_lower = text_clean.lower()
@@ -62,13 +65,19 @@ def analyze_semantic_structure(text):
         subject = text_clean[:be_state_match.start()].strip()
         state_verb = be_state_match.group(2)
         remainder = be_state_match.group(3)
-        return {
+        result = {
             "form": "State",
-            "verb": state_verb.lower(),
             "state": state_verb.lower(),
             "subject": subject,
             "object": remainder.strip() if remainder else None,
         }
+        psych_match = subject.split()[0].lower() if subject else ""
+        if psych_match in PSYCHOLOGICAL_VERBS:
+            result["psychological_verb"] = psych_match
+            result["verb"] = None
+        else:
+            result["verb"] = state_verb.lower()
+        return result
 
     # 4. 一般形（現在形・過去形など）の判定 (Morphology: Base)
     # 例: "I have a car"

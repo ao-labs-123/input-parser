@@ -2,6 +2,7 @@ import re
 
 
 UNSPECIFIED = "Unspecified"
+PSYCHOLOGICAL_VERBS = {"think", "thought", "feel", "want", "hope", "stressed"}
 
 
 def analyze_semantic_structure(text):
@@ -36,6 +37,28 @@ def analyze_semantic_structure(text):
             "subject": text_clean[:progressive_match.start()].strip(),
             "object": progressive_match.group(3).strip() or None,
         }
+
+    be_state_match = re.search(
+        r"\b(am|is|are|was|were)\b\s+([A-Za-z]+)\b(?:\s+(.*))?",
+        text_clean,
+        re.IGNORECASE,
+    )
+    if be_state_match:
+        subject = text_clean[:be_state_match.start()].strip()
+        state_value = be_state_match.group(2).lower()
+        result = {
+            "form": "State",
+            "state": state_value,
+            "subject": subject,
+            "object": be_state_match.group(3).strip() if be_state_match.group(3) else None,
+        }
+        psych_match = subject.split()[0].lower() if subject else ""
+        if psych_match in PSYCHOLOGICAL_VERBS:
+            result["psychological_verb"] = psych_match
+            result["verb"] = None
+        else:
+            result["verb"] = state_value
+        return result
 
     non_verb_second_words = {
         "a", "an", "the", "to", "in", "on", "at", "of", "by", "for", "with",

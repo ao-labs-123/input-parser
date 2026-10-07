@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-07T14:25:13.285257",
+        "timestamp": "2026-10-07T15:12:27.897679",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -70,7 +70,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.286574",
+        "timestamp": "2026-10-07T15:12:27.899041",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.287747",
+        "timestamp": "2026-10-07T15:12:27.900256",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -145,24 +145,12 @@
             "agent": "I"
         },
         "stage2": {
-            "process": "Event: State",
-            "decision": "No causal relation; Event classified: State",
-            "mapping": "I -> State -> strange",
-            "structure": {
-                "relation": "Event",
-                "event": {
-                    "category": "State",
-                    "verb": "strange",
-                    "actor": "I",
-                    "patient": null
-                }
-            },
+            "process": "No causal relation found",
+            "decision": "No causal relation",
+            "mapping": "None",
+            "structure": null,
             "agent": "I",
-            "action": {
-                "verb": "strange",
-                "actor": "I",
-                "patient": null
-            }
+            "action": null
         },
         "stage3": {
             "process": "No modification structure found",
@@ -175,16 +163,18 @@
             "process": "[State predicate] → [Category: State]",
             "form": "State",
             "category": "State",
-            "verb": "strange",
+            "verb": null,
             "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Thought",
             "structure": {
                 "form": "State",
-                "verb": "strange",
+                "state": "strange",
                 "subject": "Thought",
                 "object": null,
+                "psychological_verb": "thought",
+                "verb": null,
                 "category": "State",
                 "patient": "Unspecified",
                 "agent": "I"
@@ -204,7 +194,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.289292",
+        "timestamp": "2026-10-07T15:12:27.901837",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -212,24 +202,12 @@
             "agent": "He/She/They"
         },
         "stage2": {
-            "process": "Event: State",
-            "decision": "No causal relation; Event classified: State",
-            "mapping": "He/She/They -> State -> strange apparently",
-            "structure": {
-                "relation": "Event",
-                "event": {
-                    "category": "State",
-                    "verb": "strange",
-                    "actor": "He/She/They",
-                    "patient": "apparently"
-                }
-            },
+            "process": "No causal relation found",
+            "decision": "No causal relation",
+            "mapping": "None",
+            "structure": null,
             "agent": "He/She/They",
-            "action": {
-                "verb": "strange",
-                "actor": "He/She/They",
-                "patient": "apparently"
-            }
+            "action": null
         },
         "stage3": {
             "process": "Degree modifier",
@@ -257,16 +235,18 @@
             "process": "[State predicate] → [Category: State]",
             "form": "State",
             "category": "State",
-            "verb": "strange",
+            "verb": null,
             "patient": "apparently",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Thought it",
             "structure": {
                 "form": "State",
-                "verb": "strange",
+                "state": "strange",
                 "subject": "Thought it",
                 "object": "apparently",
+                "psychological_verb": "thought",
+                "verb": null,
                 "category": "State",
                 "patient": "apparently",
                 "agent": "He/She/They"
@@ -286,7 +266,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.290950",
+        "timestamp": "2026-10-07T15:12:27.903504",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -342,7 +322,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.292763",
+        "timestamp": "2026-10-07T15:12:27.905207",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -426,7 +406,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.293978",
+        "timestamp": "2026-10-07T15:12:27.906447",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -493,7 +473,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.295295",
+        "timestamp": "2026-10-07T15:12:27.908071",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -560,7 +540,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.296846",
+        "timestamp": "2026-10-07T15:12:27.909699",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -621,7 +601,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.298464",
+        "timestamp": "2026-10-07T15:12:27.911946",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -682,7 +662,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.300065",
+        "timestamp": "2026-10-07T15:12:27.914282",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -750,7 +730,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.301824",
+        "timestamp": "2026-10-07T15:12:27.916855",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -806,7 +786,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.303670",
+        "timestamp": "2026-10-07T15:12:27.919631",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -862,7 +842,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.305620",
+        "timestamp": "2026-10-07T15:12:27.922499",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -882,7 +862,8 @@
                     "category": "State",
                     "verb": "stressed",
                     "actor": "I",
-                    "patient": null
+                    "patient": null,
+                    "state": "stressed"
                 }
             },
             "agent": "I",
@@ -932,7 +913,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.307515",
+        "timestamp": "2026-10-07T15:12:27.925301",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1002,7 +983,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.310739",
+        "timestamp": "2026-10-07T15:12:27.929818",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1094,7 +1075,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.312998",
+        "timestamp": "2026-10-07T15:12:27.932879",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1111,7 +1092,8 @@
                     "category": "State",
                     "verb": "stressed",
                     "actor": "I",
-                    "patient": null
+                    "patient": null,
+                    "state": "stressed"
                 }
             },
             "agent": "I",
@@ -1182,7 +1164,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.315306",
+        "timestamp": "2026-10-07T15:12:27.935315",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1199,7 +1181,8 @@
                     "category": "State",
                     "verb": "long",
                     "actor": "The report",
-                    "patient": null
+                    "patient": null,
+                    "state": "long"
                 }
             },
             "agent": "The report",
@@ -1241,9 +1224,10 @@
             "subject": "The report, which",
             "structure": {
                 "form": "State",
-                "verb": "long",
+                "state": "long",
                 "subject": "The report, which",
                 "object": null,
+                "verb": "long",
                 "category": "State",
                 "patient": "Unspecified",
                 "agent": "The report"
@@ -1263,7 +1247,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.317577",
+        "timestamp": "2026-10-07T15:12:27.938378",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1280,7 +1264,8 @@
                     "category": "State",
                     "verb": "done",
                     "actor": "The report",
-                    "patient": null
+                    "patient": null,
+                    "state": "done"
                 }
             },
             "agent": "The report",
@@ -1324,9 +1309,10 @@
             "subject": "The report that I wrote",
             "structure": {
                 "form": "State",
-                "verb": "done",
+                "state": "done",
                 "subject": "The report that I wrote",
                 "object": null,
+                "verb": "done",
                 "category": "State",
                 "patient": "Unspecified",
                 "agent": "The report"
@@ -1346,7 +1332,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.320043",
+        "timestamp": "2026-10-07T15:12:27.940949",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1429,7 +1415,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.322675",
+        "timestamp": "2026-10-07T15:12:27.943539",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1512,7 +1498,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.325203",
+        "timestamp": "2026-10-07T15:12:27.946113",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1579,7 +1565,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.327845",
+        "timestamp": "2026-10-07T15:12:27.948725",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1646,7 +1632,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.330631",
+        "timestamp": "2026-10-07T15:12:27.951520",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1713,7 +1699,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.333755",
+        "timestamp": "2026-10-07T15:12:27.954559",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1796,7 +1782,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.336841",
+        "timestamp": "2026-10-07T15:12:27.957663",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1857,7 +1843,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.339844",
+        "timestamp": "2026-10-07T15:12:27.960653",
         "input": "I talked to the manager who was frustrated with the deadline.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1940,7 +1926,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T14:25:13.343068",
+        "timestamp": "2026-10-07T15:12:27.963830",
         "input": "Please review the long report.",
         "stage1": {
             "process": "Imperative / Direct Directive",

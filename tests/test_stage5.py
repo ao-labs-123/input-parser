@@ -262,18 +262,22 @@ def test_stage2_classifies_events_without_causal_relations():
             semantic_result=analyze_semantic_structure(text),
         )
 
+        expected_event = {
+            "category": category,
+            "verb": verb,
+            "actor": actor,
+            "patient": stage2["action"]["patient"],
+        }
+        if category == "State":
+            expected_event["state"] = verb
+
         assert stage2["process"] == f"Event: {category}"
         assert stage2["decision"] == (
             f"No causal relation; Event classified: {category}"
         )
         assert stage2["structure"] == {
             "relation": "Event",
-            "event": {
-                "category": category,
-                "verb": verb,
-                "actor": actor,
-                "patient": stage2["action"]["patient"],
-            },
+            "event": expected_event,
         }
 
 
@@ -397,7 +401,14 @@ def test_state_predicates_expose_state_value_separately():
     result = analyze_semantic_structure("Thought was strange.")
     assert result["form"] == "State"
     assert result["state"] == "strange"
-    assert result["verb"] == "strange"
+    assert result["verb"] is None
+    assert result["psychological_verb"] == "thought"
+
+    evidential = analyze_semantic_structure("Thought it was strange apparently.")
+    assert evidential["form"] == "State"
+    assert evidential["state"] == "strange"
+    assert evidential["verb"] is None
+    assert evidential["psychological_verb"] == "thought"
 
 
 if __name__ == "__main__":

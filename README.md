@@ -60,6 +60,104 @@ By codifying the structural and cognitive rules of language into a lightweight e
 
    The logical core (Subject Inference, Semantic Categorization) is designed to be applicable across multiple languages, including Japanese and English.
 
+## Quick Start
+
+**1. Prerequisites**
+
+- Python 3.10+
+
+**2. Execution**
+
+```
+python main.py
+```
+
+**3. Output**
+
+```json
+ {
+        "timestamp": "2026-10-07T09:43:36.737138",
+        "input": "Thought it was strange apparently.",
+        "stage1": {
+            "process": "Null Subject + Evidential / Attribution Marker",
+            "decision": "Override: Third Person",
+            "agent": "He/She/They"
+        },
+        "stage2": {
+            "process": "Event: State",
+            "decision": "No causal relation; Event classified: State",
+            "mapping": "He/She/They -> State -> strange apparently",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "State",
+                    "verb": "strange",
+                    "actor": "He/She/They",
+                    "patient": "apparently"
+                }
+            },
+            "agent": "He/She/They",
+            "action": {
+                "verb": "strange",
+                "actor": "He/She/They",
+                "patient": "apparently"
+            }
+        },
+        "stage3": {
+            "process": "Degree modifier",
+            "decision": "Supplementary",
+            "mapping": "Agent(He/She/They) -> Internal Eval -> State(Strange) -> How: Degree(Apparently)",
+            "target": "strange",
+            "modifier": "apparently",
+            "attribution": {
+                "target": "strange",
+                "modifier_agent": "strange",
+                "primary_agent": "He/She/They"
+            },
+            "structure": {
+                "type": "Supplementary",
+                "antecedent": "strange",
+                "target": "strange",
+                "clause": "apparently",
+                "kind": "Degree",
+                "classification": "Supplementary",
+                "modifier_kind": "Degree"
+            },
+            "agent": "He/She/They"
+        },
+        "stage4": {
+            "process": "[State predicate] → [Category: State]",
+            "form": "State",
+            "category": "State",
+            "verb": "strange",
+            "patient": "apparently",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "Thought it",
+            "structure": {
+                "form": "State",
+                "verb": "strange",
+                "subject": "Thought it",
+                "object": "apparently",
+                "category": "State",
+                "patient": "apparently",
+                "agent": "He/She/They"
+            }
+        },
+        "stage5": {
+            "stage": "Stage 5 - 5W1H Synthesis",
+            "frame": {
+                "who": "He/She/They",
+                "what": "thought it was strange",
+                "when": "Unspecified",
+                "where": "Unspecified",
+                "why": "Unspecified",
+                "how": "apparently"
+            },
+            "status": "Ready for Particle Encapsulation"
+        }
+    }
+```
 
 ## Repository Structure
 

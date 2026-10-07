@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-07T09:05:00.407919",
+        "timestamp": "2026-10-07T09:34:16.223326",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -33,9 +33,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "He",
-            "mapping": null
+            "agent": "He"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -70,7 +70,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.409206",
+        "timestamp": "2026-10-07T09:34:16.224616",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -100,9 +100,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "You",
-            "mapping": null
+            "agent": "You"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.410356",
+        "timestamp": "2026-10-07T09:34:16.225813",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -167,9 +167,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "I",
-            "mapping": null
+            "agent": "I"
         },
         "stage4": {
             "process": "[State predicate] → [Category: State]",
@@ -204,7 +204,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.411570",
+        "timestamp": "2026-10-07T09:34:16.227049",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -234,9 +234,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "He/She/They",
-            "mapping": null
+            "agent": "He/She/They"
         },
         "stage4": {
             "process": "[State predicate] → [Category: State]",
@@ -271,7 +271,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.413195",
+        "timestamp": "2026-10-07T09:34:16.228735",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -290,9 +290,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "Unknown",
-            "mapping": null
+            "agent": "Unknown"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -327,7 +327,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.414923",
+        "timestamp": "2026-10-07T09:34:16.230621",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -358,6 +358,7 @@
         "stage3": {
             "process": "Defining clause",
             "decision": "Essential",
+            "mapping": "Node(It is required) -> Defining Attribute -> Clause(you submit the form)",
             "target": "It is required",
             "modifier": "you submit the form",
             "attribution": {
@@ -375,8 +376,7 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "you",
-            "mapping": "Node(It is required) -> Defining Attribute -> Clause(you submit the form)"
+            "agent": "you"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -411,7 +411,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.416146",
+        "timestamp": "2026-10-07T09:34:16.231859",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -441,9 +441,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "I",
-            "mapping": null
+            "agent": "I"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -478,7 +478,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.417436",
+        "timestamp": "2026-10-07T09:34:16.233237",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -508,9 +508,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "I",
-            "mapping": null
+            "agent": "I"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -545,7 +545,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.418949",
+        "timestamp": "2026-10-07T09:34:16.234810",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -569,9 +569,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "Unknown",
-            "mapping": null
+            "agent": "Unknown"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -606,7 +606,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.420504",
+        "timestamp": "2026-10-07T09:34:16.236430",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -630,9 +630,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "Unknown",
-            "mapping": null
+            "agent": "Unknown"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -667,7 +667,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.422065",
+        "timestamp": "2026-10-07T09:34:16.238062",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -698,9 +698,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "Unknown",
-            "mapping": null
+            "agent": "Unknown"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -735,7 +735,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.423739",
+        "timestamp": "2026-10-07T09:34:16.239814",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -754,9 +754,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "Unknown",
-            "mapping": null
+            "agent": "Unknown"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -791,7 +791,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.425507",
+        "timestamp": "2026-10-07T09:34:16.241644",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -810,9 +810,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "Unknown",
-            "mapping": null
+            "agent": "Unknown"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -847,7 +847,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.427382",
+        "timestamp": "2026-10-07T09:34:16.243585",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -880,9 +880,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "I",
-            "mapping": null
+            "agent": "I"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -917,7 +917,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.429170",
+        "timestamp": "2026-10-07T09:34:16.245419",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -950,9 +950,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "I",
-            "mapping": null
+            "agent": "I"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -987,7 +987,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.431116",
+        "timestamp": "2026-10-07T09:34:16.247469",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1023,9 +1023,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "He",
-            "mapping": null
+            "agent": "He"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -1060,7 +1060,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.433201",
+        "timestamp": "2026-10-07T09:34:16.249838",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1096,6 +1096,7 @@
         "stage3": {
             "process": "Adjectival modifier",
             "decision": "Supplementary",
+            "mapping": "Node(meeting) -> Attribute -> State(Long)",
             "target": "meeting",
             "modifier": "long",
             "attribution": {
@@ -1112,8 +1113,7 @@
                 "classification": "Supplementary",
                 "modifier_kind": "Adjective"
             },
-            "agent": "I",
-            "mapping": "Node(meeting) -> Attribute -> State(Long)"
+            "agent": "I"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1148,7 +1148,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.435338",
+        "timestamp": "2026-10-07T09:34:16.252419",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1178,6 +1178,7 @@
         "stage3": {
             "process": "Non-defining clause",
             "decision": "Supplementary",
+            "mapping": "Node(The report) -> Attribute -> State(Long)",
             "target": "The report",
             "modifier": "was long",
             "attribution": {
@@ -1193,8 +1194,7 @@
                 "classification": "Supplementary",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "The report",
-            "mapping": "Node(The report) -> Attribute -> State(Long)"
+            "agent": "The report"
         },
         "stage4": {
             "process": "[State predicate] → [Category: State]",
@@ -1229,7 +1229,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.437477",
+        "timestamp": "2026-10-07T09:34:16.255413",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1259,6 +1259,7 @@
         "stage3": {
             "process": "Defining clause",
             "decision": "Essential",
+            "mapping": "Node(The report) -> Defining Attribute -> Clause(I wrote)",
             "target": "The report",
             "modifier": "I wrote",
             "attribution": {
@@ -1276,8 +1277,7 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "The report",
-            "mapping": "Node(The report) -> Defining Attribute -> Clause(I wrote)"
+            "agent": "The report"
         },
         "stage4": {
             "process": "[State predicate] → [Category: State]",
@@ -1312,7 +1312,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.439881",
+        "timestamp": "2026-10-07T09:34:16.257863",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1342,6 +1342,7 @@
         "stage3": {
             "process": "Defining clause",
             "decision": "Essential",
+            "mapping": "Node(The office) -> Defining Attribute -> Clause(I wrote the report)",
             "target": "The office",
             "modifier": "I wrote the report",
             "attribution": {
@@ -1359,8 +1360,7 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "The office",
-            "mapping": "Node(The office) -> Defining Attribute -> Clause(I wrote the report)"
+            "agent": "The office"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1395,7 +1395,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.442425",
+        "timestamp": "2026-10-07T09:34:16.260404",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1425,6 +1425,7 @@
         "stage3": {
             "process": "Defining clause",
             "decision": "Essential",
+            "mapping": "Node(The day) -> Defining Attribute -> Clause(he succeeded)",
             "target": "The day",
             "modifier": "he succeeded",
             "attribution": {
@@ -1442,8 +1443,7 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "The day",
-            "mapping": "Node(The day) -> Defining Attribute -> Clause(he succeeded)"
+            "agent": "The day"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1478,7 +1478,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.444870",
+        "timestamp": "2026-10-07T09:34:16.262936",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1508,9 +1508,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "I",
-            "mapping": null
+            "agent": "I"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Stative]",
@@ -1545,7 +1545,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.447431",
+        "timestamp": "2026-10-07T09:34:16.265554",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1575,9 +1575,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "I",
-            "mapping": null
+            "agent": "I"
         },
         "stage4": {
             "process": "[Morphology: be + V-ing] → [Category: Action]",
@@ -1612,7 +1612,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.450144",
+        "timestamp": "2026-10-07T09:34:16.268314",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1642,9 +1642,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "I",
-            "mapping": null
+            "agent": "I"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1679,7 +1679,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.452846",
+        "timestamp": "2026-10-07T09:34:16.271066",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1709,9 +1709,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "The report",
-            "mapping": null
+            "agent": "The report"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1746,7 +1746,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.455779",
+        "timestamp": "2026-10-07T09:34:16.274184",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1770,9 +1770,9 @@
         "stage3": {
             "process": "No modification structure found",
             "decision": "Standard",
+            "mapping": null,
             "structure": null,
-            "agent": "Unknown",
-            "mapping": null
+            "agent": "Unknown"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -1807,7 +1807,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.458677",
+        "timestamp": "2026-10-07T09:34:16.278000",
         "input": "I talked to the manager who was frustrated with the deadline.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1837,6 +1837,7 @@
         "stage3": {
             "process": "Defining clause",
             "decision": "Essential",
+            "mapping": "Node(manager) -> Attribute -> State(Frustrated) -> Cause -> Node(the deadline)",
             "target": "manager",
             "modifier": "was frustrated with the deadline",
             "attribution": {
@@ -1854,8 +1855,7 @@
                 "classification": "Essential",
                 "modifier_kind": "RelativeClause"
             },
-            "agent": "I",
-            "mapping": "Node(manager) -> Attribute -> State(Frustrated) -> Cause -> Node(the deadline)"
+            "agent": "I"
         },
         "stage4": {
             "process": "[Passive: be + V-en + by]",
@@ -1890,7 +1890,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:05:00.461769",
+        "timestamp": "2026-10-07T09:34:16.283438",
         "input": "Please review the long report.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -1920,6 +1920,7 @@
         "stage3": {
             "process": "Adjectival modifier",
             "decision": "Supplementary",
+            "mapping": "Node(report) -> Attribute -> State(Long)",
             "target": "report",
             "modifier": "long",
             "attribution": {
@@ -1936,8 +1937,7 @@
                 "classification": "Supplementary",
                 "modifier_kind": "Adjective"
             },
-            "agent": "You",
-            "mapping": "Node(report) -> Attribute -> State(Long)"
+            "agent": "You"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",

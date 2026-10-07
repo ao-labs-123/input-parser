@@ -373,11 +373,12 @@ class LogicAnalyzer:
         modification_type = modification_result.get("type")
         if modification_type in ("Non-defining", "Supplementary"):
             decision = "Supplementary"
-            process = (
-                "Adjectival modifier"
-                if modification_result.get("kind") == "Adjective"
-                else "Non-defining clause"
-            )
+            process = {
+                "Adjective": "Adjectival modifier",
+                "Manner": "Manner adverb",
+                "Instrument": "Instrument phrase",
+                "Degree": "Degree modifier",
+            }.get(modification_result.get("kind"), "Non-defining clause")
         elif modification_type == "Defining":
             decision = "Essential"
             process = "Defining clause"
@@ -417,7 +418,26 @@ class LogicAnalyzer:
         })
 
         mapping = f"Node({target})"
-        if modification_result.get("kind") == "Adjective":
+        modifier_kind = modification_result.get("kind")
+        if modifier_kind == "Manner":
+            mapping += (
+                f" -> Action({modification_result['action']})"
+                f" -> How: Manner({modifier.capitalize()})"
+            )
+        elif modifier_kind == "Instrument":
+            mapping = (
+                f"Agent({modification_result['actor']})"
+                f" -> How: Instrument({modification_result['instrument']})"
+                f" -> {modification_result['outcome_kind']}"
+                f"({modification_result['outcome']})"
+            )
+        elif modifier_kind == "Degree":
+            state = target[0].upper() + target[1:] if target else target
+            mapping = (
+                f"Agent({agent}) -> Internal Eval -> State({state})"
+                f" -> How: Degree({modifier.capitalize()})"
+            )
+        elif modifier_kind == "Adjective":
             degree_match = re.match(
                 r"^(very|extremely|quite|really)\s+(.+)$",
                 modifier,

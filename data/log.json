@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-07T09:34:16.223326",
+        "timestamp": "2026-10-07T09:41:46.818850",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -70,7 +70,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.224616",
+        "timestamp": "2026-10-07T09:41:46.820187",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.225813",
+        "timestamp": "2026-10-07T09:41:46.821404",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -204,7 +204,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.227049",
+        "timestamp": "2026-10-07T09:41:46.823017",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -232,10 +232,25 @@
             }
         },
         "stage3": {
-            "process": "No modification structure found",
-            "decision": "Standard",
-            "mapping": null,
-            "structure": null,
+            "process": "Degree modifier",
+            "decision": "Supplementary",
+            "mapping": "Agent(He/She/They) -> Internal Eval -> State(Strange) -> How: Degree(Apparently)",
+            "target": "strange",
+            "modifier": "apparently",
+            "attribution": {
+                "target": "strange",
+                "modifier_agent": "strange",
+                "primary_agent": "He/She/They"
+            },
+            "structure": {
+                "type": "Supplementary",
+                "antecedent": "strange",
+                "target": "strange",
+                "clause": "apparently",
+                "kind": "Degree",
+                "classification": "Supplementary",
+                "modifier_kind": "Degree"
+            },
             "agent": "He/She/They"
         },
         "stage4": {
@@ -271,7 +286,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.228735",
+        "timestamp": "2026-10-07T09:41:46.824766",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -327,7 +342,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.230621",
+        "timestamp": "2026-10-07T09:41:46.826620",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -411,7 +426,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.231859",
+        "timestamp": "2026-10-07T09:41:46.827886",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -478,7 +493,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.233237",
+        "timestamp": "2026-10-07T09:41:46.829318",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -545,7 +560,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.234810",
+        "timestamp": "2026-10-07T09:41:46.830929",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -606,7 +621,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.236430",
+        "timestamp": "2026-10-07T09:41:46.832660",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -667,7 +682,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.238062",
+        "timestamp": "2026-10-07T09:41:46.834373",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -735,7 +750,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.239814",
+        "timestamp": "2026-10-07T09:41:46.836186",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -791,7 +806,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.241644",
+        "timestamp": "2026-10-07T09:41:46.838115",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -847,7 +862,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.243585",
+        "timestamp": "2026-10-07T09:41:46.840145",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -917,7 +932,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.245419",
+        "timestamp": "2026-10-07T09:41:46.841979",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -987,7 +1002,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.247469",
+        "timestamp": "2026-10-07T09:41:46.844924",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1021,10 +1036,29 @@
             }
         },
         "stage3": {
-            "process": "No modification structure found",
-            "decision": "Standard",
-            "mapping": null,
-            "structure": null,
+            "process": "Instrument phrase",
+            "decision": "Supplementary",
+            "mapping": "Agent(He) -> How: Instrument(Hard Work) -> State(Success)",
+            "target": "Success",
+            "modifier": "Hard Work",
+            "attribution": {
+                "target": "Success",
+                "modifier_agent": "Hard Work",
+                "primary_agent": "He"
+            },
+            "structure": {
+                "type": "Supplementary",
+                "antecedent": "He succeeded",
+                "target": "Success",
+                "clause": "Hard Work",
+                "kind": "Instrument",
+                "actor": "He",
+                "outcome": "Success",
+                "outcome_kind": "State",
+                "instrument": "Hard Work",
+                "classification": "Supplementary",
+                "modifier_kind": "Instrument"
+            },
             "agent": "He"
         },
         "stage4": {
@@ -1050,17 +1084,17 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "He",
-                "what": "succeeded",
+                "what": "succeeded by working hard",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
-                "how": "by working hard"
+                "how": "Hard Work"
             },
             "status": "Ready for Particle Encapsulation"
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.249838",
+        "timestamp": "2026-10-07T09:41:46.847554",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1148,7 +1182,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.252419",
+        "timestamp": "2026-10-07T09:41:46.849912",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1229,7 +1263,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.255413",
+        "timestamp": "2026-10-07T09:41:46.852319",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1312,7 +1346,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.257863",
+        "timestamp": "2026-10-07T09:41:46.855060",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1395,7 +1429,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.260404",
+        "timestamp": "2026-10-07T09:41:46.859477",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1478,7 +1512,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.262936",
+        "timestamp": "2026-10-07T09:41:46.863619",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1545,7 +1579,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.265554",
+        "timestamp": "2026-10-07T09:41:46.867900",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1612,7 +1646,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.268314",
+        "timestamp": "2026-10-07T09:41:46.872360",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1679,7 +1713,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.271066",
+        "timestamp": "2026-10-07T09:41:46.875860",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1707,10 +1741,26 @@
             }
         },
         "stage3": {
-            "process": "No modification structure found",
-            "decision": "Standard",
-            "mapping": null,
-            "structure": null,
+            "process": "Manner adverb",
+            "decision": "Supplementary",
+            "mapping": "Node(The report) -> Action(Complete) -> How: Manner(Quickly)",
+            "target": "The report",
+            "modifier": "quickly",
+            "attribution": {
+                "target": "The report",
+                "modifier_agent": "The report",
+                "primary_agent": "The report"
+            },
+            "structure": {
+                "type": "Supplementary",
+                "antecedent": "The report",
+                "target": "The report",
+                "clause": "quickly",
+                "kind": "Manner",
+                "action": "Complete",
+                "classification": "Supplementary",
+                "modifier_kind": "Manner"
+            },
             "agent": "The report"
         },
         "stage4": {
@@ -1746,7 +1796,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.274184",
+        "timestamp": "2026-10-07T09:41:46.879066",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1807,7 +1857,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.278000",
+        "timestamp": "2026-10-07T09:41:46.883578",
         "input": "I talked to the manager who was frustrated with the deadline.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1890,7 +1940,7 @@
         }
     },
     {
-        "timestamp": "2026-10-07T09:34:16.283438",
+        "timestamp": "2026-10-07T09:41:46.887263",
         "input": "Please review the long report.",
         "stage1": {
             "process": "Imperative / Direct Directive",

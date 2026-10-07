@@ -116,7 +116,44 @@ def test_stage3_classifies_adjectival_description_as_supplementary():
     assert degree_stage3["mapping"] == (
         "Node(report) -> Attribute -> State(Long) -> How: Degree(Very)"
     )
-    assert analyze_modification_structure("The report was completed quickly.") is None
+
+    manner_text = "The report was completed quickly."
+    manner_modification = analyze_modification_structure(manner_text)
+    manner_stage3 = LogicAnalyzer({}).stage3_analyze(
+        manner_text, {"agent": "The report"}, manner_modification
+    )
+    assert manner_stage3["mapping"] == (
+        "Node(The report) -> Action(Complete) -> How: Manner(Quickly)"
+    )
+
+    instrument_text = "He succeeded by working hard."
+    instrument_modification = analyze_modification_structure(instrument_text)
+    instrument_stage3 = LogicAnalyzer({}).stage3_analyze(
+        instrument_text, {"agent": "He"}, instrument_modification
+    )
+    assert instrument_stage3["mapping"] == (
+        "Agent(He) -> How: Instrument(Hard Work) -> State(Success)"
+    )
+    assert analyze_modification_structure("I was told by him.") is None
+
+    tool_text = "I opened the door with a key."
+    tool_modification = analyze_modification_structure(tool_text)
+    tool_stage3 = LogicAnalyzer({}).stage3_analyze(
+        tool_text, {"agent": "I"}, tool_modification
+    )
+    assert tool_stage3["mapping"] == (
+        "Agent(I) -> How: Instrument(A Key) -> Action(Open)"
+    )
+
+    degree_text = "Thought it was strange apparently."
+    degree_modification = analyze_modification_structure(degree_text)
+    degree_stage3 = LogicAnalyzer({}).stage3_analyze(
+        degree_text, {"agent": "He/She/They"}, degree_modification
+    )
+    assert degree_stage3["mapping"] == (
+        "Agent(He/She/They) -> Internal Eval -> State(Strange)"
+        " -> How: Degree(Apparently)"
+    )
 
 
 def test_stage2_does_not_emit_relation_words_as_actions():

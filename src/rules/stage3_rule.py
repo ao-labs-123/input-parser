@@ -96,5 +96,92 @@ def analyze_modification_structure(text):
             "clause": adjective,
             "kind": "Adjective",
         }
+
+    instrument_match = re.search(
+        r"\b(?:by\s+(?P<gerund>[A-Za-z]+ing(?:\s+[^,.!?]+)?)|"
+        r"with\s+(?P<tool>(?:a|an|the)\s+[^,.!?]+))[.!?]*$",
+        text_clean,
+        re.IGNORECASE,
+    )
+    if instrument_match:
+        event = text_clean[:instrument_match.start()].strip()
+        event_match = re.match(
+            r"^(?P<actor>I|You|He|She|They|We|[A-Z][a-z]+)\s+"
+            r"(?P<verb>[A-Za-z]+)\b",
+            event,
+        )
+        if event_match:
+            verb = event_match.group("verb")
+            outcomes = {
+                "succeed": ("Success", "State"),
+                "succeeded": ("Success", "State"),
+                "fail": ("Failure", "State"),
+                "failed": ("Failure", "State"),
+                "opened": ("Open", "Action"),
+            }
+            outcome, outcome_kind = outcomes.get(
+                verb.lower(), (verb.capitalize(), "Action")
+            )
+            instrument = (
+                instrument_match.group("gerund") or instrument_match.group("tool")
+            ).strip()
+            instrument = re.sub(
+                r"^working\s+hard$", "hard work", instrument, flags=re.IGNORECASE
+            )
+            instrument = " ".join(word.capitalize() for word in instrument.split())
+            return {
+                "type": "Supplementary",
+                "antecedent": event,
+                "target": outcome,
+                "clause": instrument,
+                "kind": "Instrument",
+                "actor": event_match.group("actor"),
+                "outcome": outcome,
+                "outcome_kind": outcome_kind,
+                "instrument": instrument,
+            }
+
+    adverb_match = re.search(
+        r"\b(?P<adverb>[A-Za-z]+ly)[.!?]*$", text_clean, re.IGNORECASE
+    )
+    if adverb_match:
+        adverb = adverb_match.group("adverb")
+        event = text_clean[:adverb_match.start()].strip(" ,")
+        degree_adverbs = {"apparently", "seemingly", "possibly", "probably"}
+        if adverb.lower() in degree_adverbs:
+            state_match = re.search(
+                r"\b(?:am|is|are|was|were)\s+(?P<state>[A-Za-z]+)$",
+                event,
+                re.IGNORECASE,
+            )
+            if state_match:
+                state = state_match.group("state")
+                return {
+                    "type": "Supplementary",
+                    "antecedent": state,
+                    "target": state,
+                    "clause": adverb,
+                    "kind": "Degree",
+                }
+        else:
+            passive_match = re.match(
+                r"^(?P<target>.+?)\s+(?:am|is|are|was|were)\s+"
+                r"(?P<verb>[A-Za-z]+)$",
+                event,
+                re.IGNORECASE,
+            )
+            if passive_match:
+                verb = passive_match.group("verb")
+                action = {"completed": "Complete"}.get(
+                    verb.lower(), verb.capitalize()
+                )
+                return {
+                    "type": "Supplementary",
+                    "antecedent": passive_match.group("target"),
+                    "target": passive_match.group("target"),
+                    "clause": adverb,
+                    "kind": "Manner",
+                    "action": action,
+                }
             
     return None

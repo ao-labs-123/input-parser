@@ -471,7 +471,11 @@ def test_state_predicates_expose_state_value_separately():
         semantic_result=evidential,
     )
     assert stage2["process"] == "Event: State"
-    assert stage2["structure"]["event"]["verb"] == "strange"
+    assert stage2["structure"]["event"]["verb"] is None
+    assert stage2["structure"]["event"]["state"] == "strange"
+    assert stage2["action"] is None
+    assert stage2["mapping"] == "He/She/They -> State -> strange"
+    assert evidential["verb"] is None
 
 
 if __name__ == "__main__":

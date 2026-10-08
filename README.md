@@ -86,14 +86,14 @@ python src/main.py
         "stage2": {
             "process": "Event: State",
             "decision": "No causal relation; Event classified: State",
-            "mapping": "He/She/They -> State -> strange apparently",
+            "mapping": "He/She/They -> State -> strange",
             "structure": {
                 "relation": "Event",
                 "event": {
                     "category": "State",
-                    "verb": "strange",
+                    "verb": null,
                     "actor": "He/She/They",
-                    "patient": "apparently",
+                    "patient": null,
                     "state": "strange"
                 }
             },

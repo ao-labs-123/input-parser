@@ -155,13 +155,12 @@ class LogicAnalyzer:
         stage1_result = stage1_result or {}
         rule_result = stage2_rule_result or {}
         agent = stage1_result.get("agent", "Unknown")
-        if (
-            semantic_result
-            and semantic_result.get("form") == "State"
-            and not semantic_result.get("verb")
-        ):
-            semantic_result = dict(semantic_result)
-            semantic_result["verb"] = semantic_result.get("state")
+        state_value = (
+            semantic_result.get("state")
+            if semantic_result and semantic_result.get("form") == "State"
+            else None
+        )
+        state_event = bool(state_value and not semantic_result.get("verb"))
         action = None
         if semantic_result and semantic_result.get("verb"):
             form = semantic_result.get("form")
@@ -225,7 +224,16 @@ class LogicAnalyzer:
 
         event_info = None
         event_category = None
-        if action:
+        if state_event:
+            event_category = "State"
+            event_info = {
+                "category": event_category,
+                "verb": None,
+                "actor": agent,
+                "patient": None,
+                "state": state_value,
+            }
+        elif action:
             verb = action["verb"]
             if semantic_result.get("form") == "State" or verb.lower() in self.STATE_LIKE_WORDS:
                 event_category = "State"
@@ -252,6 +260,11 @@ class LogicAnalyzer:
 
         def add_action_mapping(relation_mapping):
             if not action:
+                if state_event:
+                    state_mapping = f"{agent} -> State -> {state_value}"
+                    if relation_mapping == "None":
+                        return state_mapping
+                    return f"{relation_mapping}; {state_mapping}"
                 return relation_mapping
             action_phrase = action["verb"]
             if action["patient"]:

@@ -187,12 +187,6 @@ class LogicAnalyzer:
                 "patient": patient,
             }
             if (
-                agent == "Unknown"
-                and semantic_result.get("subject")
-                and semantic_result["subject"].lower() == action["verb"].lower()
-            ):
-                action = None
-            if (
                 form == "Passive"
                 and semantic_result["verb"].lower() in self.STATE_LIKE_WORDS
                 and semantic_result.get("receiver") == agent
@@ -268,7 +262,16 @@ class LogicAnalyzer:
                 return relation_mapping
             action_phrase = action["verb"]
             if action["patient"]:
-                action_phrase = f"{action_phrase} {action['patient']}"
+                patient = action["patient"]
+                if semantic_result.get("form") == "Passive":
+                    patient = {
+                        "i": "me",
+                        "he": "him",
+                        "she": "her",
+                        "we": "us",
+                        "they": "them",
+                    }.get(patient.lower(), patient)
+                action_phrase = f"{action_phrase} {patient}"
             actor, event = self._split_actor_and_event(action_phrase)
             if actor:
                 action_phrase = event or action_phrase
@@ -552,6 +555,8 @@ class LogicAnalyzer:
         patient = semantic_result.get("object")
         if form == "Passive":
             patient = semantic_result.get("receiver")
+        elif form == "State":
+            patient = None
         patient = patient or "Unspecified"
         structure = {
             **semantic_result,

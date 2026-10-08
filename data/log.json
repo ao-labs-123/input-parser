@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-08T08:18:32.587449",
+        "timestamp": "2026-10-08T08:40:28.226938",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -42,7 +42,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "succeeded",
-            "patient": "because I helped",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "He",
@@ -50,9 +50,9 @@
                 "form": "Base",
                 "verb": "succeeded",
                 "subject": "He",
-                "object": "because I helped",
+                "object": null,
                 "category": "Action",
-                "patient": "because I helped",
+                "patient": "Unspecified",
                 "agent": "He"
             }
         },
@@ -70,7 +70,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.588686",
+        "timestamp": "2026-10-08T08:40:28.228176",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.589844",
+        "timestamp": "2026-10-08T08:40:28.229295",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -203,7 +203,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.591373",
+        "timestamp": "2026-10-08T08:40:28.230762",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -254,7 +254,7 @@
             "form": "State",
             "category": "State",
             "verb": null,
-            "patient": "apparently",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Thought it",
@@ -266,7 +266,7 @@
                 "psychological_verb": "thought",
                 "verb": null,
                 "category": "State",
-                "patient": "apparently",
+                "patient": "Unspecified",
                 "agent": "He/She/They"
             }
         },
@@ -284,7 +284,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.592947",
+        "timestamp": "2026-10-08T08:40:28.232564",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -293,12 +293,24 @@
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "mapping": "None",
-            "structure": null,
+            "process": "Event: Action",
+            "decision": "Clarification Required (Undetermined Agent); Event classified: Action",
+            "mapping": "Unknown -> Action -> went",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "went",
+                    "actor": "Unknown",
+                    "patient": null
+                }
+            },
             "agent": "Unknown",
-            "action": null
+            "action": {
+                "verb": "went",
+                "actor": "Unknown",
+                "patient": null
+            }
         },
         "stage3": {
             "process": "No modification structure found",
@@ -312,7 +324,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "went",
-            "patient": "to the cafe yesterday",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Went",
@@ -320,9 +332,9 @@
                 "form": "Base",
                 "verb": "went",
                 "subject": "Went",
-                "object": "to the cafe yesterday",
+                "object": null,
                 "category": "Action",
-                "patient": "to the cafe yesterday",
+                "patient": "Unspecified",
                 "agent": "Unknown"
             }
         },
@@ -340,7 +352,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.594663",
+        "timestamp": "2026-10-08T08:40:28.233734",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -369,26 +381,10 @@
             }
         },
         "stage3": {
-            "process": "Defining clause",
-            "decision": "Essential",
-            "mapping": "Node(It is required) -> Defining Attribute -> Clause(you submit the form)",
-            "target": "It is required",
-            "modifier": "you submit the form",
-            "attribution": {
-                "target": "It is required",
-                "modifier_agent": "It is required",
-                "primary_agent": "you"
-            },
-            "structure": {
-                "type": "Defining",
-                "antecedent": "It is required",
-                "target": "It is required",
-                "clause": "you submit the form",
-                "kind": "RelativeClause",
-                "relative_marker": "that",
-                "classification": "Essential",
-                "modifier_kind": "RelativeClause"
-            },
+            "process": "No modification structure found",
+            "decision": "Standard",
+            "mapping": null,
+            "structure": null,
             "agent": "you"
         },
         "stage4": {
@@ -424,7 +420,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.595867",
+        "timestamp": "2026-10-08T08:40:28.234915",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -434,21 +430,21 @@
         "stage2": {
             "process": "Event: Action",
             "decision": "No causal relation; Event classified: Action",
-            "mapping": "I -> Action -> submitted the form yesterday",
+            "mapping": "I -> Action -> submitted the form",
             "structure": {
                 "relation": "Event",
                 "event": {
                     "category": "Action",
                     "verb": "submitted",
                     "actor": "I",
-                    "patient": "the form yesterday"
+                    "patient": "the form"
                 }
             },
             "agent": "I",
             "action": {
                 "verb": "submitted",
                 "actor": "I",
-                "patient": "the form yesterday"
+                "patient": "the form"
             }
         },
         "stage3": {
@@ -463,7 +459,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "submitted",
-            "patient": "the form yesterday",
+            "patient": "the form",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "I",
@@ -471,9 +467,9 @@
                 "form": "Base",
                 "verb": "submitted",
                 "subject": "I",
-                "object": "the form yesterday",
+                "object": "the form",
                 "category": "Action",
-                "patient": "the form yesterday",
+                "patient": "the form",
                 "agent": "I"
             }
         },
@@ -491,7 +487,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.597193",
+        "timestamp": "2026-10-08T08:40:28.236277",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -501,21 +497,21 @@
         "stage2": {
             "process": "Event: Action",
             "decision": "No causal relation; Event classified: Action",
-            "mapping": "I -> Action -> wrote the report at the office",
+            "mapping": "I -> Action -> wrote the report",
             "structure": {
                 "relation": "Event",
                 "event": {
                     "category": "Action",
                     "verb": "wrote",
                     "actor": "I",
-                    "patient": "the report at the office"
+                    "patient": "the report"
                 }
             },
             "agent": "I",
             "action": {
                 "verb": "wrote",
                 "actor": "I",
-                "patient": "the report at the office"
+                "patient": "the report"
             }
         },
         "stage3": {
@@ -530,7 +526,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "wrote",
-            "patient": "the report at the office",
+            "patient": "the report",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "I",
@@ -538,9 +534,9 @@
                 "form": "Base",
                 "verb": "wrote",
                 "subject": "I",
-                "object": "the report at the office",
+                "object": "the report",
                 "category": "Action",
-                "patient": "the report at the office",
+                "patient": "the report",
                 "agent": "I"
             }
         },
@@ -558,7 +554,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.598672",
+        "timestamp": "2026-10-08T08:40:28.237763",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -567,17 +563,27 @@
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "Causal Marker: because",
-            "decision": "Causal relation mapped",
-            "mapping": "you helped -> Cause -> Succeeded",
+            "process": "Causal Marker: because; Event: Action",
+            "decision": "Causal relation mapped; Event classified: Action",
+            "mapping": "you helped -> Cause -> Succeeded; Unknown -> Action -> succeeded",
             "structure": {
                 "relation": "CauseEffect",
                 "marker": "because",
                 "cause": "you helped",
-                "effect": "Succeeded"
+                "effect": "Succeeded",
+                "event": {
+                    "category": "Action",
+                    "verb": "succeeded",
+                    "actor": "Unknown",
+                    "patient": null
+                }
             },
             "agent": "Unknown",
-            "action": null
+            "action": {
+                "verb": "succeeded",
+                "actor": "Unknown",
+                "patient": null
+            }
         },
         "stage3": {
             "process": "No modification structure found",
@@ -591,7 +597,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "succeeded",
-            "patient": "because you helped",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Succeeded",
@@ -599,9 +605,9 @@
                 "form": "Base",
                 "verb": "succeeded",
                 "subject": "Succeeded",
-                "object": "because you helped",
+                "object": null,
                 "category": "Action",
-                "patient": "because you helped",
+                "patient": "Unspecified",
                 "agent": "Unknown"
             }
         },
@@ -619,7 +625,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.600497",
+        "timestamp": "2026-10-08T08:40:28.239387",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -628,17 +634,27 @@
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "Concessive Marker: despite",
-            "decision": "Concessive relation mapped",
-            "mapping": "the effort -> Concession -> Failed",
+            "process": "Concessive Marker: despite; Event: Action",
+            "decision": "Concessive relation mapped; Event classified: Action",
+            "mapping": "the effort -> Concession -> Failed; Unknown -> Action -> failed",
             "structure": {
                 "relation": "Concession",
                 "marker": "despite",
                 "concession": "the effort",
-                "outcome": "Failed"
+                "outcome": "Failed",
+                "event": {
+                    "category": "Action",
+                    "verb": "failed",
+                    "actor": "Unknown",
+                    "patient": null
+                }
             },
             "agent": "Unknown",
-            "action": null
+            "action": {
+                "verb": "failed",
+                "actor": "Unknown",
+                "patient": null
+            }
         },
         "stage3": {
             "process": "No modification structure found",
@@ -652,7 +668,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "failed",
-            "patient": "despite the effort",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Failed",
@@ -660,9 +676,9 @@
                 "form": "Base",
                 "verb": "failed",
                 "subject": "Failed",
-                "object": "despite the effort",
+                "object": null,
                 "category": "Action",
-                "patient": "despite the effort",
+                "patient": "Unspecified",
                 "agent": "Unknown"
             }
         },
@@ -680,7 +696,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.602737",
+        "timestamp": "2026-10-08T08:40:28.240971",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -748,7 +764,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.604452",
+        "timestamp": "2026-10-08T08:40:28.242618",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -757,12 +773,24 @@
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "mapping": "None",
-            "structure": null,
+            "process": "Event: Action",
+            "decision": "Clarification Required (Undetermined Agent); Event classified: Action",
+            "mapping": "Unknown -> Action -> submitted the form",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "submitted",
+                    "actor": "Unknown",
+                    "patient": "the form"
+                }
+            },
             "agent": "Unknown",
-            "action": null
+            "action": {
+                "verb": "submitted",
+                "actor": "Unknown",
+                "patient": "the form"
+            }
         },
         "stage3": {
             "process": "No modification structure found",
@@ -776,7 +804,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "submitted",
-            "patient": "the form yesterday",
+            "patient": "the form",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Submitted",
@@ -784,9 +812,9 @@
                 "form": "Base",
                 "verb": "submitted",
                 "subject": "Submitted",
-                "object": "the form yesterday",
+                "object": "the form",
                 "category": "Action",
-                "patient": "the form yesterday",
+                "patient": "the form",
                 "agent": "Unknown"
             }
         },
@@ -804,7 +832,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.606233",
+        "timestamp": "2026-10-08T08:40:28.244429",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -813,12 +841,24 @@
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "No causal relation found",
-            "decision": "Clarification Required (Undetermined Agent)",
-            "mapping": "None",
-            "structure": null,
+            "process": "Event: Action",
+            "decision": "Clarification Required (Undetermined Agent); Event classified: Action",
+            "mapping": "Unknown -> Action -> succeeded",
+            "structure": {
+                "relation": "Event",
+                "event": {
+                    "category": "Action",
+                    "verb": "succeeded",
+                    "actor": "Unknown",
+                    "patient": null
+                }
+            },
             "agent": "Unknown",
-            "action": null
+            "action": {
+                "verb": "succeeded",
+                "actor": "Unknown",
+                "patient": null
+            }
         },
         "stage3": {
             "process": "No modification structure found",
@@ -832,7 +872,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "succeeded",
-            "patient": "in the meeting",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Succeeded",
@@ -840,9 +880,9 @@
                 "form": "Base",
                 "verb": "succeeded",
                 "subject": "Succeeded",
-                "object": "in the meeting",
+                "object": null,
                 "category": "Action",
-                "patient": "in the meeting",
+                "patient": "Unspecified",
                 "agent": "Unknown"
             }
         },
@@ -860,7 +900,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.607983",
+        "timestamp": "2026-10-08T08:40:28.246208",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -903,7 +943,7 @@
             "form": "State",
             "category": "State",
             "verb": "stressed",
-            "patient": "due to the project",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "I",
@@ -914,7 +954,7 @@
                 "object": "due to the project",
                 "verb": "stressed",
                 "category": "State",
-                "patient": "due to the project",
+                "patient": "Unspecified",
                 "agent": "I"
             }
         },
@@ -932,7 +972,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.609775",
+        "timestamp": "2026-10-08T08:40:28.248007",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -974,7 +1014,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "succeeded",
-            "patient": "because you helped",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "I",
@@ -982,9 +1022,9 @@
                 "form": "Base",
                 "verb": "succeeded",
                 "subject": "I",
-                "object": "because you helped",
+                "object": null,
                 "category": "Action",
-                "patient": "because you helped",
+                "patient": "Unspecified",
                 "agent": "I"
             }
         },
@@ -1002,7 +1042,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.613241",
+        "timestamp": "2026-10-08T08:40:28.250464",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1094,7 +1134,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.615457",
+        "timestamp": "2026-10-08T08:40:28.252660",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1155,7 +1195,7 @@
             "form": "State",
             "category": "State",
             "verb": "stressed",
-            "patient": "after the long meeting",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "I",
@@ -1166,7 +1206,7 @@
                 "object": "after the long meeting",
                 "verb": "stressed",
                 "category": "State",
-                "patient": "after the long meeting",
+                "patient": "Unspecified",
                 "agent": "I"
             }
         },
@@ -1184,7 +1224,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.617785",
+        "timestamp": "2026-10-08T08:40:28.255471",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1267,7 +1307,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.620084",
+        "timestamp": "2026-10-08T08:40:28.257766",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1352,7 +1392,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.622623",
+        "timestamp": "2026-10-08T08:40:28.260399",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1437,7 +1477,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.625159",
+        "timestamp": "2026-10-08T08:40:28.262962",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1522,7 +1562,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.629367",
+        "timestamp": "2026-10-08T08:40:28.266393",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1589,7 +1629,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.631931",
+        "timestamp": "2026-10-08T08:40:28.270043",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1646,7 +1686,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "I",
-                "what": "am having a party",
+                "what": "having a party",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -1656,7 +1696,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.634731",
+        "timestamp": "2026-10-08T08:40:28.273833",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1666,7 +1706,7 @@
         "stage2": {
             "process": "Event: Action",
             "decision": "No causal relation; Event classified: Action",
-            "mapping": "him -> Action -> told I",
+            "mapping": "him -> Action -> told me",
             "structure": {
                 "relation": "Event",
                 "event": {
@@ -1723,7 +1763,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.637773",
+        "timestamp": "2026-10-08T08:40:28.278145",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1806,7 +1846,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.640753",
+        "timestamp": "2026-10-08T08:40:28.282518",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1815,17 +1855,27 @@
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
-            "process": "Causal Marker: because of",
-            "decision": "Causal relation mapped",
-            "mapping": "bad luck -> Cause -> Failed the exam",
+            "process": "Causal Marker: because of; Event: Action",
+            "decision": "Causal relation mapped; Event classified: Action",
+            "mapping": "bad luck -> Cause -> Failed the exam; Unknown -> Action -> failed the exam",
             "structure": {
                 "relation": "CauseEffect",
                 "marker": "because of",
                 "cause": "bad luck",
-                "effect": "Failed the exam"
+                "effect": "Failed the exam",
+                "event": {
+                    "category": "Action",
+                    "verb": "failed",
+                    "actor": "Unknown",
+                    "patient": "the exam"
+                }
             },
             "agent": "Unknown",
-            "action": null
+            "action": {
+                "verb": "failed",
+                "actor": "Unknown",
+                "patient": "the exam"
+            }
         },
         "stage3": {
             "process": "No modification structure found",
@@ -1839,7 +1889,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "failed",
-            "patient": "the exam because of bad luck",
+            "patient": "the exam",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Failed",
@@ -1847,9 +1897,9 @@
                 "form": "Base",
                 "verb": "failed",
                 "subject": "Failed",
-                "object": "the exam because of bad luck",
+                "object": "the exam",
                 "category": "Action",
-                "patient": "the exam because of bad luck",
+                "patient": "the exam",
                 "agent": "Unknown"
             }
         },
@@ -1867,7 +1917,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.643761",
+        "timestamp": "2026-10-08T08:40:28.286862",
         "input": "I talked to the manager who was frustrated with the deadline.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1950,7 +2000,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:18:32.646857",
+        "timestamp": "2026-10-08T08:40:28.290972",
         "input": "Please review the long report.",
         "stage1": {
             "process": "Imperative / Direct Directive",

@@ -15,6 +15,13 @@ def _extract_target(antecedent):
 
 def analyze_modification_structure(text):
     text_clean = text.strip()
+
+    if re.match(
+        r"^It\s+(?:is|was)\s+\S+\s+that\b",
+        text_clean,
+        re.IGNORECASE,
+    ):
+        return None
     
     # 1. 非制限用法 (Non-defining clause) の判定: ", which" や ", who"
     for marker in [", which", ", who", ",which", ",who"]:

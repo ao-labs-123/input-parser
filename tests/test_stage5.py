@@ -36,7 +36,7 @@ def analyze_pipeline(text):
         stage3_result=stage3,
         stage4_result=stage4,
     )
-    return semantic, stage5["frame"]
+    return semantic, stage2, stage3, stage4, stage5["frame"]
 
 
 def test_stage1_unknown_subject_falls_to_stage2_clarification():
@@ -49,8 +49,16 @@ def test_stage1_unknown_subject_falls_to_stage2_clarification():
     assert stage1["decision"] == "Fallback: Undetermined Agent"
     assert stage1["action_required"] == "Trigger Stage 1 Clarification / Context Resolution"
 
-    stage2 = analyzer.stage2_analyze(text, stage1, analyze_causality_and_ambiguity(text, subject_status))
-    assert stage2["decision"] == "Clarification Required (Undetermined Agent)"
+    stage2 = analyzer.stage2_analyze(
+        text,
+        stage1,
+        analyze_causality_and_ambiguity(text, subject_status),
+        semantic_result=analyze_semantic_structure(text),
+    )
+    assert stage2["decision"] == (
+        "Clarification Required (Undetermined Agent); Event classified: Action"
+    )
+    assert stage2["structure"]["event"]["verb"] == "went"
     assert stage2["agent"] == "Unknown"
 
 
@@ -183,15 +191,19 @@ def test_stage3_classifies_adjectival_description_as_supplementary():
     )
 
 
-def test_stage2_does_not_emit_relation_words_as_actions():
+def test_stage2_preserves_events_alongside_causal_relations():
     analyzer = LogicAnalyzer({})
-    for text, expected_mapping in (
+    for text, verb, patient, expected_mapping in (
         (
             "Succeeded because you helped.",
+            "succeeded",
+            None,
             "you helped -> Cause -> Succeeded",
         ),
         (
             "Failed the exam because of bad luck.",
+            "failed",
+            "the exam",
             "bad luck -> Cause -> Failed the exam",
         ),
     ):
@@ -202,8 +214,15 @@ def test_stage2_does_not_emit_relation_words_as_actions():
             semantic_result=analyze_semantic_structure(text),
         )
 
-        assert stage2["action"] is None
-        assert stage2["mapping"] == expected_mapping
+        assert stage2["action"] == {
+            "verb": verb,
+            "actor": "Unknown",
+            "patient": patient,
+        }
+        assert stage2["mapping"] == (
+            f"{expected_mapping}; Unknown -> Action -> {verb}"
+            + (f" {patient}" if patient else "")
+        )
 
 
 def test_stage2_preserves_manner_context_without_adding_it_to_patient():
@@ -487,10 +506,28 @@ def test_remaining_examples_keep_semantics_and_5w1h_aligned():
     )
 
     for text, expected_form, expected_frame_values in cases:
-        semantic, frame = analyze_pipeline(text)
+        semantic, _, _, _, frame = analyze_pipeline(text)
         assert semantic["form"] == expected_form, text
         for key, value in expected_frame_values.items():
             assert frame[key] == value, text
+
+    _, stage2, _, _, _ = analyze_pipeline("Failed despite the effort.")
+    assert stage2["structure"]["event"]["category"] == "Action"
+    assert stage2["action"]["actor"] == "Unknown"
+
+    _, stage2, _, _, _ = analyze_pipeline("I was told by him.")
+    assert stage2["mapping"] == "him -> Action -> told me"
+
+    _, _, stage3, _, _ = analyze_pipeline("It is required that you submit the form.")
+    assert stage3["structure"] is None
+
+    _, _, _, stage4, _ = analyze_pipeline("I submitted the form yesterday.")
+    assert stage4["patient"] == "the form"
+    _, _, _, stage4, _ = analyze_pipeline("I wrote the report at the office.")
+    assert stage4["patient"] == "the report"
+
+    _, _, _, _, frame = analyze_pipeline("I am having a party.")
+    assert frame["what"] == "having a party"
 
 
 def test_stage5_synthesizes_the_documented_5w1h_frame():

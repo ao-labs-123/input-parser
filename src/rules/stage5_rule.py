@@ -265,6 +265,18 @@ def _core_action(
             agent_pattern = r"^\s*" + re.escape(agent) + r"\b[\s,]*"
         action = re.sub(agent_pattern, "", action, flags=re.IGNORECASE)
 
+    if semantic_result and semantic_result.get("form") == "Progressive":
+        semantic_structure = semantic_result.get("structure", {})
+        progressive_parts = [
+            semantic_result.get("verb") or semantic_structure.get("verb")
+        ]
+        progressive_object = semantic_result.get("object") or semantic_structure.get(
+            "object"
+        )
+        if progressive_object:
+            progressive_parts.append(progressive_object)
+        action = " ".join(part for part in progressive_parts if part)
+
     if semantic_result and semantic_result.get("form") == "State":
         action = re.sub(r"^\s*(?:am|is|are|was|were)\s+", "", action, flags=re.IGNORECASE)
 

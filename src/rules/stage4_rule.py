@@ -2,6 +2,30 @@ import re
 
 PSYCHOLOGICAL_VERBS = {"think", "thought", "feel", "want", "hope", "stressed"}
 STATE_PREDICATES = {"bright", "done", "quiet", "required", "stressed"}
+TEMPORAL_AND_ADJUNCT_MARKERS = (
+    "because of", "due to", "thanks to", "yesterday", "tomorrow", "tonight",
+    "because", "despite", "although", "though", "after", "before", "at",
+    "in", "on", "with",
+)
+
+
+def _direct_object(value, verb):
+    if not value:
+        return None
+
+    markers = TEMPORAL_AND_ADJUNCT_MARKERS
+    if verb.lower() in {"go", "goes", "went", "travel", "traveled", "walk", "walked"}:
+        markers = (*markers, "to")
+    marker_pattern = "|".join(
+        re.escape(marker) for marker in sorted(markers, key=len, reverse=True)
+    )
+    direct_object = re.split(
+        rf"\b(?:{marker_pattern})\b",
+        value,
+        maxsplit=1,
+        flags=re.IGNORECASE,
+    )[0].strip(" ,")
+    return direct_object or None
 
 
 def analyze_semantic_structure(text):
@@ -111,11 +135,11 @@ def analyze_semantic_structure(text):
         if second_word in non_verb_second_words:
             subject = words[0]
             verb = words[0]
-            object_noun = " ".join(words[1:]) if len(words) > 1 else None
+            object_noun = _direct_object(" ".join(words[1:]), verb)
         else:
             subject = words[0]
             verb = words[1]
-            object_noun = " ".join(words[2:]) if len(words) > 2 else None
+            object_noun = _direct_object(" ".join(words[2:]), verb)
 
         return {
             "form": "Base",

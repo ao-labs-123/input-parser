@@ -525,6 +525,8 @@ def test_remaining_examples_keep_semantics_and_5w1h_aligned():
     assert stage4["patient"] == "the form"
     _, _, _, stage4, _ = analyze_pipeline("I wrote the report at the office.")
     assert stage4["patient"] == "the report"
+    _, _, _, stage4, _ = analyze_pipeline("He succeeded by working hard.")
+    assert stage4["patient"] == "Unspecified"
 
     _, _, _, _, frame = analyze_pipeline("I am having a party.")
     assert frame["what"] == "having a party"

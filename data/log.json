@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-08T08:40:28.226938",
+        "timestamp": "2026-10-08T09:02:55.132514",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -70,7 +70,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.228176",
+        "timestamp": "2026-10-08T09:02:55.133744",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.229295",
+        "timestamp": "2026-10-08T09:02:55.134859",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -203,7 +203,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.230762",
+        "timestamp": "2026-10-08T09:02:55.136336",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -284,7 +284,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.232564",
+        "timestamp": "2026-10-08T09:02:55.138152",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -352,7 +352,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.233734",
+        "timestamp": "2026-10-08T09:02:55.139334",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -420,7 +420,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.234915",
+        "timestamp": "2026-10-08T09:02:55.140516",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -487,7 +487,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.236277",
+        "timestamp": "2026-10-08T09:02:55.141816",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -554,7 +554,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.237763",
+        "timestamp": "2026-10-08T09:02:55.143351",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -625,7 +625,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.239387",
+        "timestamp": "2026-10-08T09:02:55.144950",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -696,7 +696,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.240971",
+        "timestamp": "2026-10-08T09:02:55.146565",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -764,7 +764,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.242618",
+        "timestamp": "2026-10-08T09:02:55.148250",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -832,7 +832,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.244429",
+        "timestamp": "2026-10-08T09:02:55.150050",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -900,7 +900,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.246208",
+        "timestamp": "2026-10-08T09:02:55.151896",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -972,7 +972,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.248007",
+        "timestamp": "2026-10-08T09:02:55.153782",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1042,7 +1042,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.250464",
+        "timestamp": "2026-10-08T09:02:55.156327",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1106,7 +1106,7 @@
             "form": "Base",
             "category": "Action",
             "verb": "succeeded",
-            "patient": "by working hard",
+            "patient": "Unspecified",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "He",
@@ -1114,9 +1114,9 @@
                 "form": "Base",
                 "verb": "succeeded",
                 "subject": "He",
-                "object": "by working hard",
+                "object": null,
                 "category": "Action",
-                "patient": "by working hard",
+                "patient": "Unspecified",
                 "agent": "He"
             }
         },
@@ -1134,7 +1134,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.252660",
+        "timestamp": "2026-10-08T09:02:55.159388",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1224,7 +1224,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.255471",
+        "timestamp": "2026-10-08T09:02:55.163997",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1307,7 +1307,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.257766",
+        "timestamp": "2026-10-08T09:02:55.169593",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1392,7 +1392,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.260399",
+        "timestamp": "2026-10-08T09:02:55.173563",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1477,7 +1477,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.262962",
+        "timestamp": "2026-10-08T09:02:55.177552",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1562,7 +1562,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.266393",
+        "timestamp": "2026-10-08T09:02:55.181499",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1629,7 +1629,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.270043",
+        "timestamp": "2026-10-08T09:02:55.185540",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1696,7 +1696,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.273833",
+        "timestamp": "2026-10-08T09:02:55.189767",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1763,7 +1763,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.278145",
+        "timestamp": "2026-10-08T09:02:55.194521",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1846,7 +1846,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.282518",
+        "timestamp": "2026-10-08T09:02:55.199294",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1917,7 +1917,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.286862",
+        "timestamp": "2026-10-08T09:02:55.203876",
         "input": "I talked to the manager who was frustrated with the deadline.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -2000,7 +2000,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T08:40:28.290972",
+        "timestamp": "2026-10-08T09:02:55.208368",
         "input": "Please review the long report.",
         "stage1": {
             "process": "Imperative / Direct Directive",

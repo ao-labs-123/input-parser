@@ -5,7 +5,7 @@ STATE_PREDICATES = {"bright", "done", "quiet", "required", "stressed"}
 TEMPORAL_AND_ADJUNCT_MARKERS = (
     "because of", "due to", "thanks to", "yesterday", "tomorrow", "tonight",
     "because", "despite", "although", "though", "after", "before", "at",
-    "in", "on", "with",
+    "in", "on", "with", "by",
 )
 
 

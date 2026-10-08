@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-08T07:56:24.000944",
+        "timestamp": "2026-10-08T08:18:32.587449",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -70,7 +70,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.002476",
+        "timestamp": "2026-10-08T08:18:32.588686",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.003671",
+        "timestamp": "2026-10-08T08:18:32.589844",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -203,7 +203,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.005532",
+        "timestamp": "2026-10-08T08:18:32.591373",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -284,7 +284,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.007445",
+        "timestamp": "2026-10-08T08:18:32.592947",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -340,7 +340,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.009159",
+        "timestamp": "2026-10-08T08:18:32.594663",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -351,21 +351,21 @@
         "stage2": {
             "process": "Event: Action",
             "decision": "No causal relation; Event classified: Action",
-            "mapping": "Unknown -> Action -> required It",
+            "mapping": "you -> Action -> submit the form",
             "structure": {
                 "relation": "Event",
                 "event": {
                     "category": "Action",
-                    "verb": "required",
-                    "actor": "Unknown",
-                    "patient": "It"
+                    "verb": "submit",
+                    "actor": "you",
+                    "patient": "the form"
                 }
             },
             "agent": "you",
             "action": {
-                "verb": "required",
-                "actor": "Unknown",
-                "patient": "It"
+                "verb": "submit",
+                "actor": "you",
+                "patient": "the form"
             }
         },
         "stage3": {
@@ -392,21 +392,21 @@
             "agent": "you"
         },
         "stage4": {
-            "process": "[Passive: be + V-en + by]",
-            "form": "Passive",
+            "process": "[Morphology: Base] → [Category: Action]",
+            "form": "Base",
             "category": "Action",
-            "verb": "required",
-            "patient": "It",
-            "actor": "Unknown",
-            "receiver": "It",
-            "subject": "Unspecified",
+            "verb": "submit",
+            "patient": "the form",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "you",
             "structure": {
-                "form": "Passive",
-                "verb": "required",
-                "actor": "Unknown",
-                "receiver": "It",
+                "form": "Base",
+                "verb": "submit",
+                "subject": "you",
+                "object": "the form",
                 "category": "Action",
-                "patient": "It",
+                "patient": "the form",
                 "agent": "you"
             }
         },
@@ -414,7 +414,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "you",
-                "what": "required It",
+                "what": "submit the form",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -424,7 +424,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.010334",
+        "timestamp": "2026-10-08T08:18:32.595867",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -491,7 +491,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.011612",
+        "timestamp": "2026-10-08T08:18:32.597193",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -558,7 +558,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.013095",
+        "timestamp": "2026-10-08T08:18:32.598672",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -619,7 +619,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.014574",
+        "timestamp": "2026-10-08T08:18:32.600497",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -670,7 +670,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "Unknown",
-                "what": "failed despite the effort",
+                "what": "failed",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -680,7 +680,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.016086",
+        "timestamp": "2026-10-08T08:18:32.602737",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -748,7 +748,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.017693",
+        "timestamp": "2026-10-08T08:18:32.604452",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -804,7 +804,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.019394",
+        "timestamp": "2026-10-08T08:18:32.606233",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -860,7 +860,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.021249",
+        "timestamp": "2026-10-08T08:18:32.607983",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -899,20 +899,21 @@
             "agent": "I"
         },
         "stage4": {
-            "process": "[Morphology: Base] → [Category: Action]",
-            "form": "Base",
-            "category": "Action",
+            "process": "[State predicate] → [Category: State]",
+            "form": "State",
+            "category": "State",
             "verb": "stressed",
             "patient": "due to the project",
             "actor": "Unspecified",
             "receiver": "Unspecified",
-            "subject": "I'm",
+            "subject": "I",
             "structure": {
-                "form": "Base",
-                "verb": "stressed",
-                "subject": "I'm",
+                "form": "State",
+                "state": "stressed",
+                "subject": "I",
                 "object": "due to the project",
-                "category": "Action",
+                "verb": "stressed",
+                "category": "State",
                 "patient": "due to the project",
                 "agent": "I"
             }
@@ -921,9 +922,9 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "I",
-                "what": "'m stressed due",
+                "what": "stressed",
                 "when": "Unspecified",
-                "where": "project",
+                "where": "Unspecified",
                 "why": "due to the project",
                 "how": "Unspecified"
             },
@@ -931,7 +932,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.022964",
+        "timestamp": "2026-10-08T08:18:32.609775",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1001,7 +1002,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.025040",
+        "timestamp": "2026-10-08T08:18:32.613241",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1083,7 +1084,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "He",
-                "what": "succeeded by working hard",
+                "what": "succeeded",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -1093,7 +1094,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.027191",
+        "timestamp": "2026-10-08T08:18:32.615457",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1150,21 +1151,22 @@
             "agent": "I"
         },
         "stage4": {
-            "process": "[Passive: be + V-en + by]",
-            "form": "Passive",
-            "category": "Action",
+            "process": "[State predicate] → [Category: State]",
+            "form": "State",
+            "category": "State",
             "verb": "stressed",
-            "patient": "I",
-            "actor": "Unknown",
-            "receiver": "I",
-            "subject": "Unspecified",
+            "patient": "after the long meeting",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "I",
             "structure": {
-                "form": "Passive",
+                "form": "State",
+                "state": "stressed",
+                "subject": "I",
+                "object": "after the long meeting",
                 "verb": "stressed",
-                "actor": "Unknown",
-                "receiver": "I",
-                "category": "Action",
-                "patient": "I",
+                "category": "State",
+                "patient": "after the long meeting",
                 "agent": "I"
             }
         },
@@ -1172,7 +1174,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "I",
-                "what": "stressed I",
+                "what": "stressed",
                 "when": "after the long meeting",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -1182,7 +1184,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.029378",
+        "timestamp": "2026-10-08T08:18:32.617785",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1255,7 +1257,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "The report",
-                "what": "which was long, is done",
+                "what": "done",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -1265,7 +1267,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.031584",
+        "timestamp": "2026-10-08T08:18:32.620084",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1340,7 +1342,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "The report",
-                "what": "that I wrote is done",
+                "what": "done",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -1350,7 +1352,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.034000",
+        "timestamp": "2026-10-08T08:18:32.622623",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1358,23 +1360,24 @@
             "agent": "The office"
         },
         "stage2": {
-            "process": "Event: Action",
-            "decision": "No causal relation; Event classified: Action",
-            "mapping": "Unknown -> Action -> quiet The office where I wrote the report",
+            "process": "Event: State",
+            "decision": "No causal relation; Event classified: State",
+            "mapping": "The office -> State -> quiet",
             "structure": {
                 "relation": "Event",
                 "event": {
-                    "category": "Action",
+                    "category": "State",
                     "verb": "quiet",
-                    "actor": "Unknown",
-                    "patient": "The office where I wrote the report"
+                    "actor": "The office",
+                    "patient": null,
+                    "state": "quiet"
                 }
             },
             "agent": "The office",
             "action": {
                 "verb": "quiet",
-                "actor": "Unknown",
-                "patient": "The office where I wrote the report"
+                "actor": "The office",
+                "patient": null
             }
         },
         "stage3": {
@@ -1401,21 +1404,22 @@
             "agent": "The office"
         },
         "stage4": {
-            "process": "[Passive: be + V-en + by]",
-            "form": "Passive",
-            "category": "Action",
+            "process": "[State predicate] → [Category: State]",
+            "form": "State",
+            "category": "State",
             "verb": "quiet",
-            "patient": "The office where I wrote the report",
-            "actor": "Unknown",
-            "receiver": "The office where I wrote the report",
-            "subject": "Unspecified",
+            "patient": "Unspecified",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "The office where I wrote the report",
             "structure": {
-                "form": "Passive",
+                "form": "State",
+                "state": "quiet",
+                "subject": "The office where I wrote the report",
+                "object": null,
                 "verb": "quiet",
-                "actor": "Unknown",
-                "receiver": "The office where I wrote the report",
-                "category": "Action",
-                "patient": "The office where I wrote the report",
+                "category": "State",
+                "patient": "Unspecified",
                 "agent": "The office"
             }
         },
@@ -1423,7 +1427,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "The office",
-                "what": "quiet the office where I wrote the report",
+                "what": "quiet",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -1433,7 +1437,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.036463",
+        "timestamp": "2026-10-08T08:18:32.625159",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1441,23 +1445,24 @@
             "agent": "The day"
         },
         "stage2": {
-            "process": "Event: Action",
-            "decision": "No causal relation; Event classified: Action",
-            "mapping": "Unknown -> Action -> bright The day where he succeeded",
+            "process": "Event: State",
+            "decision": "No causal relation; Event classified: State",
+            "mapping": "The day -> State -> bright",
             "structure": {
                 "relation": "Event",
                 "event": {
-                    "category": "Action",
+                    "category": "State",
                     "verb": "bright",
-                    "actor": "Unknown",
-                    "patient": "The day where he succeeded"
+                    "actor": "The day",
+                    "patient": null,
+                    "state": "bright"
                 }
             },
             "agent": "The day",
             "action": {
                 "verb": "bright",
-                "actor": "Unknown",
-                "patient": "The day where he succeeded"
+                "actor": "The day",
+                "patient": null
             }
         },
         "stage3": {
@@ -1484,21 +1489,22 @@
             "agent": "The day"
         },
         "stage4": {
-            "process": "[Passive: be + V-en + by]",
-            "form": "Passive",
-            "category": "Action",
+            "process": "[State predicate] → [Category: State]",
+            "form": "State",
+            "category": "State",
             "verb": "bright",
-            "patient": "The day where he succeeded",
-            "actor": "Unknown",
-            "receiver": "The day where he succeeded",
-            "subject": "Unspecified",
+            "patient": "Unspecified",
+            "actor": "Unspecified",
+            "receiver": "Unspecified",
+            "subject": "The day where he succeeded",
             "structure": {
-                "form": "Passive",
+                "form": "State",
+                "state": "bright",
+                "subject": "The day where he succeeded",
+                "object": null,
                 "verb": "bright",
-                "actor": "Unknown",
-                "receiver": "The day where he succeeded",
-                "category": "Action",
-                "patient": "The day where he succeeded",
+                "category": "State",
+                "patient": "Unspecified",
                 "agent": "The day"
             }
         },
@@ -1506,7 +1512,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "The day",
-                "what": "bright the day where he succeeded",
+                "what": "bright",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -1516,7 +1522,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.038832",
+        "timestamp": "2026-10-08T08:18:32.629367",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1583,7 +1589,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.041320",
+        "timestamp": "2026-10-08T08:18:32.631931",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1650,7 +1656,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.043960",
+        "timestamp": "2026-10-08T08:18:32.634731",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1707,7 +1713,7 @@
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
                 "who": "him",
-                "what": "told I",
+                "what": "told me",
                 "when": "Unspecified",
                 "where": "Unspecified",
                 "why": "Unspecified",
@@ -1717,7 +1723,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.046970",
+        "timestamp": "2026-10-08T08:18:32.637773",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1800,7 +1806,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.049943",
+        "timestamp": "2026-10-08T08:18:32.640753",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
@@ -1861,7 +1867,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.052932",
+        "timestamp": "2026-10-08T08:18:32.643761",
         "input": "I talked to the manager who was frustrated with the deadline.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1944,7 +1950,7 @@
         }
     },
     {
-        "timestamp": "2026-10-08T07:56:24.056015",
+        "timestamp": "2026-10-08T08:18:32.646857",
         "input": "Please review the long report.",
         "stage1": {
             "process": "Imperative / Direct Directive",

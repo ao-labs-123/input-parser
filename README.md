@@ -69,7 +69,7 @@ By codifying the structural and cognitive rules of language into a lightweight e
 **2. Execution**
 
 ```
-python main.py
+python src/main.py
 ```
 
 **3. Output**
@@ -93,7 +93,8 @@ python main.py
                     "category": "State",
                     "verb": "strange",
                     "actor": "He/She/They",
-                    "patient": "apparently"
+                    "patient": "apparently",
+                    "state": "strange"
                 }
             },
             "agent": "He/She/They",
@@ -129,16 +130,18 @@ python main.py
             "process": "[State predicate] → [Category: State]",
             "form": "State",
             "category": "State",
-            "verb": "strange",
+            "verb": null,
             "patient": "apparently",
             "actor": "Unspecified",
             "receiver": "Unspecified",
             "subject": "Thought it",
             "structure": {
                 "form": "State",
-                "verb": "strange",
+                "state": "strange",
                 "subject": "Thought it",
                 "object": "apparently",
+                "psychological_verb": "thought",
+                "verb": null,
                 "category": "State",
                 "patient": "apparently",
                 "agent": "He/She/They"

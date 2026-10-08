@@ -5,7 +5,17 @@ PSYCHOLOGICAL_VERBS = {"think", "thought", "feel", "want", "hope", "stressed"}
 
 def analyze_semantic_structure(text):
     text_clean = text.strip().rstrip(".")
-    text_lower = text_clean.lower()
+    text_clean = re.sub(
+        r",\s*(?:who|which)\b[^,]*,",
+        "",
+        text_clean,
+        flags=re.IGNORECASE,
+    )
+    relative_match = re.search(r"\b(?:who|which)\b", text_clean, re.IGNORECASE)
+    if relative_match:
+        main_clause = text_clean[:relative_match.start()].strip(" ,")
+        if main_clause and main_clause.split()[0].lower() not in {"the", "a", "an"}:
+            text_clean = main_clause
     
     # 1. 受動態の判定 (Passive: be + V-en + by)
     # 例: "I was told by him" / "The report was completed quickly"

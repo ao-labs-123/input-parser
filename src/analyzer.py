@@ -155,6 +155,13 @@ class LogicAnalyzer:
         stage1_result = stage1_result or {}
         rule_result = stage2_rule_result or {}
         agent = stage1_result.get("agent", "Unknown")
+        if (
+            semantic_result
+            and semantic_result.get("form") == "State"
+            and not semantic_result.get("verb")
+        ):
+            semantic_result = dict(semantic_result)
+            semantic_result["verb"] = semantic_result.get("state")
         action = None
         if semantic_result and semantic_result.get("verb"):
             form = semantic_result.get("form")

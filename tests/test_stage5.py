@@ -337,6 +337,58 @@ def test_stage2_does_not_treat_role_as_as_causal():
     assert rule_result["is_causal"] is False
     assert rule_result["markers"] == []
 
+    analyzer = LogicAnalyzer({})
+    stage1 = {"agent": "I"}
+    semantic = analyze_semantic_structure(text)
+    stage2 = analyzer.stage2_analyze(text, stage1, rule_result, semantic_result=semantic)
+    stage3 = analyzer.stage3_analyze(text, stage1)
+    stage4 = analyzer.stage4_analyze(text, semantic, stage1)
+    frame = analyzer.stage5_analyze(
+        text,
+        semantic,
+        stage1,
+        stage2_result=stage2,
+        stage3_result=stage3,
+        stage4_result=stage4,
+    )["frame"]
+    assert frame["why"] == "Unspecified"
+
+
+def test_relative_clause_does_not_replace_main_action():
+    text = "I talked to the manager who was frustrated with the deadline."
+    analyzer = LogicAnalyzer({})
+    stage1 = {"agent": "I"}
+    semantic = analyze_semantic_structure(text)
+    stage2 = analyzer.stage2_analyze(
+        text,
+        stage1,
+        analyze_causality_and_ambiguity(text, "I"),
+        semantic_result=semantic,
+    )
+    stage3 = analyzer.stage3_analyze(
+        text, stage1, analyze_modification_structure(text)
+    )
+    stage4 = analyzer.stage4_analyze(text, semantic, stage1)
+    frame = analyzer.stage5_analyze(
+        text,
+        semantic,
+        stage1,
+        stage2_result=stage2,
+        stage3_result=stage3,
+        stage4_result=stage4,
+    )["frame"]
+
+    assert semantic["form"] == "Base"
+    assert semantic["verb"] == "talked"
+    assert frame["what"] == "talked to the manager"
+
+    non_defining = analyze_semantic_structure(
+        "The report, which was long, is done."
+    )
+    assert non_defining["form"] == "State"
+    assert non_defining["state"] == "done"
+    assert non_defining["subject"] == "The report"
+
 
 def test_stage5_synthesizes_the_documented_5w1h_frame():
     text = "Yesterday, I bought a book at the store to study logic."
@@ -409,6 +461,17 @@ def test_state_predicates_expose_state_value_separately():
     assert evidential["state"] == "strange"
     assert evidential["verb"] is None
     assert evidential["psychological_verb"] == "thought"
+
+    stage2 = LogicAnalyzer({}).stage2_analyze(
+        "Thought it was strange apparently.",
+        {"agent": "He/She/They"},
+        analyze_causality_and_ambiguity(
+            "Thought it was strange apparently.", "He/She/They"
+        ),
+        semantic_result=evidential,
+    )
+    assert stage2["process"] == "Event: State"
+    assert stage2["structure"]["event"]["verb"] == "strange"
 
 
 if __name__ == "__main__":

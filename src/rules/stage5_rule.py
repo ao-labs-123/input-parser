@@ -104,7 +104,7 @@ def _why_phrase(text, stage3_result):
     if isinstance(structure, dict) and structure.get("cause"):
         cause = structure["cause"]
         match = re.search(
-            r"\b(?:because\s+of|due\s+to|because|since|as)\s+[^,.!?]+",
+            r"\b(?:because\s+of|due\s+to|because|since)\s+[^,.!?]+",
             text,
             re.IGNORECASE,
         )
@@ -114,7 +114,7 @@ def _why_phrase(text, stage3_result):
         return f"{marker} {cause}".strip() if marker else cause
 
     match = re.search(
-        r"\b(?:because\s+of|due\s+to|because|since|as)\s+[^,.!?]+",
+        r"\b(?:because\s+of|due\s+to|because|since)\s+[^,.!?]+",
         text,
         re.IGNORECASE,
     )
@@ -179,8 +179,20 @@ def _resolved_value(sources, keys):
     return UNSPECIFIED
 
 
-def _core_action(text, agent, semantic_result, modifiers):
+def _core_action(text, agent, semantic_result, modifiers, stage3_result):
     action = text.strip().rstrip(".!?")
+
+    structure = (stage3_result or {}).get("structure")
+    if isinstance(structure, dict):
+        relative_marker = structure.get("relative_marker")
+        relative_clause = structure.get("clause")
+        if relative_marker and relative_clause:
+            action = re.sub(
+                rf"\s+{re.escape(relative_marker)}\s+{re.escape(relative_clause)}$",
+                "",
+                action,
+                flags=re.IGNORECASE,
+            )
 
     where = modifiers[1]
     if where != UNSPECIFIED and not re.match(
@@ -252,7 +264,9 @@ def synthesize_5w1h(
     why = resolved_why if resolved_why != UNSPECIFIED else why
     how = resolved_how if resolved_how != UNSPECIFIED else how
 
-    what = _core_action(text, agent, semantic_result, (when, where, why, how))
+    what = _core_action(
+        text, agent, semantic_result, (when, where, why, how), stage3_result
+    )
 
     return {
         "stage": "Stage 5 - 5W1H Synthesis",

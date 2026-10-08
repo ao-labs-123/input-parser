@@ -139,6 +139,10 @@ def _where_phrase(text):
         return UNSPECIFIED
     preposition = match.group("preposition").lower()
     place = match.group("place").strip()
+    if preposition == "to" and re.search(
+        r"\b(?:due|thanks)\s+$", text[:match.start()], re.IGNORECASE
+    ):
+        return UNSPECIFIED
     if preposition == "to" and re.match(
         r"(?:study|learn|understand|review|finish|help|improve)\b", place, re.IGNORECASE
     ):
@@ -179,16 +183,57 @@ def _resolved_value(sources, keys):
     return UNSPECIFIED
 
 
-def _core_action(text, agent, semantic_result, modifiers, stage3_result):
+def _core_action(
+    text, agent, semantic_result, modifiers, stage2_result, stage3_result
+):
     action = text.strip().rstrip(".!?")
+    action = re.sub(r"^\s*I'm\b", "I am", action, flags=re.IGNORECASE)
+
+    formal_subject_match = re.match(
+        r"^It\s+(?:is|was)\s+\S+\s+that\s+(.+)$",
+        action,
+        re.IGNORECASE,
+    )
+    if formal_subject_match:
+        action = formal_subject_match.group(1)
 
     structure = (stage3_result or {}).get("structure")
     if isinstance(structure, dict):
+        if structure.get("type") == "Non-defining":
+            action = re.sub(
+                r",\s*(?:who|which)\b[^,]*(?:,|$)",
+                "",
+                action,
+                flags=re.IGNORECASE,
+            )
         relative_marker = structure.get("relative_marker")
         relative_clause = structure.get("clause")
         if relative_marker and relative_clause:
             action = re.sub(
-                rf"\s+{re.escape(relative_marker)}\s+{re.escape(relative_clause)}$",
+                rf"\s+{re.escape(relative_marker)}\s+{re.escape(relative_clause)}",
+                "",
+                action,
+                flags=re.IGNORECASE,
+            )
+        if structure.get("kind") == "Instrument":
+            action = re.sub(
+                r"\s+(?:by\s+[A-Za-z]+ing(?:\s+[^,.!?]+)?|"
+                r"with\s+(?:a|an|the)\s+[^,.!?]+)$",
+                "",
+                action,
+                flags=re.IGNORECASE,
+            )
+
+    stage2_structure = (stage2_result or {}).get("structure")
+    if (
+        isinstance(stage2_structure, dict)
+        and stage2_structure.get("relation") == "Concession"
+    ):
+        marker = stage2_structure.get("marker")
+        concession = stage2_structure.get("concession")
+        if marker and concession:
+            action = re.sub(
+                rf"\s+{re.escape(marker)}\s+{re.escape(concession)}$",
                 "",
                 action,
                 flags=re.IGNORECASE,
@@ -214,12 +259,26 @@ def _core_action(text, agent, semantic_result, modifiers, stage3_result):
     action = action.strip(" ,")
 
     if agent not in (None, "", "Unknown", UNSPECIFIED):
-        action = re.sub(r"^\s*" + re.escape(agent) + r"\b[\s,]*", "", action, flags=re.IGNORECASE)
+        if agent.lower() == "i":
+            agent_pattern = r"^\s*I(?:['’]m\s+|\s+)"
+        else:
+            agent_pattern = r"^\s*" + re.escape(agent) + r"\b[\s,]*"
+        action = re.sub(agent_pattern, "", action, flags=re.IGNORECASE)
+
+    if semantic_result and semantic_result.get("form") == "State":
+        action = re.sub(r"^\s*(?:am|is|are|was|were)\s+", "", action, flags=re.IGNORECASE)
 
     if semantic_result and semantic_result.get("form") == "Passive":
         verb = semantic_result.get("verb")
         receiver = semantic_result.get("receiver")
         if verb and receiver:
+            receiver = {
+                "i": "me",
+                "he": "him",
+                "she": "her",
+                "we": "us",
+                "they": "them",
+            }.get(receiver.lower(), receiver)
             receiver = re.sub(r"^(The|A|An)\b", lambda match: match.group(1).lower(), receiver)
             action = f"{verb} {receiver}"
 
@@ -265,7 +324,12 @@ def synthesize_5w1h(
     how = resolved_how if resolved_how != UNSPECIFIED else how
 
     what = _core_action(
-        text, agent, semantic_result, (when, where, why, how), stage3_result
+        text,
+        agent,
+        semantic_result,
+        (when, where, why, how),
+        stage2_result,
+        stage3_result,
     )
 
     return {

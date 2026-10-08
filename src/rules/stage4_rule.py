@@ -1,10 +1,19 @@
 import re
 
 PSYCHOLOGICAL_VERBS = {"think", "thought", "feel", "want", "hope", "stressed"}
+STATE_PREDICATES = {"bright", "done", "quiet", "required", "stressed"}
 
 
 def analyze_semantic_structure(text):
     text_clean = text.strip().rstrip(".")
+    text_clean = re.sub(r"\bI'm\b", "I am", text_clean, flags=re.IGNORECASE)
+    formal_subject_match = re.match(
+        r"^It\s+(?:is|was)\s+\S+\s+that\s+(.+)$",
+        text_clean,
+        re.IGNORECASE,
+    )
+    if formal_subject_match:
+        text_clean = formal_subject_match.group(1)
     text_clean = re.sub(
         r",\s*(?:who|which)\b[^,]*,",
         "",
@@ -28,23 +37,22 @@ def analyze_semantic_structure(text):
         be_verb = passive_match.group(1)
         v_en = passive_match.group(2)
         by_actor = passive_match.group(3)
+        is_participle = v_en.lower().endswith(("ed", "en")) or v_en.lower() in {
+            "built", "left", "made", "sent", "told", "written"
+        }
 
-        # be + V-ing は進行形であり、受動態の対象から除外する
-        if v_en.lower().endswith("ing"):
-            pass
-        else:
-            # 形容詞的な語は受動態と誤判定しないように、典型的な受動態の語尾を制限する
-            if not re.search(r"(?:ed|en|t|d|n)$", v_en, re.IGNORECASE):
-                pass
-            else:
-                idx = text_clean.lower().find(be_verb.lower())
-                receiver = text_clean[:idx].strip()
-                return {
-                    "form": "Passive",
-                    "verb": v_en.lower(),
-                    "actor": by_actor.strip() if by_actor else "Unknown",
-                    "receiver": receiver
-                }
+        if (
+            is_participle
+            and (by_actor or v_en.lower() not in STATE_PREDICATES)
+        ):
+            idx = text_clean.lower().find(be_verb.lower())
+            receiver = text_clean[:idx].strip()
+            return {
+                "form": "Passive",
+                "verb": v_en.lower(),
+                "actor": by_actor.strip() if by_actor else "Unknown",
+                "receiver": receiver,
+            }
         
     # 2. 進行形の判定 (Morphology: be + V-ing)
     # 例: "I am having a party"

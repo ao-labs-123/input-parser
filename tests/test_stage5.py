@@ -12,6 +12,33 @@ from src.rules.stage3_rule import analyze_modification_structure
 from src.rules.stage4_rule import analyze_semantic_structure
 
 
+def analyze_pipeline(text):
+    analyzer = LogicAnalyzer({})
+    subject_status = determine_explicit_subject(text) or determine_subject(text)
+    stage1 = analyzer.stage1_analyze(text, subject_status)
+    semantic = analyze_semantic_structure(text)
+    stage2 = analyzer.stage2_analyze(
+        text,
+        stage1,
+        analyze_causality_and_ambiguity(text, subject_status),
+        analyze_context_relation(text),
+        semantic_result=semantic,
+    )
+    stage3 = analyzer.stage3_analyze(
+        text, stage1, analyze_modification_structure(text)
+    )
+    stage4 = analyzer.stage4_analyze(text, semantic, stage1)
+    stage5 = analyzer.stage5_analyze(
+        text,
+        semantic,
+        stage1,
+        stage2_result=stage2,
+        stage3_result=stage3,
+        stage4_result=stage4,
+    )
+    return semantic, stage5["frame"]
+
+
 def test_stage1_unknown_subject_falls_to_stage2_clarification():
     text = "Went to the cafe yesterday."
     subject_status = determine_subject(text)
@@ -388,6 +415,82 @@ def test_relative_clause_does_not_replace_main_action():
     assert non_defining["form"] == "State"
     assert non_defining["state"] == "done"
     assert non_defining["subject"] == "The report"
+
+
+def test_remaining_examples_keep_semantics_and_5w1h_aligned():
+    cases = (
+        (
+            "It is required that you submit the form.",
+            "Base",
+            {"who": "you", "what": "submit the form"},
+        ),
+        (
+            "I was stressed after the long meeting.",
+            "State",
+            {
+                "who": "I",
+                "what": "stressed",
+                "when": "after the long meeting",
+                "where": "Unspecified",
+            },
+        ),
+        (
+            "I'm stressed due to the project.",
+            "State",
+            {
+                "who": "I",
+                "what": "stressed",
+                "why": "due to the project",
+                "where": "Unspecified",
+            },
+        ),
+        (
+            "I was told by him.",
+            "Passive",
+            {"who": "him", "what": "told me"},
+        ),
+        (
+            "He succeeded by working hard.",
+            "Base",
+            {"who": "He", "what": "succeeded", "how": "Hard Work"},
+        ),
+        (
+            "Failed despite the effort.",
+            "Base",
+            {"what": "failed"},
+        ),
+        (
+            "The report that I wrote is done.",
+            "State",
+            {"what": "done"},
+        ),
+        (
+            "The report, which was long, is done.",
+            "State",
+            {"what": "done"},
+        ),
+        (
+            "The office where I wrote the report was quiet.",
+            "State",
+            {"what": "quiet"},
+        ),
+        (
+            "The day where he succeeded was bright.",
+            "State",
+            {"what": "bright"},
+        ),
+        (
+            "I opened the door with a key.",
+            "Base",
+            {"who": "I", "what": "opened the door", "how": "A Key"},
+        ),
+    )
+
+    for text, expected_form, expected_frame_values in cases:
+        semantic, frame = analyze_pipeline(text)
+        assert semantic["form"] == expected_form, text
+        for key, value in expected_frame_values.items():
+            assert frame[key] == value, text
 
 
 def test_stage5_synthesizes_the_documented_5w1h_frame():

@@ -1,97 +1,17 @@
 import re
 
+try:
+    from .stage4_rule import analyze_semantic_structure as _canonical_analyze_semantic_structure
+except ImportError:
+    from stage4_rule import analyze_semantic_structure as _canonical_analyze_semantic_structure
+
 
 UNSPECIFIED = "Unspecified"
 PSYCHOLOGICAL_VERBS = {"think", "thought", "feel", "want", "hope", "stressed"}
 
 
 def analyze_semantic_structure(text):
-    text_clean = text.strip().rstrip(".!")
-    if re.match(r"^\s*please\b", text_clean, re.IGNORECASE):
-        imperative_text = re.sub(r"^\s*please\s+", "", text_clean, flags=re.IGNORECASE).strip()
-        words = imperative_text.split()
-        if words:
-            verb = words[0].lower()
-            object_value = " ".join(words[1:]) if len(words) > 1 else None
-            return {
-                "form": "Base",
-                "verb": verb,
-                "subject": "You",
-                "object": object_value,
-            }
-
-    passive_match = re.search(
-        r"\b(am|is|are|was|were|be|been)\b\s+([A-Za-z]+)\b(?:\s+by\s+(.+))?",
-        text_clean,
-        re.IGNORECASE,
-    )
-    if passive_match:
-        verb = passive_match.group(2)
-        if not verb.lower().endswith("ing") and re.search(
-            r"(?:ed|en|t|d|n)$", verb, re.IGNORECASE
-        ):
-            return {
-                "form": "Passive",
-                "verb": verb.lower(),
-                "actor": passive_match.group(3).strip() if passive_match.group(3) else "Unknown",
-                "receiver": text_clean[:passive_match.start()].strip(),
-            }
-
-    progressive_match = re.search(
-        r"\b(am|is|are|was|were)\b\s+(\w+ing)\b\s*(.*)",
-        text_clean,
-        re.IGNORECASE,
-    )
-    if progressive_match:
-        return {
-            "form": "Progressive",
-            "verb": progressive_match.group(2).lower(),
-            "subject": text_clean[:progressive_match.start()].strip(),
-            "object": progressive_match.group(3).strip() or None,
-        }
-
-    be_state_match = re.search(
-        r"\b(am|is|are|was|were)\b\s+([A-Za-z]+)\b(?:\s+(.*))?",
-        text_clean,
-        re.IGNORECASE,
-    )
-    if be_state_match:
-        subject = text_clean[:be_state_match.start()].strip()
-        state_value = be_state_match.group(2).lower()
-        result = {
-            "form": "State",
-            "state": state_value,
-            "subject": subject,
-            "object": be_state_match.group(3).strip() if be_state_match.group(3) else None,
-        }
-        psych_match = subject.split()[0].lower() if subject else ""
-        if psych_match in PSYCHOLOGICAL_VERBS:
-            result["psychological_verb"] = psych_match
-            result["verb"] = None
-        else:
-            result["verb"] = state_value
-        return result
-
-    non_verb_second_words = {
-        "a", "an", "the", "to", "in", "on", "at", "of", "by", "for", "with",
-        "from", "into", "onto", "after", "before", "because", "despite", "although",
-        "though", "if", "when", "while", "as", "and", "or", "but", "not"
-    }
-    words = text_clean.split()
-    if len(words) >= 2:
-        if words[1].lower() in non_verb_second_words:
-            verb = words[0].lower()
-            object_value = " ".join(words[1:]) or None
-        else:
-            verb = words[1].lower()
-            object_value = " ".join(words[2:]) or None
-        return {
-            "form": "Base",
-            "verb": verb,
-            "subject": words[0],
-            "object": object_value,
-        }
-    return None
+    return _canonical_analyze_semantic_structure(text)
 
 
 def _temporal_phrase(text, stage3_result):

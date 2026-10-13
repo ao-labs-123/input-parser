@@ -168,6 +168,20 @@ def test_stage3_stops_relative_clause_before_non_copular_main_predicate():
     assert modification["clause"] == "I wrote"
 
 
+def test_stage3_stops_subject_relative_before_main_predicate():
+    cases = (
+        ("The report that arrived yesterday disappeared.", "arrived yesterday"),
+        (
+            "The report that was written by me arrived today.",
+            "was written by me",
+        ),
+    )
+
+    for text, expected_clause in cases:
+        modification = analyze_modification_structure(text)
+        assert modification["clause"] == expected_clause, text
+
+
 def test_stage3_extracts_head_target_from_modified_noun_phrase():
     modification = analyze_modification_structure(
         "I talked to the manager from accounting who was frustrated."

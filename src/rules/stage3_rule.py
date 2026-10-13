@@ -13,6 +13,10 @@ IRREGULAR_PAST_FORMS = {
     "got", "heard", "held", "knew", "left", "made", "met", "ran", "read",
     "said", "saw", "sent", "told", "took", "went", "wrote",
 }
+PARTICIPIAL_ADJECTIVES = {
+    "bored", "confused", "excited", "frustrated", "interested", "pleased",
+    "satisfied", "stressed", "surprised", "tired", "worried",
+}
 RELATIVE_SUBJECT_PATTERN = re.compile(
     r"^(?:[Ii]|[Yy]ou|[Hh]e|[Ss]he|[Tt]hey|[Ww]e|[Ii]t|[Tt]he|[Aa]|[Aa]n|"
     r"[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\b"
@@ -22,10 +26,15 @@ RELATIVE_SUBJECT_PATTERN = re.compile(
 def _is_finite_predicate(word, previous_word):
     normalized = word.strip(".,!?;:").lower()
     previous = previous_word.strip(".,!?;:").lower()
+    if previous in HAVE_FORMS:
+        return False
+    if previous in BE_FORMS and (
+        normalized.endswith(("ed", "en", "ing"))
+        or normalized in PARTICIPIAL_ADJECTIVES
+    ):
+        return False
     if normalized in BE_FORMS or normalized in HAVE_FORMS or normalized in {"do", "does", "did"}:
         return True
-    if previous in BE_FORMS or previous in HAVE_FORMS:
-        return False
     return normalized in IRREGULAR_PAST_FORMS or normalized.endswith("ed")
 
 
@@ -104,25 +113,16 @@ def analyze_modification_structure(text):
             )
             finite_predicate_seen = False
             previous_word = ""
+            predicate_start = 1 if explicit_subject else 0
             for index, word in enumerate(clause_parts):
-                if explicit_subject and index > 0:
-                    if _is_finite_predicate(word, previous_word):
-                        is_coordinated_predicate = previous_word.lower() in {
-                            "and", "or",
-                        }
-                        if finite_predicate_seen and not is_coordinated_predicate:
+                if index >= predicate_start and _is_finite_predicate(word, previous_word):
+                    is_coordinated_predicate = previous_word.lower() in {"and", "or"}
+                    if finite_predicate_seen and not is_coordinated_predicate:
+                        if word.strip(".,!?;:").lower() not in PARTICIPIAL_ADJECTIVES:
                             break
-                        finite_predicate_seen = True
-                    clause_words.append(word)
-                    previous_word = word
-                    continue
-
-                is_clause_initial_copula = index == 0 and word.lower() in {
-                    "is", "was", "are", "were"
-                }
-                if word.lower() in ["is", "was", "are", "were", "has", "have", "done"] and not is_clause_initial_copula:
-                    break
+                    finite_predicate_seen = True
                 clause_words.append(word)
+                previous_word = word
                 
             clause_content = " ".join(clause_words).replace(".", "").strip()
             

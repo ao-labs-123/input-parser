@@ -6,12 +6,33 @@ THAT_COMPLEMENT_PREDICATES = {
     "realized", "say", "said", "see", "saw", "suppose", "supposed", "think",
     "thought", "understand", "understood",
 }
+BE_FORMS = {"am", "is", "are", "was", "were", "be", "been", "being"}
+HAVE_FORMS = {"have", "has", "had"}
+IRREGULAR_PAST_FORMS = {
+    "bought", "brought", "built", "came", "did", "felt", "found", "gave",
+    "got", "heard", "held", "knew", "left", "made", "met", "ran", "read",
+    "said", "saw", "sent", "told", "took", "went", "wrote",
+}
+RELATIVE_SUBJECT_PATTERN = re.compile(
+    r"^(?:[Ii]|[Yy]ou|[Hh]e|[Ss]he|[Tt]hey|[Ww]e|[Ii]t|[Tt]he|[Aa]|[Aa]n|"
+    r"[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\b"
+)
+
+
+def _is_finite_predicate(word, previous_word):
+    normalized = word.strip(".,!?;:").lower()
+    previous = previous_word.strip(".,!?;:").lower()
+    if normalized in BE_FORMS or normalized in HAVE_FORMS or normalized in {"do", "does", "did"}:
+        return True
+    if previous in BE_FORMS or previous in HAVE_FORMS:
+        return False
+    return normalized in IRREGULAR_PAST_FORMS or normalized.endswith("ed")
 
 
 def _extract_target(antecedent):
     target_match = re.search(
         r"\b(?:to|with|for|of|in|on|at)\s+(?:the|a|an)\s+"
-        r"([A-Za-z]+(?:\s+[A-Za-z]+)?)$",
+        r"([A-Za-z]+(?:\s+(?!(?:to|with|for|of|in|on|at|from|the|a|an|and|or)\b)[A-Za-z]+)?)",
         antecedent,
         re.IGNORECASE,
     )
@@ -60,13 +81,42 @@ def analyze_modification_structure(text):
                 continue
                 
             antecedent = parts[0].strip()
-            if m_word == "that" and antecedent.split() and antecedent.split()[-1].lower() in THAT_COMPLEMENT_PREDICATES:
+            antecedent_words = antecedent.lower().split()
+            is_that_complement = (
+                m_word == "that"
+                and antecedent_words
+                and (
+                    antecedent_words[-1] in THAT_COMPLEMENT_PREDICATES
+                    or (
+                        len(antecedent_words) > 1
+                        and antecedent_words[-2] in BE_FORMS
+                    )
+                )
+            )
+            if is_that_complement:
                 continue
             
             # 主節の動詞（is, wasなど）の手前までを関係節として切り出す
             clause_parts = parts[1].split()
             clause_words = []
+            explicit_subject = bool(
+                clause_parts and RELATIVE_SUBJECT_PATTERN.match(clause_parts[0])
+            )
+            finite_predicate_seen = False
+            previous_word = ""
             for index, word in enumerate(clause_parts):
+                if explicit_subject and index > 0:
+                    if _is_finite_predicate(word, previous_word):
+                        is_coordinated_predicate = previous_word.lower() in {
+                            "and", "or",
+                        }
+                        if finite_predicate_seen and not is_coordinated_predicate:
+                            break
+                        finite_predicate_seen = True
+                    clause_words.append(word)
+                    previous_word = word
+                    continue
+
                 is_clause_initial_copula = index == 0 and word.lower() in {
                     "is", "was", "are", "were"
                 }

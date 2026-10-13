@@ -160,6 +160,28 @@ def test_stage3_attributes_object_relative_clause_to_its_explicit_subject():
     assert stage3["attribution"]["modifier_agent"] == "I"
 
 
+def test_stage3_stops_relative_clause_before_non_copular_main_predicate():
+    modification = analyze_modification_structure(
+        "The report that I wrote arrived today."
+    )
+
+    assert modification["clause"] == "I wrote"
+
+
+def test_stage3_extracts_head_target_from_modified_noun_phrase():
+    modification = analyze_modification_structure(
+        "I talked to the manager from accounting who was frustrated."
+    )
+
+    assert modification["target"] == "manager"
+
+
+def test_stage3_does_not_map_adjective_that_complement_as_relative_clause():
+    modification = analyze_modification_structure("I am sure that she left.")
+
+    assert modification is None
+
+
 def test_stage3_classifies_adjectival_description_as_supplementary():
     text = "Please review the long report."
     modification = analyze_modification_structure(text)

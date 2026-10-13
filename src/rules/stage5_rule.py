@@ -242,15 +242,15 @@ def synthesize_5w1h(
 ):
     """Bind resolved stage outputs into the deterministic 5W1H handoff frame."""
     stage1_result = stage1_result or {}
-    agent = stage1_result.get("agent", "Unknown")
-    if agent in (None, ""):
-        agent = "Unknown"
-    if agent == "Unknown" and re.match(r"^\s*please\s+\w+", text, re.IGNORECASE):
+    agent = stage1_result.get("agent", "Unspecified")
+    if agent in (None, "", "Unknown"):
+        agent = "Unspecified"
+    if agent == "Unspecified" and re.match(r"^\s*please\s+\w+", text, re.IGNORECASE):
         agent = "you"
 
     if semantic_result and semantic_result.get("form") == "Passive":
         actor = semantic_result.get("actor")
-        if actor and actor != "Unknown":
+        if actor and actor not in ("Unknown", "Unspecified"):
             agent = actor
 
     when = _temporal_phrase(text, stage3_result)

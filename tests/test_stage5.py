@@ -45,7 +45,7 @@ def test_stage1_unknown_subject_falls_to_stage2_clarification():
     analyzer = LogicAnalyzer({})
 
     stage1 = analyzer.stage1_analyze(text, subject_status)
-    assert stage1["agent"] == "Unknown"
+    assert stage1["agent"] == "Unspecified"
     assert stage1["decision"] == "Fallback: Undetermined Agent"
     assert stage1["action_required"] == "Trigger Stage 1 Clarification / Context Resolution"
 
@@ -59,7 +59,19 @@ def test_stage1_unknown_subject_falls_to_stage2_clarification():
         "Clarification Required (Undetermined Agent); Event classified: Action"
     )
     assert stage2["structure"]["event"]["verb"] == "went"
-    assert stage2["agent"] == "Unknown"
+    assert stage2["agent"] == "Unspecified"
+
+
+def test_unknown_placeholders_are_normalized_to_unspecified():
+    analyzer = LogicAnalyzer({})
+    text = "Went to the cafe yesterday."
+
+    stage1 = analyzer.stage1_analyze(text, "Neutral")
+    assert stage1["agent"] == "Unspecified"
+
+    stage4 = analyzer.stage4_analyze(text, analyze_semantic_structure(text), stage1)
+    assert stage4["actor"] == "Unspecified"
+    assert stage4["patient"] == "Unspecified"
 
 
 def test_stage1_prioritizes_formal_subject_imperative_and_psychological_agent():
@@ -282,18 +294,18 @@ def test_stage2_preserves_events_alongside_causal_relations():
     ):
         stage2 = analyzer.stage2_analyze(
             text,
-            {"agent": "Unknown"},
-            analyze_causality_and_ambiguity(text, "Unknown"),
+            {"agent": "Unspecified"},
+            analyze_causality_and_ambiguity(text, "Unspecified"),
             semantic_result=analyze_semantic_structure(text),
         )
 
         assert stage2["action"] == {
             "verb": verb,
-            "actor": "Unknown",
+            "actor": "Unspecified",
             "patient": patient,
         }
         assert stage2["mapping"] == (
-            f"{expected_mapping}; Unknown -> Action -> {verb}"
+            f"{expected_mapping}; Unspecified -> Action -> {verb}"
             + (f" {patient}" if patient else "")
         )
 
@@ -419,8 +431,8 @@ def test_stage2_uses_state_label_for_state_like_events():
 
 def test_stage2_maps_despite_as_concession_not_causality():
     text = "I failed despite the effort."
-    stage1 = {"agent": "Unknown"}
-    rule_result = analyze_causality_and_ambiguity(text, "Unknown")
+    stage1 = {"agent": "Unspecified"}
+    rule_result = analyze_causality_and_ambiguity(text, "Unspecified")
     stage2 = LogicAnalyzer({}).stage2_analyze(
         text,
         stage1,
@@ -439,13 +451,13 @@ def test_stage2_maps_despite_as_concession_not_causality():
         "event": {
             "category": "Action",
             "verb": "failed",
-            "actor": "Unknown",
+            "actor": "Unspecified",
             "patient": None,
         },
     }
     assert stage2["decision"] == "Concessive relation mapped; Event classified: Action"
     assert stage2["mapping"] == (
-        "the effort -> Concession -> I failed; Unknown -> Action -> failed"
+        "the effort -> Concession -> I failed; Unspecified -> Action -> failed"
     )
 
 
@@ -586,7 +598,7 @@ def test_remaining_examples_keep_semantics_and_5w1h_aligned():
 
     _, stage2, _, _, _ = analyze_pipeline("Failed despite the effort.")
     assert stage2["structure"]["event"]["category"] == "Action"
-    assert stage2["action"]["actor"] == "Unknown"
+    assert stage2["action"]["actor"] == "Unspecified"
 
     _, stage2, _, _, _ = analyze_pipeline("I was told by him.")
     assert stage2["mapping"] == "him -> Action -> told me"
@@ -635,7 +647,7 @@ def test_passive_without_by_is_detected():
 
     assert result["form"] == "Passive"
     assert result["verb"] == "completed"
-    assert result["actor"] == "Unknown"
+    assert result["actor"] == "Unspecified"
     assert result["receiver"] == "The report"
 
     analyzer = LogicAnalyzer({})

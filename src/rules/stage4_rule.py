@@ -87,7 +87,7 @@ def analyze_semantic_structure(text):
             return {
                 "form": "Passive",
                 "verb": v_en.lower(),
-                "actor": by_actor.strip() if by_actor else "Unknown",
+                "actor": by_actor.strip() if by_actor else "Unspecified",
                 "receiver": receiver,
             }
         

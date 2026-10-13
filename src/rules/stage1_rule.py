@@ -26,7 +26,7 @@ def determine_explicit_subject(text):
         that_clause = formal_subject_match.group(3).strip()
         
         clause_words = that_clause.split()
-        true_agent = clause_words[0] if clause_words else "Unknown"
+        true_agent = clause_words[0] if clause_words else "Unspecified"
         
         return {
             "structure_type": "FormalSubject",

@@ -1,6 +1,6 @@
 [
     {
-        "timestamp": "2026-10-13T11:19:10.755671",
+        "timestamp": "2026-10-13T11:26:28.800267",
         "input": "He succeeded because I helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -70,7 +70,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.756917",
+        "timestamp": "2026-10-13T11:26:28.801619",
         "input": "Please review the document.",
         "stage1": {
             "process": "Imperative / Direct Directive",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.758213",
+        "timestamp": "2026-10-13T11:26:28.802858",
         "input": "Thought was strange.",
         "stage1": {
             "process": "Psychological Verb + Null Subject",
@@ -203,7 +203,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.759889",
+        "timestamp": "2026-10-13T11:26:28.804494",
         "input": "Thought it was strange apparently.",
         "stage1": {
             "process": "Null Subject + Evidential / Attribution Marker",
@@ -284,31 +284,31 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.761825",
+        "timestamp": "2026-10-13T11:26:28.806481",
         "input": "Went to the cafe yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
             "decision": "Fallback: Undetermined Agent",
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
             "process": "Event: Action",
             "decision": "Clarification Required (Undetermined Agent); Event classified: Action",
-            "mapping": "Unknown -> Action -> went",
+            "mapping": "Unspecified -> Action -> went",
             "structure": {
                 "relation": "Event",
                 "event": {
                     "category": "Action",
                     "verb": "went",
-                    "actor": "Unknown",
+                    "actor": "Unspecified",
                     "patient": null
                 }
             },
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action": {
                 "verb": "went",
-                "actor": "Unknown",
+                "actor": "Unspecified",
                 "patient": null
             }
         },
@@ -317,7 +317,7 @@
             "decision": "Standard",
             "mapping": null,
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unspecified"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -335,13 +335,13 @@
                 "object": null,
                 "category": "Action",
                 "patient": "Unspecified",
-                "agent": "Unknown"
+                "agent": "Unspecified"
             }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
-                "who": "Unknown",
+                "who": "Unspecified",
                 "what": "went",
                 "when": "yesterday",
                 "where": "cafe",
@@ -352,7 +352,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.763073",
+        "timestamp": "2026-10-13T11:26:28.807710",
         "input": "It is required that you submit the form.",
         "stage1": {
             "process": "Formal Subject Detected (It ... that)",
@@ -420,7 +420,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.764398",
+        "timestamp": "2026-10-13T11:26:28.808994",
         "input": "I submitted the form yesterday.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -487,7 +487,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.765755",
+        "timestamp": "2026-10-13T11:26:28.810458",
         "input": "I wrote the report at the office.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -554,18 +554,18 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.767436",
+        "timestamp": "2026-10-13T11:26:28.812077",
         "input": "Succeeded because you helped.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
             "decision": "Fallback: Undetermined Agent",
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
             "process": "Causal Marker: because; Event: Action",
             "decision": "Causal relation mapped; Event classified: Action",
-            "mapping": "you helped -> Cause -> Succeeded; Unknown -> Action -> succeeded",
+            "mapping": "you helped -> Cause -> Succeeded; Unspecified -> Action -> succeeded",
             "structure": {
                 "relation": "CauseEffect",
                 "marker": "because",
@@ -574,14 +574,14 @@
                 "event": {
                     "category": "Action",
                     "verb": "succeeded",
-                    "actor": "Unknown",
+                    "actor": "Unspecified",
                     "patient": null
                 }
             },
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action": {
                 "verb": "succeeded",
-                "actor": "Unknown",
+                "actor": "Unspecified",
                 "patient": null
             }
         },
@@ -590,7 +590,7 @@
             "decision": "Standard",
             "mapping": null,
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unspecified"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -608,13 +608,13 @@
                 "object": null,
                 "category": "Action",
                 "patient": "Unspecified",
-                "agent": "Unknown"
+                "agent": "Unspecified"
             }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
-                "who": "Unknown",
+                "who": "Unspecified",
                 "what": "succeeded",
                 "when": "Unspecified",
                 "where": "Unspecified",
@@ -625,18 +625,18 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.769128",
+        "timestamp": "2026-10-13T11:26:28.814980",
         "input": "Failed despite the effort.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
             "decision": "Fallback: Undetermined Agent",
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
             "process": "Concessive Marker: despite; Event: Action",
             "decision": "Concessive relation mapped; Event classified: Action",
-            "mapping": "the effort -> Concession -> Failed; Unknown -> Action -> failed",
+            "mapping": "the effort -> Concession -> Failed; Unspecified -> Action -> failed",
             "structure": {
                 "relation": "Concession",
                 "marker": "despite",
@@ -645,14 +645,14 @@
                 "event": {
                     "category": "Action",
                     "verb": "failed",
-                    "actor": "Unknown",
+                    "actor": "Unspecified",
                     "patient": null
                 }
             },
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action": {
                 "verb": "failed",
-                "actor": "Unknown",
+                "actor": "Unspecified",
                 "patient": null
             }
         },
@@ -661,7 +661,7 @@
             "decision": "Standard",
             "mapping": null,
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unspecified"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -679,13 +679,13 @@
                 "object": null,
                 "category": "Action",
                 "patient": "Unspecified",
-                "agent": "Unknown"
+                "agent": "Unspecified"
             }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
-                "who": "Unknown",
+                "who": "Unspecified",
                 "what": "failed",
                 "when": "Unspecified",
                 "where": "Unspecified",
@@ -696,31 +696,31 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.770888",
+        "timestamp": "2026-10-13T11:26:28.817943",
         "input": "Required further investigation.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
             "decision": "Fallback: Undetermined Agent",
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
             "process": "Event: Action",
             "decision": "Clarification Required (Undetermined Agent); Event classified: Action",
-            "mapping": "Unknown -> Action -> further investigation",
+            "mapping": "Unspecified -> Action -> further investigation",
             "structure": {
                 "relation": "Event",
                 "event": {
                     "category": "Action",
                     "verb": "further",
-                    "actor": "Unknown",
+                    "actor": "Unspecified",
                     "patient": "investigation"
                 }
             },
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action": {
                 "verb": "further",
-                "actor": "Unknown",
+                "actor": "Unspecified",
                 "patient": "investigation"
             }
         },
@@ -729,7 +729,7 @@
             "decision": "Standard",
             "mapping": null,
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unspecified"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -747,13 +747,13 @@
                 "object": "investigation",
                 "category": "Action",
                 "patient": "investigation",
-                "agent": "Unknown"
+                "agent": "Unspecified"
             }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
-                "who": "Unknown",
+                "who": "Unspecified",
                 "what": "required further investigation",
                 "when": "Unspecified",
                 "where": "Unspecified",
@@ -764,31 +764,31 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.772654",
+        "timestamp": "2026-10-13T11:26:28.820779",
         "input": "Submitted the form yesterday.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
             "decision": "Fallback: Undetermined Agent",
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
             "process": "Event: Action",
             "decision": "Clarification Required (Undetermined Agent); Event classified: Action",
-            "mapping": "Unknown -> Action -> submitted the form",
+            "mapping": "Unspecified -> Action -> submitted the form",
             "structure": {
                 "relation": "Event",
                 "event": {
                     "category": "Action",
                     "verb": "submitted",
-                    "actor": "Unknown",
+                    "actor": "Unspecified",
                     "patient": "the form"
                 }
             },
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action": {
                 "verb": "submitted",
-                "actor": "Unknown",
+                "actor": "Unspecified",
                 "patient": "the form"
             }
         },
@@ -797,7 +797,7 @@
             "decision": "Standard",
             "mapping": null,
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unspecified"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -815,13 +815,13 @@
                 "object": "the form",
                 "category": "Action",
                 "patient": "the form",
-                "agent": "Unknown"
+                "agent": "Unspecified"
             }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
-                "who": "Unknown",
+                "who": "Unspecified",
                 "what": "submitted the form",
                 "when": "yesterday",
                 "where": "Unspecified",
@@ -832,31 +832,31 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.774564",
+        "timestamp": "2026-10-13T11:26:28.823801",
         "input": "Succeeded in the meeting.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
             "decision": "Fallback: Undetermined Agent",
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
             "process": "Event: Action",
             "decision": "Clarification Required (Undetermined Agent); Event classified: Action",
-            "mapping": "Unknown -> Action -> succeeded",
+            "mapping": "Unspecified -> Action -> succeeded",
             "structure": {
                 "relation": "Event",
                 "event": {
                     "category": "Action",
                     "verb": "succeeded",
-                    "actor": "Unknown",
+                    "actor": "Unspecified",
                     "patient": null
                 }
             },
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action": {
                 "verb": "succeeded",
-                "actor": "Unknown",
+                "actor": "Unspecified",
                 "patient": null
             }
         },
@@ -865,7 +865,7 @@
             "decision": "Standard",
             "mapping": null,
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unspecified"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -883,13 +883,13 @@
                 "object": null,
                 "category": "Action",
                 "patient": "Unspecified",
-                "agent": "Unknown"
+                "agent": "Unspecified"
             }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
-                "who": "Unknown",
+                "who": "Unspecified",
                 "what": "succeeded",
                 "when": "Unspecified",
                 "where": "in the meeting",
@@ -900,7 +900,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.776509",
+        "timestamp": "2026-10-13T11:26:28.826792",
         "input": "I'm stressed due to the project.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -972,7 +972,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.779086",
+        "timestamp": "2026-10-13T11:26:28.829655",
         "input": "I succeeded because you helped.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1042,7 +1042,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.781695",
+        "timestamp": "2026-10-13T11:26:28.832967",
         "input": "He succeeded by working hard.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1134,7 +1134,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.784013",
+        "timestamp": "2026-10-13T11:26:28.835942",
         "input": "I was stressed after the long meeting.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1224,7 +1224,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.787172",
+        "timestamp": "2026-10-13T11:26:28.839007",
         "input": "The report, which was long, is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1307,7 +1307,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.789575",
+        "timestamp": "2026-10-13T11:26:28.841466",
         "input": "The report that I wrote is done.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1392,7 +1392,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.792195",
+        "timestamp": "2026-10-13T11:26:28.844063",
         "input": "The office where I wrote the report was quiet.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1477,7 +1477,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.794915",
+        "timestamp": "2026-10-13T11:26:28.846841",
         "input": "The day where he succeeded was bright.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1562,7 +1562,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.797524",
+        "timestamp": "2026-10-13T11:26:28.849521",
         "input": "I have a car.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1629,7 +1629,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.800245",
+        "timestamp": "2026-10-13T11:26:28.852294",
         "input": "I am having a party.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1696,7 +1696,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.803183",
+        "timestamp": "2026-10-13T11:26:28.855349",
         "input": "I was told by him.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1763,7 +1763,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.806432",
+        "timestamp": "2026-10-13T11:26:28.859781",
         "input": "The report was completed quickly.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -1773,20 +1773,20 @@
         "stage2": {
             "process": "Event: Action",
             "decision": "No causal relation; Event classified: Action",
-            "mapping": "Unknown -> Action -> completed The report",
+            "mapping": "Unspecified -> Action -> completed The report",
             "structure": {
                 "relation": "Event",
                 "event": {
                     "category": "Action",
                     "verb": "completed",
-                    "actor": "Unknown",
+                    "actor": "Unspecified",
                     "patient": "The report"
                 }
             },
             "agent": "The report",
             "action": {
                 "verb": "completed",
-                "actor": "Unknown",
+                "actor": "Unspecified",
                 "patient": "The report"
             }
         },
@@ -1819,13 +1819,13 @@
             "category": "Action",
             "verb": "completed",
             "patient": "The report",
-            "actor": "Unknown",
+            "actor": "Unspecified",
             "receiver": "The report",
             "subject": "Unspecified",
             "structure": {
                 "form": "Passive",
                 "verb": "completed",
-                "actor": "Unknown",
+                "actor": "Unspecified",
                 "receiver": "The report",
                 "category": "Action",
                 "patient": "The report",
@@ -1846,18 +1846,18 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.809761",
+        "timestamp": "2026-10-13T11:26:28.863096",
         "input": "Failed the exam because of bad luck.",
         "stage1": {
             "process": "Null Subject + No Core Markers Detected",
             "decision": "Fallback: Undetermined Agent",
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action_required": "Trigger Stage 1 Clarification / Context Resolution"
         },
         "stage2": {
             "process": "Causal Marker: because of; Event: Action",
             "decision": "Causal relation mapped; Event classified: Action",
-            "mapping": "bad luck -> Cause -> Failed the exam; Unknown -> Action -> failed the exam",
+            "mapping": "bad luck -> Cause -> Failed the exam; Unspecified -> Action -> failed the exam",
             "structure": {
                 "relation": "CauseEffect",
                 "marker": "because of",
@@ -1866,14 +1866,14 @@
                 "event": {
                     "category": "Action",
                     "verb": "failed",
-                    "actor": "Unknown",
+                    "actor": "Unspecified",
                     "patient": "the exam"
                 }
             },
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action": {
                 "verb": "failed",
-                "actor": "Unknown",
+                "actor": "Unspecified",
                 "patient": "the exam"
             }
         },
@@ -1882,7 +1882,7 @@
             "decision": "Standard",
             "mapping": null,
             "structure": null,
-            "agent": "Unknown"
+            "agent": "Unspecified"
         },
         "stage4": {
             "process": "[Morphology: Base] → [Category: Action]",
@@ -1900,13 +1900,13 @@
                 "object": "the exam",
                 "category": "Action",
                 "patient": "the exam",
-                "agent": "Unknown"
+                "agent": "Unspecified"
             }
         },
         "stage5": {
             "stage": "Stage 5 - 5W1H Synthesis",
             "frame": {
-                "who": "Unknown",
+                "who": "Unspecified",
                 "what": "failed the exam",
                 "when": "Unspecified",
                 "where": "Unspecified",
@@ -1917,7 +1917,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.813018",
+        "timestamp": "2026-10-13T11:26:28.866819",
         "input": "I talked to the manager who was frustrated with the deadline.",
         "stage1": {
             "process": "Explicit Subject Present",
@@ -2000,7 +2000,7 @@
         }
     },
     {
-        "timestamp": "2026-10-13T11:19:10.816419",
+        "timestamp": "2026-10-13T11:26:28.872013",
         "input": "Please review the long report.",
         "stage1": {
             "process": "Imperative / Direct Directive",

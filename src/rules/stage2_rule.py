@@ -45,7 +45,10 @@ def analyze_causality_and_ambiguity(text, subject_status):
         for marker in get_concession_markers()
         if re.search(rf"(?<!\w){re.escape(marker)}(?!\w)", text, re.IGNORECASE)
     ]
-    ambiguous_agent = subject_status in (None, "Unknown", "Neutral")
+    if isinstance(subject_status, dict):
+        ambiguous_agent = True
+    else:
+        ambiguous_agent = subject_status in (None, "Unknown", "Unspecified", "Neutral")
 
     return {
         "status": "Ambiguous" if ambiguous_agent else "Resolved",

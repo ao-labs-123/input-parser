@@ -1,5 +1,17 @@
 import re
 
+
+def _normalize_placeholder(value, default="Unspecified"):
+    if value is None:
+        return default
+    if isinstance(value, str):
+        normalized = value.strip()
+        if normalized in ("", "Unknown", "Unspecified"):
+            return default
+        return normalized
+    return value
+
+
 if __package__ == "src":
     from .rules.stage5_rule import synthesize_5w1h
 else:
@@ -95,7 +107,7 @@ class LogicAnalyzer:
 
     def stage1_analyze(self, text, subject_result):
         if isinstance(subject_result, dict) and subject_result.get("structure_type") == "FormalSubject":
-            true_agent = subject_result.get("true_agent") or "Unknown"
+            true_agent = _normalize_placeholder(subject_result.get("true_agent"))
             predicate = subject_result.get("predicate", "")
             that_clause = subject_result.get("that_clause", "")
             return {
@@ -105,7 +117,7 @@ class LogicAnalyzer:
                 "structure": f"It is [{predicate}] that [{that_clause}]",
             }
 
-        if isinstance(subject_result, str) and subject_result not in ("", "Unknown", "Neutral"):
+        if isinstance(subject_result, str) and subject_result not in ("", "Unknown", "Unspecified", "Neutral"):
             if subject_result in ("Imperative", "Listener"):
                 return {
                     "process": "Imperative / Direct Directive",
@@ -127,7 +139,7 @@ class LogicAnalyzer:
             return {
                 "process": "Explicit Subject Present",
                 "decision": "Priority: Explicit Subject",
-                "agent": subject_result,
+                "agent": _normalize_placeholder(subject_result),
             }
 
         if re.match(r"^\s*please\b", text, re.IGNORECASE):
@@ -140,7 +152,7 @@ class LogicAnalyzer:
         return {
             "process": "Null Subject + No Core Markers Detected",
             "decision": "Fallback: Undetermined Agent",
-            "agent": "Unknown",
+            "agent": "Unspecified",
             "action_required": "Trigger Stage 1 Clarification / Context Resolution",
         }
 
@@ -154,7 +166,7 @@ class LogicAnalyzer:
     ):
         stage1_result = stage1_result or {}
         rule_result = stage2_rule_result or {}
-        agent = stage1_result.get("agent", "Unknown")
+        agent = _normalize_placeholder(stage1_result.get("agent"))
         state_value = (
             semantic_result.get("state")
             if semantic_result and semantic_result.get("form") == "State"
@@ -180,7 +192,7 @@ class LogicAnalyzer:
             action = {
                 "verb": semantic_result["verb"],
                 "actor": (
-                    semantic_result.get("actor", "Unknown")
+                    semantic_result.get("actor", "Unspecified")
                     if form == "Passive"
                     else agent
                 ),
@@ -371,7 +383,7 @@ class LogicAnalyzer:
         else:
             decision = (
                 "Clarification Required (Undetermined Agent)"
-                if agent == "Unknown"
+                if agent == "Unspecified"
                 else "No causal relation"
             )
             result = {
@@ -394,7 +406,7 @@ class LogicAnalyzer:
         return result
 
     def stage3_analyze(self, text, stage1_result, modification_result=None):
-        agent = (stage1_result or {}).get("agent", "Unknown")
+        agent = _normalize_placeholder((stage1_result or {}).get("agent"))
         if not modification_result:
             return {
                 "process": "No modification structure found",
@@ -565,7 +577,7 @@ class LogicAnalyzer:
         if form == "State":
             structure["state"] = semantic_result.get("state", verb)
         if stage1_result:
-            structure["agent"] = stage1_result.get("agent", "Unknown")
+            structure["agent"] = _normalize_placeholder(stage1_result.get("agent"))
 
         return {
             "process": process,

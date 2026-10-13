@@ -431,18 +431,17 @@ class LogicAnalyzer:
         modifier = modification_result.get("clause", "Unspecified")
         relative_marker = modification_result.get("relative_marker")
         modifier_subject = None
-        if relative_marker == "who" or (
+        subject_match = re.match(
+            r"^(I|You|He|She|They|We|[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\b",
+            modifier,
+        )
+        if subject_match:
+            modifier_subject = subject_match.group(1)
+        elif relative_marker == "who" or (
             relative_marker in ("which", "where")
             and re.match(r"^(?:is|was|are|were)\b", modifier, re.IGNORECASE)
         ):
             modifier_subject = target
-        else:
-            subject_match = re.match(
-                r"^(I|You|He|She|They|We|[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\b",
-                modifier,
-            )
-            if subject_match:
-                modifier_subject = subject_match.group(1)
 
         structure = dict(modification_result)
         structure.update({

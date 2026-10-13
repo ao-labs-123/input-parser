@@ -1,5 +1,12 @@
 import re
 
+THAT_COMPLEMENT_PREDICATES = {
+    "assume", "assumed", "believe", "believed", "feel", "felt", "guess",
+    "guessed", "hear", "heard", "hope", "hoped", "know", "knew", "realize",
+    "realized", "say", "said", "see", "saw", "suppose", "supposed", "think",
+    "thought", "understand", "understood",
+}
+
 
 def _extract_target(antecedent):
     target_match = re.search(
@@ -53,6 +60,8 @@ def analyze_modification_structure(text):
                 continue
                 
             antecedent = parts[0].strip()
+            if m_word == "that" and antecedent.split() and antecedent.split()[-1].lower() in THAT_COMPLEMENT_PREDICATES:
+                continue
             
             # 主節の動詞（is, wasなど）の手前までを関係節として切り出す
             clause_parts = parts[1].split()

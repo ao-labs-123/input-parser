@@ -135,6 +135,31 @@ def test_stage3_keeps_modifier_agent_separate_from_primary_agent():
     }
 
 
+def test_stage3_does_not_map_that_complement_as_a_relative_clause():
+    text = "I think that you are right."
+
+    modification = analyze_modification_structure(text)
+    stage3 = LogicAnalyzer({}).stage3_analyze(text, {"agent": "I"}, modification)
+
+    assert modification is None
+    assert stage3["decision"] == "Standard"
+    assert stage3["mapping"] is None
+
+    relative_text = "The report that I wrote is done."
+    relative = analyze_modification_structure(relative_text)
+    assert relative["type"] == "Defining"
+    assert relative["clause"] == "I wrote"
+
+
+def test_stage3_attributes_object_relative_clause_to_its_explicit_subject():
+    text = "The manager who I talked to was frustrated."
+    modification = analyze_modification_structure(text)
+    stage3 = LogicAnalyzer({}).stage3_analyze(text, {"agent": "I"}, modification)
+
+    assert stage3["target"] == "The manager"
+    assert stage3["attribution"]["modifier_agent"] == "I"
+
+
 def test_stage3_classifies_adjectival_description_as_supplementary():
     text = "Please review the long report."
     modification = analyze_modification_structure(text)

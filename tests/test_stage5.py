@@ -73,6 +73,18 @@ def test_stage1_prioritizes_formal_subject_imperative_and_psychological_agent():
     assert analyzer.stage1_analyze("Thought was strange.", "First-Person")["agent"] == "I"
 
 
+def test_stage4_normalizes_imperative_subject_to_agent():
+    text = "Please review the document."
+    analyzer = LogicAnalyzer({})
+    stage1 = analyzer.stage1_analyze(text, "Neutral")
+    semantic = analyze_semantic_structure(text)
+    stage4 = analyzer.stage4_analyze(text, semantic, stage1)
+
+    assert stage1["agent"] == "You"
+    assert semantic["subject"] == "You"
+    assert stage4["subject"] == "You"
+
+
 def test_stage2_maps_cause_to_effect_and_stage3_maps_modification():
     analyzer = LogicAnalyzer({})
     text = "I succeeded because you helped."

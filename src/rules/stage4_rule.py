@@ -49,6 +49,19 @@ def analyze_semantic_structure(text):
         main_clause = text_clean[:relative_match.start()].strip(" ,")
         if main_clause and main_clause.split()[0].lower() not in {"the", "a", "an"}:
             text_clean = main_clause
+
+    if re.match(r"^\s*please\b", text_clean, re.IGNORECASE):
+        imperative_text = re.sub(r"^\s*please\s+", "", text_clean, flags=re.IGNORECASE).strip()
+        words = imperative_text.split()
+        if words:
+            verb = words[0].lower()
+            object_noun = _direct_object(" ".join(words[1:]), verb) if len(words) > 1 else None
+            return {
+                "form": "Base",
+                "verb": verb,
+                "subject": "You",
+                "object": object_noun,
+            }
     
     # 1. 受動態の判定 (Passive: be + V-en + by)
     # 例: "I was told by him" / "The report was completed quickly"

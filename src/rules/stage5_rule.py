@@ -6,7 +6,19 @@ PSYCHOLOGICAL_VERBS = {"think", "thought", "feel", "want", "hope", "stressed"}
 
 
 def analyze_semantic_structure(text):
-    text_clean = text.strip().rstrip(".!?")
+    text_clean = text.strip().rstrip(".!")
+    if re.match(r"^\s*please\b", text_clean, re.IGNORECASE):
+        imperative_text = re.sub(r"^\s*please\s+", "", text_clean, flags=re.IGNORECASE).strip()
+        words = imperative_text.split()
+        if words:
+            verb = words[0].lower()
+            object_value = " ".join(words[1:]) if len(words) > 1 else None
+            return {
+                "form": "Base",
+                "verb": verb,
+                "subject": "You",
+                "object": object_value,
+            }
 
     passive_match = re.search(
         r"\b(am|is|are|was|were|be|been)\b\s+([A-Za-z]+)\b(?:\s+by\s+(.+))?",

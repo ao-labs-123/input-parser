@@ -1,10 +1,10 @@
 ## CCA Architecture
-![alt text](image-1.jpeg)
+**[conscious-cognitive-architecture](https://github.com/ao-labs-123/conscious-cognitive-architecture)**
 
 1. [input-parser](https://github.com/ao-labs-123/input-parser)※Current Position
 2. [particle-encapsulation](https://github.com/ao-labs-123/particle-encapsulation)
 3. [topological-mapper](https://github.com/ao-labs-123/topological-mapper)
-4. [spatial-allocation]()
+4. [spatial-allocation](https://github.com/ao-labs-123/spatial-allocation)
 
 # Current Phase: Input Parsing
 ![alt text](image.jpeg)

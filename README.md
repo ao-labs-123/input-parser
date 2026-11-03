@@ -1,5 +1,5 @@
 ## CCA Architecture
-<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/7844b856-c666-433f-9344-dffe1ab9bc0c" />
+![alt text](image-1.jpeg)
 
 1. [input-parser](https://github.com/ao-labs-123/input-parser)※Current Position
 2. [particle-encapsulation](https://github.com/ao-labs-123/particle-encapsulation)

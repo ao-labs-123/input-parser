@@ -5,7 +5,6 @@
 2. [particle-encapsulation](https://github.com/ao-labs-123/particle-encapsulation)
 3. [topological-mapper](https://github.com/ao-labs-123/topological-mapper)
 4. [spatial-allocation](https://github.com/ao-labs-123/spatial-allocation)
-5. [cognitive-wave-dynamics](https://github.com/ao-labs-123/cognitive-wave-dynmics)
 
 # Current Phase: Input Parsing
 ![alt text](image.jpeg)
